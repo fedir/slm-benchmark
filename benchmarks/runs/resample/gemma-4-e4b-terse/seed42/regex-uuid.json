@@ -1,0 +1,36 @@
+{
+ "model": "gemma-4-e4b-terse",
+ "mode": "resample",
+ "seed": 42,
+ "question": "regex-uuid",
+ "category": "regex",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": false,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 42,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 53,
+ "seconds_total": 12.0,
+ "attempts": [
+  {
+   "tokens": 53,
+   "seconds": 12.0,
+   "tps": 4.43,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "regex '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$'",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

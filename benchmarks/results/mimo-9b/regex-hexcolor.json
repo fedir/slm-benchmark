@@ -1,0 +1,12 @@
+{
+ "model": "mimo-9b",
+ "question": "regex-hexcolor",
+ "category": "regex",
+ "passed": true,
+ "detail": "regex '^#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6})$'",
+ "completion_tokens": 33,
+ "seconds": 11.8,
+ "tps": 2.8,
+ "finish_reason": "stop",
+ "reasoning_chars": 0
+}

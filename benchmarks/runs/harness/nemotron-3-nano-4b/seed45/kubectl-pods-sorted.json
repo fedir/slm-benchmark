@@ -1,0 +1,58 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "harness",
+ "seed": 45,
+ "question": "kubectl-pods-sorted",
+ "category": "kubectl",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 45,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 81,
+ "seconds_total": 23.1,
+ "attempts": [
+  {
+   "tokens": 43,
+   "seconds": 7.8,
+   "tps": 5.5,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['--sort-by[ =]\\\\.?metadata\\\\.creationTimestamp']",
+   "verifier_pass": false,
+   "verifier_feedback": "it must be a single kubectl invocation: no pipes, redirects or substitutions",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 19,
+   "seconds": 6.6,
+   "tps": 2.89,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['--sort-by[ =]\\\\.?metadata\\\\.creationTimestamp']",
+   "verifier_pass": false,
+   "verifier_feedback": "the command is valid kubectl but does not do what was asked: the list is not sorted by the pod creation timestamp (sort expression found: 'creationTimestamp')",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 19,
+   "seconds": 8.7,
+   "tps": 2.19,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['--sort-by[ =]\\\\.?metadata\\\\.creationTimestamp']",
+   "verifier_pass": false,
+   "verifier_feedback": "the command is valid kubectl but does not do what was asked: the list is not sorted by the pod creation timestamp (sort expression found: 'creationTimestamp')",
+   "reasoning_chars": 0
+  }
+ ]
+}

@@ -1,0 +1,48 @@
+{
+ "model": "qwen2.5-coder-3b",
+ "mode": "resample",
+ "seed": 46,
+ "question": "regex-slug",
+ "category": "regex",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 46,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 31,
+ "seconds_total": 5.9,
+ "attempts": [
+  {
+   "tokens": 10,
+   "seconds": 2.5,
+   "tps": 3.98,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^[-\\\\w]+$'; wrong on ['!Hello', '!hello_world', '!-hello', '!hello-', '!hello--world']",
+   "verifier_pass": false,
+   "verifier_feedback": "it matches these, which it must reject: ['My-Post', 'post-', 'a--b']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 21,
+   "seconds": 3.4,
+   "tps": 6.12,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "regex '^[a-z0-9]+(-[a-z0-9]+)*$'",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0,
+   "retry_seed": 1046
+  }
+ ]
+}

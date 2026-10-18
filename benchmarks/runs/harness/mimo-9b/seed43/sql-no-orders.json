@@ -1,0 +1,36 @@
+{
+ "model": "mimo-9b",
+ "mode": "harness",
+ "seed": 43,
+ "question": "sql-no-orders",
+ "category": "sql",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": false,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 43,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 28,
+ "seconds_total": 11.3,
+ "attempts": [
+  {
+   "tokens": 28,
+   "seconds": 11.3,
+   "tps": 2.49,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "rows match",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

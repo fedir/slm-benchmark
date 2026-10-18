@@ -1,0 +1,24 @@
+{
+ "model": "ornith-9b-mtp",
+ "mode": "naked",
+ "seed": 43,
+ "question": "py-topk",
+ "category": "python",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": false,
+ "tokens_total": 66,
+ "seconds_total": 14.3,
+ "attempts": [
+  {
+   "tokens": 66,
+   "seconds": 14.3,
+   "tps": 4.62,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "AssertionError",
+   "verifier_pass": null,
+   "verifier_feedback": ""
+  }
+ ]
+}

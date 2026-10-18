@@ -1,0 +1,24 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "harness",
+ "seed": 43,
+ "question": "regex-ipv4",
+ "category": "regex",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": false,
+ "tokens_total": 73,
+ "seconds_total": 12.7,
+ "attempts": [
+  {
+   "tokens": 73,
+   "seconds": 12.7,
+   "tps": 5.73,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "regex '^(?:(?:25[0-5]|2[0-4]\\\\d|1\\\\d{2}|[1-9]?\\\\d)\\\\.){3}(?:25[0-5]|2[0-4]\\\\d|1\\\\d{2}|[1-9]?\\\\d)$'",
+   "verifier_pass": true,
+   "verifier_feedback": ""
+  }
+ ]
+}

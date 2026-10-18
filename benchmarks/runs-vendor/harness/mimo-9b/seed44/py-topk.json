@@ -1,0 +1,50 @@
+{
+ "model": "mimo-9b",
+ "mode": "harness",
+ "seed": 44,
+ "question": "py-topk",
+ "category": "python",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 44,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "min_p": 0.0,
+  "repeat_penalty": 1.0,
+  "presence_penalty": 0.0,
+  "profile": "vendor"
+ },
+ "tokens_total": 79,
+ "seconds_total": 37.9,
+ "attempts": [
+  {
+   "tokens": 37,
+   "seconds": 15.1,
+   "tps": 2.45,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "NameError: name 'Counter' is not defined (no code fence)",
+   "verifier_pass": false,
+   "verifier_feedback": "top_k_frequent(['a','b','a','c','b','a'],2) raised NameError: name 'Counter' is not defined; top_k_frequent(['x','y','z'],2) raised NameError: name 'Counter' is not defined; top_k_frequent(['dog','cat','cat','dog'],1) raised NameError: name 'Counter' is not defined",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 42,
+   "seconds": 22.8,
+   "tps": 1.84,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "tests passed (no code fence)",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

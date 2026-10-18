@@ -1,0 +1,58 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "harness",
+ "seed": 45,
+ "question": "kubectl-portforward",
+ "category": "kubectl",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 45,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 76,
+ "seconds_total": 23.9,
+ "attempts": [
+  {
+   "tokens": 23,
+   "seconds": 5.2,
+   "tps": 4.42,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['-n[ =]?staging\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "the command is valid kubectl but does not do what was asked: the target should be `svc/web`, the command uses 'service/web:80'; the namespace should be `staging`, the command uses None",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 29,
+   "seconds": 8.6,
+   "tps": 3.36,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "all parts present",
+   "verifier_pass": false,
+   "verifier_feedback": "the command is valid kubectl but does not do what was asked: the target should be `svc/web`, the command uses 'svc/web:80'",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 24,
+   "seconds": 10.1,
+   "tps": 2.38,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['-n[ =]?staging\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "the command is valid kubectl but does not do what was asked: the target should be `svc/web`, the command uses 'svc/web:80'; the namespace should be `staging`, the command uses None",
+   "reasoning_chars": 0
+  }
+ ]
+}

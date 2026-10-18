@@ -1,0 +1,47 @@
+{
+ "model": "mimo-9b",
+ "mode": "harness",
+ "seed": 42,
+ "question": "kubectl-top",
+ "category": "kubectl",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 42,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 36,
+ "seconds_total": 17.0,
+ "attempts": [
+  {
+   "tokens": 19,
+   "seconds": 7.4,
+   "tps": 2.58,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "all parts present",
+   "verifier_pass": false,
+   "verifier_feedback": "kubectl rejected the command: error: --sort-by accepts only cpu or memory",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 17,
+   "seconds": 9.6,
+   "tps": 1.76,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "all parts present",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

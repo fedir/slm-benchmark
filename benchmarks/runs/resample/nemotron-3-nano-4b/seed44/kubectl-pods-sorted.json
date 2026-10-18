@@ -1,0 +1,48 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "resample",
+ "seed": 44,
+ "question": "kubectl-pods-sorted",
+ "category": "kubectl",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 44,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 40,
+ "seconds_total": 9.4,
+ "attempts": [
+  {
+   "tokens": 19,
+   "seconds": 4.4,
+   "tps": 4.31,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['--sort-by[ =]\\\\.?metadata\\\\.creationTimestamp']",
+   "verifier_pass": false,
+   "verifier_feedback": "the command is valid kubectl but does not do what was asked: the list is not sorted by the pod creation timestamp (sort expression found: 'creationTimestamp')",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 21,
+   "seconds": 5.0,
+   "tps": 4.23,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "all parts present",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0,
+   "retry_seed": 1044
+  }
+ ]
+}

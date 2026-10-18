@@ -1,0 +1,61 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "harness",
+ "seed": 42,
+ "question": "kubectl-logs",
+ "category": "kubectl",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 0,
+  "seed": 42,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "min_p": 0.0,
+  "repeat_penalty": 1.0,
+  "presence_penalty": 0.0,
+  "profile": "vendor"
+ },
+ "tokens_total": 59,
+ "seconds_total": 21.8,
+ "attempts": [
+  {
+   "tokens": 19,
+   "seconds": 4.5,
+   "tps": 4.19,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['-c[ =]?app\\\\b', '\\\\s-f\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "the command is valid kubectl but does not do what was asked: the target should be pod `api-0`; the container to read should be `app`, the command selects None; it does not follow (stream) the log",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 21,
+   "seconds": 7.7,
+   "tps": 2.74,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['-c[ =]?app\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "the command is valid kubectl but does not do what was asked: the target should be pod `api-0`; the container to read should be `app`, the command selects None",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 19,
+   "seconds": 9.6,
+   "tps": 1.98,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['-c[ =]?app\\\\b', '\\\\s-f\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "the command is valid kubectl but does not do what was asked: the target should be pod `api-0`; the container to read should be `app`, the command selects None; it does not follow (stream) the log",
+   "reasoning_chars": 0
+  }
+ ]
+}

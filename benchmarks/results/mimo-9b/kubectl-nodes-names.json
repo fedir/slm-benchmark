@@ -1,0 +1,12 @@
+{
+ "model": "mimo-9b",
+ "question": "kubectl-nodes-names",
+ "category": "kubectl",
+ "passed": true,
+ "detail": "all parts present",
+ "completion_tokens": 21,
+ "seconds": 8.4,
+ "tps": 2.5,
+ "finish_reason": "stop",
+ "reasoning_chars": 0
+}

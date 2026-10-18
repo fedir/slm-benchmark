@@ -1,0 +1,39 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "harness",
+ "seed": 42,
+ "question": "regex-ipv4",
+ "category": "regex",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": false,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 0,
+  "seed": 42,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "min_p": 0.0,
+  "repeat_penalty": 1.0,
+  "presence_penalty": 0.0,
+  "profile": "vendor"
+ },
+ "tokens_total": 65,
+ "seconds_total": 10.9,
+ "attempts": [
+  {
+   "tokens": 65,
+   "seconds": 10.9,
+   "tps": 5.96,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "regex '^(?:(?:25[0-5]|2[0-4]\\\\d|[01]?\\\\d\\\\d?)\\\\.){3}(?:25[0-5]|2[0-4]\\\\d|[01]?\\\\d\\\\d?)$'",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

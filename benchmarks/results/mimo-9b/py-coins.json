@@ -1,0 +1,12 @@
+{
+ "model": "mimo-9b",
+ "question": "py-coins",
+ "category": "python",
+ "passed": true,
+ "detail": "tests passed (no code fence)",
+ "completion_tokens": 113,
+ "seconds": 35.2,
+ "tps": 3.21,
+ "finish_reason": "stop",
+ "reasoning_chars": 0
+}

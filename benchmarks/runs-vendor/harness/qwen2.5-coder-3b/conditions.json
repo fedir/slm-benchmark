@@ -1,0 +1,21 @@
+{
+ "time": "2026-10-17 06:17:51",
+ "sampling_profile": "vendor",
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.7,
+  "top_p": 0.8,
+  "top_k": 20,
+  "seed": 42,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "min_p": 0.0,
+  "repeat_penalty": 1.05,
+  "presence_penalty": 0.0
+ },
+ "mem_available_mb": 10016,
+ "swap_used_mb": 4,
+ "loadavg_1m": 0.54,
+ "uptime_min": 527
+}

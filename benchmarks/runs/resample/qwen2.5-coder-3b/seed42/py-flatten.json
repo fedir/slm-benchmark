@@ -1,0 +1,60 @@
+{
+ "model": "qwen2.5-coder-3b",
+ "mode": "resample",
+ "seed": 42,
+ "question": "py-flatten",
+ "category": "python",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 42,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 134,
+ "seconds_total": 17.0,
+ "attempts": [
+  {
+   "tokens": 51,
+   "seconds": 6.2,
+   "tps": 8.26,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "RecursionError: maximum recursion depth exceeded",
+   "verifier_pass": false,
+   "verifier_feedback": "the performance example raised RecursionError: maximum recursion depth exceeded",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 45,
+   "seconds": 5.7,
+   "tps": 7.91,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "RecursionError: maximum recursion depth exceeded",
+   "verifier_pass": false,
+   "verifier_feedback": "the performance example raised RecursionError: maximum recursion depth exceeded",
+   "reasoning_chars": 0,
+   "retry_seed": 1042
+  },
+  {
+   "tokens": 38,
+   "seconds": 5.1,
+   "tps": 7.52,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "RecursionError: maximum recursion depth exceeded",
+   "verifier_pass": false,
+   "verifier_feedback": "the performance example raised RecursionError: maximum recursion depth exceeded",
+   "reasoning_chars": 0,
+   "retry_seed": 2042
+  }
+ ]
+}

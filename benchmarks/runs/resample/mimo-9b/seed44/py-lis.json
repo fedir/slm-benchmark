@@ -1,0 +1,59 @@
+{
+ "model": "mimo-9b",
+ "mode": "resample",
+ "seed": 44,
+ "question": "py-lis",
+ "category": "python",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 44,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 278,
+ "seconds_total": 84.8,
+ "attempts": [
+  {
+   "tokens": 108,
+   "seconds": 31.7,
+   "tps": 3.41,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "NameError: name 'bisect_left' is not defined (no code fence)",
+   "verifier_pass": false,
+   "verifier_feedback": "lis_length([0,1,0,3,2,3]) raised NameError: name 'bisect_left' is not defined; lis_length([5,4,3]) raised NameError: name 'bisect_left' is not defined; lis_length([2,2,2,2]) raised NameError: name 'bisect_left' is not defined; the performance example raised NameError: name 'bisect_left' is not defined"
+  },
+  {
+   "tokens": 80,
+   "seconds": 25.5,
+   "tps": 3.14,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "NameError: name 'bisect' is not defined. Did you forget to import 'bisect'? (no code fence)",
+   "verifier_pass": false,
+   "verifier_feedback": "lis_length([0,1,0,3,2,3]) raised NameError: name 'bisect' is not defined; lis_length([5,4,3]) raised NameError: name 'bisect' is not defined; lis_length([2,2,2,2]) raised NameError: name 'bisect' is not defined; the performance example raised NameError: name 'bisect' is not defined",
+   "reasoning_chars": 0,
+   "retry_seed": 1044
+  },
+  {
+   "tokens": 90,
+   "seconds": 27.6,
+   "tps": 3.26,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "NameError: name 'bisect' is not defined. Did you forget to import 'bisect'? (no code fence)",
+   "verifier_pass": false,
+   "verifier_feedback": "lis_length([0,1,0,3,2,3]) raised NameError: name 'bisect' is not defined; lis_length([5,4,3]) raised NameError: name 'bisect' is not defined; lis_length([2,2,2,2]) raised NameError: name 'bisect' is not defined; the performance example raised NameError: name 'bisect' is not defined",
+   "reasoning_chars": 0,
+   "retry_seed": 2044
+  }
+ ]
+}

@@ -1,0 +1,12 @@
+{
+ "model": "qwen2.5-coder-3b",
+ "question": "py-topk",
+ "category": "python",
+ "passed": true,
+ "detail": "tests passed",
+ "completion_tokens": 89,
+ "seconds": 8.9,
+ "tps": 10.0,
+ "finish_reason": "stop",
+ "reasoning_chars": 0
+}

@@ -1,0 +1,48 @@
+{
+ "model": "qwen2.5-coder-3b",
+ "mode": "resample",
+ "seed": 46,
+ "question": "sql-second-salary",
+ "category": "sql",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 46,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 46,
+ "seconds_total": 7.4,
+ "attempts": [
+  {
+   "tokens": 22,
+   "seconds": 3.5,
+   "tps": 6.26,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "returned [(90000,)] (1 rows), expected [(70000,)] (1 rows)",
+   "verifier_pass": false,
+   "verifier_feedback": "on a small example table the query returned [(300,)] (1 rows), expected [(200,)] (1 rows)",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 24,
+   "seconds": 3.9,
+   "tps": 6.2,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "rows match",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0,
+   "retry_seed": 1046
+  }
+ ]
+}

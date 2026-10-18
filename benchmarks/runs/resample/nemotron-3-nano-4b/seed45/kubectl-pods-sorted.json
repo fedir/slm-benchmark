@@ -1,0 +1,48 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "resample",
+ "seed": 45,
+ "question": "kubectl-pods-sorted",
+ "category": "kubectl",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 45,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 65,
+ "seconds_total": 12.7,
+ "attempts": [
+  {
+   "tokens": 43,
+   "seconds": 7.8,
+   "tps": 5.5,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['--sort-by[ =]\\\\.?metadata\\\\.creationTimestamp']",
+   "verifier_pass": false,
+   "verifier_feedback": "it must be a single kubectl invocation: no pipes, redirects or substitutions",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 22,
+   "seconds": 4.9,
+   "tps": 4.5,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "all parts present",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0,
+   "retry_seed": 1045
+  }
+ ]
+}

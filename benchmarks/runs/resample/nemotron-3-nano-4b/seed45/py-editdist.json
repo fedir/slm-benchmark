@@ -1,0 +1,48 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "resample",
+ "seed": 45,
+ "question": "py-editdist",
+ "category": "python",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 45,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 336,
+ "seconds_total": 52.0,
+ "attempts": [
+  {
+   "tokens": 165,
+   "seconds": 24.9,
+   "tps": 6.63,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "AssertionError",
+   "verifier_pass": false,
+   "verifier_feedback": "edit_distance('horse','ros') returned 4, expected 3",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 171,
+   "seconds": 27.1,
+   "tps": 6.3,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "tests passed",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0,
+   "retry_seed": 1045
+  }
+ ]
+}

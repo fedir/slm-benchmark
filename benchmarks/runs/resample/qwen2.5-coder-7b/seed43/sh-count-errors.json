@@ -1,0 +1,48 @@
+{
+ "model": "qwen2.5-coder-7b",
+ "mode": "resample",
+ "seed": 43,
+ "question": "sh-count-errors",
+ "category": "shell",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 43,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 40,
+ "seconds_total": 16.8,
+ "attempts": [
+  {
+   "tokens": 26,
+   "seconds": 8.4,
+   "tps": 3.1,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "output ['0'], expected ['3']",
+   "verifier_pass": false,
+   "verifier_feedback": "on a small example the command's output ['0'], expected ['4']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 14,
+   "seconds": 8.4,
+   "tps": 1.66,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "output ['4'], expected ['3']",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0,
+   "retry_seed": 1043
+  }
+ ]
+}

@@ -1,0 +1,12 @@
+{
+ "model": "ornith-9b-mtp",
+ "question": "kubectl-pods-sorted",
+ "category": "kubectl",
+ "passed": true,
+ "detail": "all parts present",
+ "completion_tokens": 19,
+ "seconds": 7.4,
+ "tps": 2.56,
+ "finish_reason": "stop",
+ "reasoning_chars": 0
+}

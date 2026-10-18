@@ -1,0 +1,12 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "question": "regex-ipv4",
+ "category": "regex",
+ "passed": true,
+ "detail": "regex '^(?:(?:25[0-5]|2[0-4]\\\\d|[01]?\\\\d\\\\d?)\\\\.){3}(?:25[0-5]|2[0-4]\\\\d|[01]?\\\\d\\\\d?)$'",
+ "completion_tokens": 65,
+ "seconds": 11.1,
+ "tps": 5.84,
+ "finish_reason": "stop",
+ "reasoning_chars": 0
+}

@@ -1,0 +1,12 @@
+{
+ "model": "qwen2.5-coder-3b",
+ "question": "regex-hexcolor",
+ "category": "regex",
+ "passed": false,
+ "detail": "regex '^#[0-9A-Fa-f]{3,6}$'; wrong on ['!#ffff', '!#12345']",
+ "completion_tokens": 21,
+ "seconds": 3.0,
+ "tps": 6.96,
+ "finish_reason": "stop",
+ "reasoning_chars": 0
+}

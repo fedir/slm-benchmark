@@ -1,0 +1,44 @@
+{
+ "model": "mimo-9b",
+ "mode": "harness",
+ "seed": 44,
+ "question": "regex-ipv4",
+ "category": "regex",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "tokens_total": 118,
+ "seconds_total": 54.2,
+ "attempts": [
+  {
+   "tokens": 40,
+   "seconds": 13.4,
+   "tps": 2.99,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?){4}$'; wrong on ['192.168.1.1', '0.0.0.0', '255.255.255.255', '10.0.42.7']",
+   "verifier_pass": false,
+   "verifier_feedback": "it does not match these, which it should: ['8.8.8.8', '127.0.0.1', '172.16.254.1']"
+  },
+  {
+   "tokens": 39,
+   "seconds": 18.4,
+   "tps": 2.12,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?){4}$'; wrong on ['192.168.1.1', '0.0.0.0', '255.255.255.255', '10.0.42.7']",
+   "verifier_pass": false,
+   "verifier_feedback": "it does not match these, which it should: ['8.8.8.8', '127.0.0.1', '172.16.254.1']"
+  },
+  {
+   "tokens": 39,
+   "seconds": 22.4,
+   "tps": 1.74,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?){4}$'; wrong on ['192.168.1.1', '0.0.0.0', '255.255.255.255', '10.0.42.7']",
+   "verifier_pass": false,
+   "verifier_feedback": "it does not match these, which it should: ['8.8.8.8', '127.0.0.1', '172.16.254.1']"
+  }
+ ]
+}

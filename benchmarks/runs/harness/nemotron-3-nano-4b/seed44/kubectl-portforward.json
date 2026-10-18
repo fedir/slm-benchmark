@@ -1,0 +1,58 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "harness",
+ "seed": 44,
+ "question": "kubectl-portforward",
+ "category": "kubectl",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 44,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 80,
+ "seconds_total": 23.2,
+ "attempts": [
+  {
+   "tokens": 26,
+   "seconds": 5.6,
+   "tps": 4.66,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "all parts present",
+   "verifier_pass": false,
+   "verifier_feedback": "the command is valid kubectl but does not do what was asked: the target should be `svc/web`, the command uses 'service/web:80'",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 27,
+   "seconds": 7.7,
+   "tps": 3.52,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "all parts present",
+   "verifier_pass": false,
+   "verifier_feedback": "the command is valid kubectl but does not do what was asked: the target should be `svc/web`, the command uses 'svc/web:80'",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 27,
+   "seconds": 9.9,
+   "tps": 2.73,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "all parts present",
+   "verifier_pass": false,
+   "verifier_feedback": "the command is valid kubectl but does not do what was asked: the target should be `svc/web`, the command uses 'svc/web:80'",
+   "reasoning_chars": 0
+  }
+ ]
+}

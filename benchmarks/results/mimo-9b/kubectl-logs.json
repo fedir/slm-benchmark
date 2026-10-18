@@ -1,0 +1,12 @@
+{
+ "model": "mimo-9b",
+ "question": "kubectl-logs",
+ "category": "kubectl",
+ "passed": true,
+ "detail": "all parts present",
+ "completion_tokens": 23,
+ "seconds": 8.6,
+ "tps": 2.68,
+ "finish_reason": "stop",
+ "reasoning_chars": 0
+}

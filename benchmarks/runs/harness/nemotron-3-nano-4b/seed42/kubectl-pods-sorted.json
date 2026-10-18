@@ -1,0 +1,47 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "harness",
+ "seed": 42,
+ "question": "kubectl-pods-sorted",
+ "category": "kubectl",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "tokens_total": 124,
+ "seconds_total": 28.7,
+ "attempts": [
+  {
+   "tokens": 46,
+   "seconds": 8.0,
+   "tps": 5.77,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['--sort-by[ =]\\\\.?metadata\\\\.creationTimestamp']",
+   "verifier_pass": false,
+   "verifier_feedback": "it must be a single kubectl invocation: no pipes, redirects or substitutions",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 59,
+   "seconds": 12.0,
+   "tps": 4.9,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['--sort-by[ =]\\\\.?metadata\\\\.creationTimestamp']",
+   "verifier_pass": false,
+   "verifier_feedback": "it must be a single kubectl invocation: no pipes, redirects or substitutions",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 19,
+   "seconds": 8.7,
+   "tps": 2.18,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['--sort-by[ =]\\\\.?metadata\\\\.creationTimestamp']",
+   "verifier_pass": false,
+   "verifier_feedback": "the command is valid kubectl but does not do what was asked: the list is not sorted by the pod creation timestamp (sort expression found: 'createTime')",
+   "reasoning_chars": 0
+  }
+ ]
+}

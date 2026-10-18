@@ -1,0 +1,50 @@
+{
+ "model": "mimo-9b",
+ "mode": "harness",
+ "seed": 43,
+ "question": "regex-hexcolor",
+ "category": "regex",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 43,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "min_p": 0.0,
+  "repeat_penalty": 1.0,
+  "presence_penalty": 0.0,
+  "profile": "vendor"
+ },
+ "tokens_total": 59,
+ "seconds_total": 26.0,
+ "attempts": [
+  {
+   "tokens": 31,
+   "seconds": 10.9,
+   "tps": 2.85,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^#(?:(?:[0-9a-f]{3})|(?:[0-9a-f]{6}))$'; wrong on ['#A1b2C3', '#1aF']",
+   "verifier_pass": false,
+   "verifier_feedback": "it does not match these, which it should: ['#DEF012', '#9a8B7c']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 28,
+   "seconds": 15.1,
+   "tps": 1.85,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "regex '^#(?i:[0-9a-f]{3}|[0-9a-f]{6})$'",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

@@ -1,0 +1,60 @@
+{
+ "model": "qwen2.5-coder-3b",
+ "mode": "resample",
+ "seed": 42,
+ "question": "kubectl-exec",
+ "category": "kubectl",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 42,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 76,
+ "seconds_total": 11.9,
+ "attempts": [
+  {
+   "tokens": 24,
+   "seconds": 3.9,
+   "tps": 6.14,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['-c[ =]?db\\\\b', '--\\\\s+ls\\\\s+/data\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "the command is valid kubectl but does not do what was asked: the command to run should come after `--` and be `ls /data`, found 'bash -c ls /data'; the --container option should be 'db', the command has None",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 26,
+   "seconds": 4.0,
+   "tps": 6.51,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['-c[ =]?db\\\\b', '--\\\\s+ls\\\\s+/data\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "the command is valid kubectl but does not do what was asked: the command to run should come after `--` and be `ls /data`, found '/bin/bash -c ls /data'; the --container option should be 'db', the command has None",
+   "reasoning_chars": 0,
+   "retry_seed": 1042
+  },
+  {
+   "tokens": 26,
+   "seconds": 4.0,
+   "tps": 6.48,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['-c[ =]?db\\\\b', '--\\\\s+ls\\\\s+/data\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "the command is valid kubectl but does not do what was asked: the command to run should come after `--` and be `ls /data`, found '/bin/sh -c ls /data'; the --container option should be 'db', the command has None",
+   "reasoning_chars": 0,
+   "retry_seed": 2042
+  }
+ ]
+}

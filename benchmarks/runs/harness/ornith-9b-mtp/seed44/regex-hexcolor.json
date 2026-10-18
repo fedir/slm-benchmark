@@ -1,0 +1,24 @@
+{
+ "model": "ornith-9b-mtp",
+ "mode": "harness",
+ "seed": 44,
+ "question": "regex-hexcolor",
+ "category": "regex",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": false,
+ "tokens_total": 32,
+ "seconds_total": 10.9,
+ "attempts": [
+  {
+   "tokens": 32,
+   "seconds": 10.9,
+   "tps": 2.94,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "regex '^#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6})$'",
+   "verifier_pass": true,
+   "verifier_feedback": ""
+  }
+ ]
+}

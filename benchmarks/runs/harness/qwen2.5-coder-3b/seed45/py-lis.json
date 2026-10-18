@@ -1,0 +1,58 @@
+{
+ "model": "qwen2.5-coder-3b",
+ "mode": "harness",
+ "seed": 45,
+ "question": "py-lis",
+ "category": "python",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 45,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 523,
+ "seconds_total": 60.1,
+ "attempts": [
+  {
+   "tokens": 209,
+   "seconds": 19.7,
+   "tps": 10.59,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "IndexError: list assignment index out of range",
+   "verifier_pass": false,
+   "verifier_feedback": "lis_length([0,1,0,3,2,3]) raised IndexError: list assignment index out of range; lis_length([5,4,3]) raised IndexError: list assignment index out of range; lis_length([2,2,2,2]) raised IndexError: list assignment index out of range; the performance example raised IndexError: list assignment index out of range",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 157,
+   "seconds": 18.6,
+   "tps": 8.42,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "IndexError: list assignment index out of range",
+   "verifier_pass": false,
+   "verifier_feedback": "lis_length([0,1,0,3,2,3]) raised IndexError: list assignment index out of range; lis_length([5,4,3]) raised IndexError: list assignment index out of range; lis_length([2,2,2,2]) raised IndexError: list assignment index out of range; the performance example raised IndexError: list assignment index out of range",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 157,
+   "seconds": 21.8,
+   "tps": 7.19,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "IndexError: list assignment index out of range",
+   "verifier_pass": false,
+   "verifier_feedback": "lis_length([0,1,0,3,2,3]) raised IndexError: list assignment index out of range; lis_length([5,4,3]) raised IndexError: list assignment index out of range; lis_length([2,2,2,2]) raised IndexError: list assignment index out of range; the performance example raised IndexError: list assignment index out of range",
+   "reasoning_chars": 0
+  }
+ ]
+}

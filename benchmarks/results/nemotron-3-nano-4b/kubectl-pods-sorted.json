@@ -1,0 +1,12 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "question": "kubectl-pods-sorted",
+ "category": "kubectl",
+ "passed": false,
+ "detail": "missing ['--sort-by[ =]\\\\.?metadata\\\\.creationTimestamp']",
+ "completion_tokens": 46,
+ "seconds": 8.2,
+ "tps": 5.64,
+ "finish_reason": "stop",
+ "reasoning_chars": 0
+}

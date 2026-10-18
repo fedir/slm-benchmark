@@ -1,0 +1,36 @@
+{
+ "model": "gemma-4-e4b-p-minimal",
+ "mode": "naked",
+ "seed": 43,
+ "question": "py-flatten",
+ "category": "python",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": false,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 43,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 51,
+ "seconds_total": 11.5,
+ "attempts": [
+  {
+   "tokens": 51,
+   "seconds": 11.5,
+   "tps": 4.42,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "RecursionError: maximum recursion depth exceeded",
+   "verifier_pass": null,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

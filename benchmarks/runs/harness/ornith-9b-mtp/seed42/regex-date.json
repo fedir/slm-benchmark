@@ -1,0 +1,24 @@
+{
+ "model": "ornith-9b-mtp",
+ "mode": "harness",
+ "seed": 42,
+ "question": "regex-date",
+ "category": "regex",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": false,
+ "tokens_total": 42,
+ "seconds_total": 12.9,
+ "attempts": [
+  {
+   "tokens": 42,
+   "seconds": 12.9,
+   "tps": 3.24,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "regex '\\\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])'",
+   "verifier_pass": true,
+   "verifier_feedback": ""
+  }
+ ]
+}

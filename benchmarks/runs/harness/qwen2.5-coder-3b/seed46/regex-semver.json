@@ -1,0 +1,58 @@
+{
+ "model": "qwen2.5-coder-3b",
+ "mode": "harness",
+ "seed": 46,
+ "question": "regex-semver",
+ "category": "regex",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 46,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 73,
+ "seconds_total": 13.7,
+ "attempts": [
+  {
+   "tokens": 15,
+   "seconds": 2.9,
+   "tps": 5.15,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '\\\\b\\\\d+\\\\.\\\\d+\\\\.\\\\d+\\\\b'; wrong on ['!01.2.3', '!1.02.3', '!1.2.03']",
+   "verifier_pass": false,
+   "verifier_feedback": "it matches these, which it must reject: ['3.04.5', '10.0.00']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 35,
+   "seconds": 5.3,
+   "tps": 6.65,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '\\\\b0*[1-9]\\\\d*\\\\.\\\\b0*[1-9]\\\\d*\\\\.\\\\b0*[1-9]\\\\d*\\\\b'; wrong on ['0.0.0', '100.0.1', '!01.2.3', '!1.02.3', '!1.2.03']",
+   "verifier_pass": false,
+   "verifier_feedback": "it does not match these, which it should: ['2.0.15', '0.10.0']; it matches these, which it must reject: ['3.04.5']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 23,
+   "seconds": 5.5,
+   "tps": 4.19,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '\\\\b0*\\\\d+\\\\.\\\\b0*\\\\d+\\\\.\\\\b0*\\\\d+\\\\b'; wrong on ['!01.2.3', '!1.02.3', '!1.2.03']",
+   "verifier_pass": false,
+   "verifier_feedback": "it matches these, which it must reject: ['3.04.5', '10.0.00']",
+   "reasoning_chars": 0
+  }
+ ]
+}

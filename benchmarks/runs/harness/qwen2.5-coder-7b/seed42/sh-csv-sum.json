@@ -1,0 +1,36 @@
+{
+ "model": "qwen2.5-coder-7b",
+ "mode": "harness",
+ "seed": 42,
+ "question": "sh-csv-sum",
+ "category": "shell",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": false,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 42,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 28,
+ "seconds_total": 8.8,
+ "attempts": [
+  {
+   "tokens": 28,
+   "seconds": 8.8,
+   "tps": 3.18,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "output matches",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

@@ -1,0 +1,24 @@
+{
+ "model": "mimo-9b",
+ "mode": "harness",
+ "seed": 42,
+ "question": "py-coins",
+ "category": "python",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": false,
+ "tokens_total": 113,
+ "seconds_total": 32.5,
+ "attempts": [
+  {
+   "tokens": 113,
+   "seconds": 32.5,
+   "tps": 3.48,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "tests passed (no code fence)",
+   "verifier_pass": true,
+   "verifier_feedback": ""
+  }
+ ]
+}

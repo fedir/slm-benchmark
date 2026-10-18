@@ -1,0 +1,12 @@
+{
+ "model": "ornith-9b-mtp",
+ "question": "py-intervals",
+ "category": "python",
+ "passed": true,
+ "detail": "tests passed",
+ "completion_tokens": 111,
+ "seconds": 22.8,
+ "tps": 4.86,
+ "finish_reason": "stop",
+ "reasoning_chars": 0
+}

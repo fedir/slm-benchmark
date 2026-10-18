@@ -1,0 +1,48 @@
+{
+ "model": "qwen2.5-coder-7b",
+ "mode": "resample",
+ "seed": 46,
+ "question": "sh-csv-sum",
+ "category": "shell",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 46,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 51,
+ "seconds_total": 16.6,
+ "attempts": [
+  {
+   "tokens": 24,
+   "seconds": 8.0,
+   "tps": 2.99,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "output ['0'], expected ['42']",
+   "verifier_pass": false,
+   "verifier_feedback": "on a small example the command's output ['0'], expected ['6']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 27,
+   "seconds": 8.6,
+   "tps": 3.15,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "output matches",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0,
+   "retry_seed": 1046
+  }
+ ]
+}

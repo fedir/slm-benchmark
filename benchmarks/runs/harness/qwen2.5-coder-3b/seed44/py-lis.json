@@ -1,0 +1,34 @@
+{
+ "model": "qwen2.5-coder-3b",
+ "mode": "harness",
+ "seed": 44,
+ "question": "py-lis",
+ "category": "python",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "tokens_total": 314,
+ "seconds_total": 32.7,
+ "attempts": [
+  {
+   "tokens": 155,
+   "seconds": 14.8,
+   "tps": 10.46,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "NameError: name 'bisect' is not defined. Did you forget to import 'bisect'?",
+   "verifier_pass": false,
+   "verifier_feedback": "lis_length([0,1,0,3,2,3]) raised NameError: name 'bisect' is not defined; lis_length([5,4,3]) raised NameError: name 'bisect' is not defined; lis_length([2,2,2,2]) raised NameError: name 'bisect' is not defined; the performance example raised NameError: name 'bisect' is not defined"
+  },
+  {
+   "tokens": 159,
+   "seconds": 17.9,
+   "tps": 8.87,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "tests passed",
+   "verifier_pass": true,
+   "verifier_feedback": ""
+  }
+ ]
+}

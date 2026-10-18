@@ -1,0 +1,12 @@
+{
+ "model": "ornith-9b-mtp",
+ "question": "kubectl-logs",
+ "category": "kubectl",
+ "passed": false,
+ "detail": "missing ['-c[ =]?app\\\\b']",
+ "completion_tokens": 20,
+ "seconds": 8.9,
+ "tps": 2.24,
+ "finish_reason": "stop",
+ "reasoning_chars": 0
+}

@@ -1,0 +1,36 @@
+{
+ "model": "ornith-9b-mtp",
+ "mode": "resample",
+ "seed": 44,
+ "question": "kubectl-nodes-names",
+ "category": "kubectl",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": false,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 44,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 29,
+ "seconds_total": 8.9,
+ "attempts": [
+  {
+   "tokens": 29,
+   "seconds": 8.9,
+   "tps": 3.25,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "all parts present",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

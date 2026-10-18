@@ -1,0 +1,58 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "harness",
+ "seed": 46,
+ "question": "regex-date",
+ "category": "regex",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 46,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 140,
+ "seconds_total": 36.4,
+ "attempts": [
+  {
+   "tokens": 46,
+   "seconds": 9.1,
+   "tps": 5.06,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "invalid regex '^(?:\\\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\\\d|3[01])$': missing ), unterminated subpattern at position 1",
+   "verifier_pass": false,
+   "verifier_feedback": "invalid regex '^(?:\\\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\\\d|3[01])$': missing ), unterminated subpattern at position 1",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 47,
+   "seconds": 12.1,
+   "tps": 3.88,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "invalid regex '^(?:\\\\\\\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\\\\\\\d|3[01])$': missing ), unterminated subpattern at position 1",
+   "verifier_pass": false,
+   "verifier_feedback": "invalid regex '^(?:\\\\\\\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\\\\\\\d|3[01])$': missing ), unterminated subpattern at position 1",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 47,
+   "seconds": 15.2,
+   "tps": 3.1,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "invalid regex '^(?:\\\\\\\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\\\\\\\d|3[01])$': missing ), unterminated subpattern at position 1",
+   "verifier_pass": false,
+   "verifier_feedback": "invalid regex '^(?:\\\\\\\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\\\\\\\d|3[01])$': missing ), unterminated subpattern at position 1",
+   "reasoning_chars": 0
+  }
+ ]
+}

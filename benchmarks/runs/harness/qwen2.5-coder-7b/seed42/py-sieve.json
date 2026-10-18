@@ -1,0 +1,36 @@
+{
+ "model": "qwen2.5-coder-7b",
+ "mode": "harness",
+ "seed": 42,
+ "question": "py-sieve",
+ "category": "python",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": false,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 42,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 106,
+ "seconds_total": 23.9,
+ "attempts": [
+  {
+   "tokens": 106,
+   "seconds": 23.9,
+   "tps": 4.43,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "AssertionError",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

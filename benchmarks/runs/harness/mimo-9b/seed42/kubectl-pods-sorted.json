@@ -1,0 +1,47 @@
+{
+ "model": "mimo-9b",
+ "mode": "harness",
+ "seed": 42,
+ "question": "kubectl-pods-sorted",
+ "category": "kubectl",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "tokens_total": 75,
+ "seconds_total": 35.7,
+ "attempts": [
+  {
+   "tokens": 18,
+   "seconds": 7.1,
+   "tps": 2.52,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['--sort-by[ =]\\\\.?metadata\\\\.creationTimestamp']",
+   "verifier_pass": false,
+   "verifier_feedback": "kubectl rejected the command: error: unknown flag: --sort",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 35,
+   "seconds": 13.9,
+   "tps": 2.52,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['--sort-by[ =]\\\\.?metadata\\\\.creationTimestamp']",
+   "verifier_pass": false,
+   "verifier_feedback": "kubectl rejected the command: error: unknown flag: --sort",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 22,
+   "seconds": 14.7,
+   "tps": 1.49,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['--sort-by[ =]\\\\.?metadata\\\\.creationTimestamp']",
+   "verifier_pass": false,
+   "verifier_feedback": "kubectl rejected the command: error: unknown flag: --sort",
+   "reasoning_chars": 0
+  }
+ ]
+}

@@ -1,0 +1,12 @@
+{
+ "model": "mimo-9b",
+ "question": "regex-date",
+ "category": "regex",
+ "passed": true,
+ "detail": "regex '^\\\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$'",
+ "completion_tokens": 44,
+ "seconds": 17.4,
+ "tps": 2.53,
+ "finish_reason": "stop",
+ "reasoning_chars": 0
+}

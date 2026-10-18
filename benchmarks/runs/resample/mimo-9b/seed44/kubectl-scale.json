@@ -1,0 +1,36 @@
+{
+ "model": "mimo-9b",
+ "mode": "resample",
+ "seed": 44,
+ "question": "kubectl-scale",
+ "category": "kubectl",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": false,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 44,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 18,
+ "seconds_total": 7.3,
+ "attempts": [
+  {
+   "tokens": 18,
+   "seconds": 7.3,
+   "tps": 2.47,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "all parts present",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

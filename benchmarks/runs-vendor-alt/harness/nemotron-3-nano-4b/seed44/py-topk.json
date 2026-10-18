@@ -1,0 +1,50 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "harness",
+ "seed": 44,
+ "question": "py-topk",
+ "category": "python",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 1.0,
+  "top_p": 0.95,
+  "top_k": 0,
+  "seed": 44,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "min_p": 0.0,
+  "repeat_penalty": 1.0,
+  "presence_penalty": 0.0,
+  "profile": "vendor-alt"
+ },
+ "tokens_total": 103,
+ "seconds_total": 24.2,
+ "attempts": [
+  {
+   "tokens": 49,
+   "seconds": 9.4,
+   "tps": 5.24,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "AssertionError",
+   "verifier_pass": false,
+   "verifier_feedback": "top_k_frequent(['a','b','a','c','b','a'],2) returned [('a', 3), ('b', 2)], expected ['a','b']; top_k_frequent(['x','y','z'],2) returned [('x', 1), ('y', 1)], expected ['x','y']; top_k_frequent(['dog','cat','cat','dog'],1) returned [('cat', 2)], expected ['cat']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 54,
+   "seconds": 14.8,
+   "tps": 3.64,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "tests passed",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

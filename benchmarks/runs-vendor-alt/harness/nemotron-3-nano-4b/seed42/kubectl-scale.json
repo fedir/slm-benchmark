@@ -1,0 +1,39 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "harness",
+ "seed": 42,
+ "question": "kubectl-scale",
+ "category": "kubectl",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": false,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 1.0,
+  "top_p": 0.95,
+  "top_k": 0,
+  "seed": 42,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "min_p": 0.0,
+  "repeat_penalty": 1.0,
+  "presence_penalty": 0.0,
+  "profile": "vendor-alt"
+ },
+ "tokens_total": 20,
+ "seconds_total": 5.7,
+ "attempts": [
+  {
+   "tokens": 20,
+   "seconds": 5.7,
+   "tps": 3.51,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "all parts present",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

@@ -1,0 +1,58 @@
+{
+ "model": "ornith-9b-mtp",
+ "mode": "harness",
+ "seed": 46,
+ "question": "regex-hexcolor",
+ "category": "regex",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 46,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 82,
+ "seconds_total": 37.1,
+ "attempts": [
+  {
+   "tokens": 20,
+   "seconds": 8.5,
+   "tps": 2.34,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^#[0-9a-fA-F]{3,6}$'; wrong on ['!#ffff', '!#12345']",
+   "verifier_pass": false,
+   "verifier_feedback": "it matches these, which it must reject: ['#abcd']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 31,
+   "seconds": 12.4,
+   "tps": 2.5,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^#[0-9a-fA-F]{3}|\\\\^#[0-9a-fA-F]{6}$'; wrong on ['#A1b2C3', '#000000']",
+   "verifier_pass": false,
+   "verifier_feedback": "it does not match these, which it should: ['#DEF012', '#9a8B7c']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 31,
+   "seconds": 16.2,
+   "tps": 1.91,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "regex '^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$'",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

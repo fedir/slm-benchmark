@@ -1,0 +1,58 @@
+\section{Experimental setup}
+\label{sec:setup}
+\subsection{Platform and software}
+All measurements were made on one laptop: Intel Core i7-1165G7 (4 cores/8 threads, 2.8\,GHz, 12\,MiB L3), 15.3\,GB RAM shared with the Intel Iris Xe integrated GPU, Fedora~43 (the CPU energy performance preference read \code{performance} when checked). A hardware capability scan reported a peak memory bandwidth of about 34\,GB/s. Inference used the \code{llama-server} binary of the llama.cpp~\citep{llamacpp}
+build bundled with LM~Studio (runtime 2.54.0, Vulkan/AVX2 backend, \code{llama-server} 0.6.0-dev, commit 448147d). Unless stated otherwise the model runs on the CPU
+(\code{-ngl 0}) with 4 threads, a 4096-token context and one request at a time; \code{cache\_prompt} is off so each request is independent. No other heavy process ran during benchmark runs
+(sleep and idle were inhibited; Appendix~\ref{app:incidents} lists the one incident where this failed).
+
+\subsection{Models}
+Five instruction-tuned checkpoints, all quantized to \code{Q4\_K\_M} GGUF (Table~\ref{tab:models}). We chose models that fit in free RAM with room for the context
+(file size $\le$ 5.9\,GB), represent different vendors and architectures, and include one model with a built-in multi-token-prediction head.
+Models were run in \emph{non-thinking} mode (\code{enable\_thinking=false}) with at most 512 generated tokens per attempt; a reasoning model that cannot disable its trace was excluded because
+the trace costs minutes per answer at 3--5 tokens/s on this machine (a DeepSeek-R1-distilled 8B model was dropped for this reason).
+\begin{table}[t]\centering\small
+\caption{Models. Sizes are decimal GB of the GGUF file. ``Vendor sampling'' is the vendor's recommendation (Section~\ref{sec:sampling}).}\label{tab:models}
+\input{tab_models}
+\end{table}
+
+\subsection{Task suite}
+\label{sec:tasks}
+The suite has \nq{} tasks in five types (Table~\ref{tab:tasktypes}); the task list is in Appendix~\ref{app:tasks}. A task has a natural-language prompt that asks for \emph{only} the artifact in a code block,
+a hidden grader, and (for the retry loop) \emph{public examples that are disjoint from the hidden cases}.
+\begin{table}[t]\centering\small
+\caption{Task types and how an answer is graded. A task scores 1 only if the whole answer passes; there is no partial credit.}\label{tab:tasktypes}
+\begin{tabularx}{\textwidth}{lrX}\toprule
+Type & Tasks & Hidden grader\\\midrule
+Regex & \nregex{} & \code{re.fullmatch} accepts every must-match string and rejects every must-reject string\\
+Python & \npython{} & the function runs in a fresh \code{python3 -I} process; every assertion holds, including timing tests (e.g.\ 200\,000-element inputs)\\
+kubectl & \nkubectl{} & every required verb, resource, name, flag and value is present in the command text (quotes ignored); no cluster is contacted\\
+SQL & \nsql{} & the query runs read-only on a hidden SQLite fixture; the result rows equal the expected rows (ordered where the task demands it)\\
+Shell & \nshell{} & the command runs in a bubblewrap sandbox (read-only system, private \code{/tmp} and \code{/home}, no network) on hidden fixture files; its stdout, or the final directory listing, equals the expected output\\
+\bottomrule\end{tabularx}
+\end{table}
+\paragraph{Validation of the graders.} For each of the \nnew{} tasks written for the extended suite we wrote a known-good answer, which must pass the hidden grader \emph{and} the public verifier, and one or two known-bad
+answers (plausible mistakes: an off-by-one boundary, a quadratic algorithm that must time out, a missing tie-break, a wrong flag), which must fail the hidden grader. The script
+(\code{tasks\_v2.py}) found three errors in our own task data before any model ran (an inverted expected row, a fixture where a wrong query happened to be right, and a known-bad answer that was equivalent to the good one) and it is part of the artifact.
+\paragraph{Task authoring.} The first 11 tasks were written before any model ran, and the \nnew{} others after we had seen failures on the first 11; they therefore include several that target observed weaknesses
+(for example the \code{kubectl} container flag, tie-breaks, performance limits). The suite is a convenience sample of practical tasks, not a random draw from a population of tasks (Section~\ref{sec:threats}).
+
+\subsection{Protocol}
+\label{sec:protocol}
+Each model answers every task with \nseeds{} seeds (\seedlist{}). The seed fixes the sampler's random stream, so a run is reproducible and a different seed is a different random draw with the same model, prompt and
+settings. Benchmark sampling is temperature 0.6, top-$p$ 0.95, top-$k$ 20 for all models, with llama-server's built-in $\mathrm{min}\text{-}p$ of 0.05 (which we discovered was never overridden, see Section~\ref{sec:sampling}).
+Three conditions share the same first attempt (same seed, same request):
+\begin{description}
+\item[N] the first attempt only (no harness);
+\item[H] the generate--verify--retry \emph{harness}: the answer is checked by a verifier that sees only the public examples (regex strings, function calls on small inputs, a SQL fixture, a shell fixture, or for \code{kubectl}
+the real \code{kubectl} argument parser run offline in a network-less namespace plus a check of parsed arguments against the task's requirements). If the verifier rejects the answer, the model is told what failed and asked to fix it, up to two retries. The hidden grader scores the final answer;
+\item[R] the \emph{control}: when the verifier rejects the first attempt, the model is \emph{not} told why; the original prompt is simply sampled again with a new seed, up to two times, with the same verifier deciding when to stop.
+\end{description}
+H and R therefore have exactly the same trigger and budget and differ only in whether the retry sees the feedback. First attempts are shared between N, H and R, so all comparisons are paired.
+
+\subsection{Statistics}
+\label{sec:stats}
+The sample is the set of $Q=\nq{}$ questions; seeds only add sampling noise within a question~\citep{miller2024errorbars}. For model $m$ and question $q$ let $p_{mq}$ be the pass rate over seeds. A model's score is $\bar p_m=\frac1Q\sum_q p_{mq}$.
+95\% confidence intervals are percentile bootstrap intervals over questions (\nboot{} resamples)~\citep{efron1993bootstrap}. Comparisons between models or conditions use the per-question difference $d_q=p_{Aq}-p_{Bq}$: a paired bootstrap interval for $\bar d$ and a two-sided sign-flip
+permutation test; $p$-values are Holm-adjusted~\citep{holm1979} within each family of comparisons. For failed first attempts we compare the two retry arms cell by cell with an exact McNemar test~\citep{mcnemar1947}; cells are clustered in questions, so these $p$-values are indicative only. We also report
+rank stability (the share of bootstrap resamples in which each model ranks first or last) and the split of outcome variance into between-question and between-seed parts. We do not use a normal approximation for per-seed scores because with five seeds an SD is a rough guide at best.

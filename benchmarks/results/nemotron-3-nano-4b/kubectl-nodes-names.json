@@ -1,0 +1,12 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "question": "kubectl-nodes-names",
+ "category": "kubectl",
+ "passed": true,
+ "detail": "all parts present",
+ "completion_tokens": 31,
+ "seconds": 6.0,
+ "tps": 5.17,
+ "finish_reason": "stop",
+ "reasoning_chars": 0
+}

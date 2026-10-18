@@ -1,0 +1,36 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "resample",
+ "seed": 43,
+ "question": "sh-rename-ext",
+ "category": "shell",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": false,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 43,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 25,
+ "seconds_total": 5.5,
+ "attempts": [
+  {
+   "tokens": 25,
+   "seconds": 5.5,
+   "tps": 4.52,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "output matches",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

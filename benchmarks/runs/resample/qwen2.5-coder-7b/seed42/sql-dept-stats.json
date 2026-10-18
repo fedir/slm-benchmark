@@ -1,0 +1,36 @@
+{
+ "model": "qwen2.5-coder-7b",
+ "mode": "resample",
+ "seed": 42,
+ "question": "sql-dept-stats",
+ "category": "sql",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": false,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 42,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 34,
+ "seconds_total": 10.0,
+ "attempts": [
+  {
+   "tokens": 34,
+   "seconds": 10.0,
+   "tps": 3.39,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "rows match",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

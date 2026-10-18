@@ -1,0 +1,58 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "harness",
+ "seed": 45,
+ "question": "regex-time24",
+ "category": "regex",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 45,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 62,
+ "seconds_total": 21.4,
+ "attempts": [
+  {
+   "tokens": 15,
+   "seconds": 4.8,
+   "tps": 3.12,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^\\\\d{2}:\\\\d{2}$'; wrong on ['!24:00', '!12:60']",
+   "verifier_pass": false,
+   "verifier_feedback": "it matches these, which it must reject: ['25:10', '10:75']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 15,
+   "seconds": 6.1,
+   "tps": 2.48,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^\\\\d{2}:\\\\d{2}$'; wrong on ['!24:00', '!12:60']",
+   "verifier_pass": false,
+   "verifier_feedback": "it matches these, which it must reject: ['25:10', '10:75']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 32,
+   "seconds": 10.5,
+   "tps": 3.05,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^([01]?[0-9]|2[0-3]):[0-5][0-9]$'; wrong on ['!9:05']",
+   "verifier_pass": false,
+   "verifier_feedback": "it matches these, which it must reject: ['1:15']",
+   "reasoning_chars": 0
+  }
+ ]
+}

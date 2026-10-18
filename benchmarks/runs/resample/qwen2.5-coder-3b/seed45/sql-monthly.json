@@ -1,0 +1,60 @@
+{
+ "model": "qwen2.5-coder-3b",
+ "mode": "resample",
+ "seed": 45,
+ "question": "sql-monthly",
+ "category": "sql",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 45,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 194,
+ "seconds_total": 21.5,
+ "attempts": [
+  {
+   "tokens": 65,
+   "seconds": 7.2,
+   "tps": 9.01,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "the query fails: OperationalError: no such function: DATE_TRUNC",
+   "verifier_pass": false,
+   "verifier_feedback": "on a small example table the query the query fails: OperationalError: no such function: DATE_TRUNC",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 69,
+   "seconds": 7.5,
+   "tps": 9.16,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "the query fails: OperationalError: no such function: DATE_FORMAT",
+   "verifier_pass": false,
+   "verifier_feedback": "on a small example table the query the query fails: OperationalError: no such function: DATE_FORMAT",
+   "reasoning_chars": 0,
+   "retry_seed": 1045
+  },
+  {
+   "tokens": 60,
+   "seconds": 6.8,
+   "tps": 8.87,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "rows match",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0,
+   "retry_seed": 2045
+  }
+ ]
+}

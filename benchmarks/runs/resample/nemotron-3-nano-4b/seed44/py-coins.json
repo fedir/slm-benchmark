@@ -1,0 +1,35 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "resample",
+ "seed": 44,
+ "question": "py-coins",
+ "category": "python",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": false,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 44,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 114,
+ "seconds_total": 18.3,
+ "attempts": [
+  {
+   "tokens": 114,
+   "seconds": 18.3,
+   "tps": 6.22,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "tests passed",
+   "verifier_pass": true,
+   "verifier_feedback": ""
+  }
+ ]
+}

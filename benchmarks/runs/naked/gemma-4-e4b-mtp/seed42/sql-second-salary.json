@@ -1,0 +1,36 @@
+{
+ "model": "gemma-4-e4b-mtp",
+ "mode": "naked",
+ "seed": 42,
+ "question": "sql-second-salary",
+ "category": "sql",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": false,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 42,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 21,
+ "seconds_total": 5.6,
+ "attempts": [
+  {
+   "tokens": 21,
+   "seconds": 5.6,
+   "tps": 3.78,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "returned [(90000,)] (1 rows), expected [(70000,)] (1 rows)",
+   "verifier_pass": null,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

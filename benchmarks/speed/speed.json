@@ -1,0 +1,404 @@
+[
+ {
+  "name": "gemma-4-e4b/cpu-t4",
+  "file_gb": 4.98,
+  "args": [
+   "-fa",
+   "off"
+  ],
+  "hw": [
+   "-ngl",
+   "0",
+   "-t",
+   "4"
+  ],
+  "runs": [
+   {
+    "prompt_n": 210,
+    "prompt_tps": 39.701625271105385,
+    "gen_n": 128,
+    "gen_tps": 6.557570720560329,
+    "draft_n": 0,
+    "draft_ok": 0,
+    "wall": 24.66
+   },
+   {
+    "prompt_n": 210,
+    "prompt_tps": 40.955855049037815,
+    "gen_n": 128,
+    "gen_tps": 6.573948116537983,
+    "draft_n": 0,
+    "draft_ok": 0,
+    "wall": 24.45
+   },
+   {
+    "prompt_n": 210,
+    "prompt_tps": 40.14501910233826,
+    "gen_n": 128,
+    "gen_tps": 6.620196708459048,
+    "draft_n": 0,
+    "draft_ok": 0,
+    "wall": 24.42
+   },
+   {
+    "prompt_n": 210,
+    "prompt_tps": 45.03018952563483,
+    "gen_n": 128,
+    "gen_tps": 6.883679635717842,
+    "draft_n": 0,
+    "draft_ok": 0,
+    "wall": 23.12
+   },
+   {
+    "prompt_n": 210,
+    "prompt_tps": 45.143155394779036,
+    "gen_n": 128,
+    "gen_tps": 6.896683178701912,
+    "draft_n": 0,
+    "draft_ok": 0,
+    "wall": 23.07
+   }
+  ],
+  "swap_used_mb": 1429,
+  "mem_available_mb": 777,
+  "loadavg_before": 3.69
+ },
+ {
+  "name": "gemma-4-e4b/cpu-t8",
+  "file_gb": 4.98,
+  "args": [
+   "-fa",
+   "off"
+  ],
+  "hw": [
+   "-ngl",
+   "0",
+   "-t",
+   "8"
+  ],
+  "runs": [
+   {
+    "prompt_n": 210,
+    "prompt_tps": 44.98412060542628,
+    "gen_n": 128,
+    "gen_tps": 6.732593066171317,
+    "draft_n": 0,
+    "draft_ok": 0,
+    "wall": 23.54
+   },
+   {
+    "prompt_n": 210,
+    "prompt_tps": 44.91673079777675,
+    "gen_n": 128,
+    "gen_tps": 6.688052988759226,
+    "draft_n": 0,
+    "draft_ok": 0,
+    "wall": 23.67
+   },
+   {
+    "prompt_n": 210,
+    "prompt_tps": 44.8497245906555,
+    "gen_n": 128,
+    "gen_tps": 6.7498969710608,
+    "draft_n": 0,
+    "draft_ok": 0,
+    "wall": 23.5
+   },
+   {
+    "prompt_n": 210,
+    "prompt_tps": 44.95434565096676,
+    "gen_n": 128,
+    "gen_tps": 6.730612431144378,
+    "draft_n": 0,
+    "draft_ok": 0,
+    "wall": 23.55
+   },
+   {
+    "prompt_n": 210,
+    "prompt_tps": 44.91316680814314,
+    "gen_n": 128,
+    "gen_tps": 6.736105482956486,
+    "draft_n": 0,
+    "draft_ok": 0,
+    "wall": 23.53
+   }
+  ],
+  "swap_used_mb": 2194,
+  "mem_available_mb": 905,
+  "loadavg_before": 6.91
+ },
+ {
+  "name": "gemma-4-e4b-mtp/cpu-t4",
+  "file_gb": 4.98,
+  "args": [
+   "-fa",
+   "off",
+   "--model-draft",
+   "/var/home/fedir/.lmstudio/models/unsloth/gemma-4-E4B-it-GGUF/MTP/mtp-gemma-4-E4B-it-Q8_0.gguf",
+   "--spec-type",
+   "draft-mtp",
+   "--spec-draft-n-max",
+   "4"
+  ],
+  "hw": [
+   "-ngl",
+   "0",
+   "-t",
+   "4"
+  ],
+  "runs": [
+   {
+    "prompt_n": 210,
+    "prompt_tps": 44.35186403492561,
+    "gen_n": 128,
+    "gen_tps": 6.4182458499470725,
+    "draft_n": 202,
+    "draft_ok": 76,
+    "wall": 24.53
+   },
+   {
+    "prompt_n": 210,
+    "prompt_tps": 44.45078514903502,
+    "gen_n": 128,
+    "gen_tps": 6.4178757750911535,
+    "draft_n": 202,
+    "draft_ok": 76,
+    "wall": 24.52
+   },
+   {
+    "prompt_n": 210,
+    "prompt_tps": 44.416610035488866,
+    "gen_n": 128,
+    "gen_tps": 6.424058473297718,
+    "draft_n": 202,
+    "draft_ok": 76,
+    "wall": 24.5
+   },
+   {
+    "prompt_n": 210,
+    "prompt_tps": 44.25216061174187,
+    "gen_n": 128,
+    "gen_tps": 6.384663615702371,
+    "draft_n": 202,
+    "draft_ok": 76,
+    "wall": 24.64
+   },
+   {
+    "prompt_n": 210,
+    "prompt_tps": 44.43492737640108,
+    "gen_n": 128,
+    "gen_tps": 6.386758670188335,
+    "draft_n": 202,
+    "draft_ok": 76,
+    "wall": 24.61
+   }
+  ],
+  "swap_used_mb": 6113,
+  "mem_available_mb": 1074,
+  "loadavg_before": 3.41
+ },
+ {
+  "name": "gemma-4-e4b-mtp/cpu-t8",
+  "file_gb": 4.98,
+  "args": [
+   "-fa",
+   "off",
+   "--model-draft",
+   "/var/home/fedir/.lmstudio/models/unsloth/gemma-4-E4B-it-GGUF/MTP/mtp-gemma-4-E4B-it-Q8_0.gguf",
+   "--spec-type",
+   "draft-mtp",
+   "--spec-draft-n-max",
+   "4"
+  ],
+  "hw": [
+   "-ngl",
+   "0",
+   "-t",
+   "8"
+  ],
+  "runs": [
+   {
+    "prompt_n": 210,
+    "prompt_tps": 44.20107193913891,
+    "gen_n": 128,
+    "gen_tps": 6.058120077568742,
+    "draft_n": 202,
+    "draft_ok": 76,
+    "wall": 25.72
+   },
+   {
+    "prompt_n": 210,
+    "prompt_tps": 44.172993220917974,
+    "gen_n": 128,
+    "gen_tps": 6.06709789878724,
+    "draft_n": 202,
+    "draft_ok": 76,
+    "wall": 25.69
+   },
+   {
+    "prompt_n": 210,
+    "prompt_tps": 44.18179419741561,
+    "gen_n": 128,
+    "gen_tps": 6.017662550332772,
+    "draft_n": 202,
+    "draft_ok": 76,
+    "wall": 25.86
+   },
+   {
+    "prompt_n": 210,
+    "prompt_tps": 44.08753601269385,
+    "gen_n": 128,
+    "gen_tps": 5.989036855825444,
+    "draft_n": 202,
+    "draft_ok": 76,
+    "wall": 25.97
+   },
+   {
+    "prompt_n": 210,
+    "prompt_tps": 44.029984839008556,
+    "gen_n": 128,
+    "gen_tps": 6.101722732530167,
+    "draft_n": 202,
+    "draft_ok": 76,
+    "wall": 25.59
+   }
+  ],
+  "swap_used_mb": 6178,
+  "mem_available_mb": 1041,
+  "loadavg_before": 6.26
+ },
+ {
+  "name": "gemma-4-e4b/cpu-t4",
+  "file_gb": 4.98,
+  "args": [
+   "-fa",
+   "off"
+  ],
+  "hw": [
+   "-ngl",
+   "0",
+   "-t",
+   "4"
+  ],
+  "runs": [
+   {
+    "prompt_n": 210,
+    "prompt_tps": 45.07121574024214,
+    "gen_n": 128,
+    "gen_tps": 6.892309669411182,
+    "draft_n": 0,
+    "draft_ok": 0,
+    "wall": 23.09
+   },
+   {
+    "prompt_n": 210,
+    "prompt_tps": 45.22389380740608,
+    "gen_n": 128,
+    "gen_tps": 6.897664190206077,
+    "draft_n": 0,
+    "draft_ok": 0,
+    "wall": 23.06
+   },
+   {
+    "prompt_n": 210,
+    "prompt_tps": 45.09508298246853,
+    "gen_n": 128,
+    "gen_tps": 6.889199005308155,
+    "draft_n": 0,
+    "draft_ok": 0,
+    "wall": 23.1
+   },
+   {
+    "prompt_n": 210,
+    "prompt_tps": 45.25080907369223,
+    "gen_n": 128,
+    "gen_tps": 6.896374586740182,
+    "draft_n": 0,
+    "draft_ok": 0,
+    "wall": 23.06
+   },
+   {
+    "prompt_n": 210,
+    "prompt_tps": 45.15122111477505,
+    "gen_n": 128,
+    "gen_tps": 6.8965116520908625,
+    "draft_n": 0,
+    "draft_ok": 0,
+    "wall": 23.07
+   }
+  ],
+  "swap_used_mb": 6176,
+  "mem_available_mb": 1472,
+  "loadavg_before": 3.97
+ },
+ {
+  "name": "gemma-4-e4b-mtp/cpu-t4",
+  "file_gb": 4.98,
+  "args": [
+   "-fa",
+   "off",
+   "--model-draft",
+   "/var/home/fedir/.lmstudio/models/unsloth/gemma-4-E4B-it-GGUF/MTP/mtp-gemma-4-E4B-it-Q8_0.gguf",
+   "--spec-type",
+   "draft-mtp",
+   "--spec-draft-n-max",
+   "4"
+  ],
+  "hw": [
+   "-ngl",
+   "0",
+   "-t",
+   "4"
+  ],
+  "runs": [
+   {
+    "prompt_n": 210,
+    "prompt_tps": 44.2589316104666,
+    "gen_n": 128,
+    "gen_tps": 6.383320614441354,
+    "draft_n": 202,
+    "draft_ok": 76,
+    "wall": 24.64
+   },
+   {
+    "prompt_n": 210,
+    "prompt_tps": 44.47418802839571,
+    "gen_n": 128,
+    "gen_tps": 6.33735855402436,
+    "draft_n": 202,
+    "draft_ok": 76,
+    "wall": 24.77
+   },
+   {
+    "prompt_n": 210,
+    "prompt_tps": 44.34765861256872,
+    "gen_n": 128,
+    "gen_tps": 6.387595149391013,
+    "draft_n": 202,
+    "draft_ok": 76,
+    "wall": 24.62
+   },
+   {
+    "prompt_n": 210,
+    "prompt_tps": 44.42824341515253,
+    "gen_n": 128,
+    "gen_tps": 6.365417359114644,
+    "draft_n": 202,
+    "draft_ok": 76,
+    "wall": 24.68
+   },
+   {
+    "prompt_n": 210,
+    "prompt_tps": 44.44873410005283,
+    "gen_n": 128,
+    "gen_tps": 6.365984031004247,
+    "draft_n": 202,
+    "draft_ok": 76,
+    "wall": 24.68
+   }
+  ],
+  "swap_used_mb": 6264,
+  "mem_available_mb": 1051,
+  "loadavg_before": 3.33
+ }
+]

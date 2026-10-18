@@ -1,0 +1,24 @@
+{
+ "model": "mimo-9b",
+ "mode": "harness",
+ "seed": 42,
+ "question": "regex-date",
+ "category": "regex",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": false,
+ "tokens_total": 44,
+ "seconds_total": 15.3,
+ "attempts": [
+  {
+   "tokens": 44,
+   "seconds": 15.3,
+   "tps": 2.87,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "regex '^\\\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$'",
+   "verifier_pass": true,
+   "verifier_feedback": ""
+  }
+ ]
+}

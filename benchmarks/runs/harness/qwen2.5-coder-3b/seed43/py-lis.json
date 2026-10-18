@@ -1,0 +1,44 @@
+{
+ "model": "qwen2.5-coder-3b",
+ "mode": "harness",
+ "seed": 43,
+ "question": "py-lis",
+ "category": "python",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "tokens_total": 643,
+ "seconds_total": 69.5,
+ "attempts": [
+  {
+   "tokens": 173,
+   "seconds": 16.4,
+   "tps": 10.54,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "timeout",
+   "verifier_pass": false,
+   "verifier_feedback": "too slow: 8.7s on a 20,000-element list (limit 2.0s)"
+  },
+  {
+   "tokens": 233,
+   "seconds": 24.3,
+   "tps": 9.58,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "NameError: name 'bisect' is not defined. Did you forget to import 'bisect'?",
+   "verifier_pass": false,
+   "verifier_feedback": "lis_length([0,1,0,3,2,3]) raised NameError: name 'bisect' is not defined; lis_length([5,4,3]) raised NameError: name 'bisect' is not defined; lis_length([2,2,2,2]) raised NameError: name 'bisect' is not defined; the performance example raised NameError: name 'bisect' is not defined"
+  },
+  {
+   "tokens": 237,
+   "seconds": 28.8,
+   "tps": 8.22,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "IndexError: list assignment index out of range",
+   "verifier_pass": false,
+   "verifier_feedback": "lis_length([0,1,0,3,2,3]) raised IndexError: list assignment index out of range; lis_length([5,4,3]) raised IndexError: list assignment index out of range; lis_length([2,2,2,2]) raised IndexError: list assignment index out of range; the performance example raised IndexError: list assignment index out of range"
+  }
+ ]
+}

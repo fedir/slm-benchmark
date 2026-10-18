@@ -1,0 +1,145 @@
+{
+ "ornith-9b-mtp": {
+  "path": "~/.lmstudio/models/protoLabsAI/Ornith-1.5-9B-MTP-GGUF/Ornith-1.5-9B-MTP-Q4_K_M.gguf",
+  "args": [
+   "--spec-type",
+   "draft-mtp",
+   "--spec-draft-n-max",
+   "2"
+  ],
+  "sampling": {
+   "vendor": {
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "min_p": 0.0,
+    "repeat_penalty": 1.0,
+    "presence_penalty": 0.0
+   }
+  }
+ },
+ "mimo-9b": {
+  "path": "~/.lmstudio/models/bartowski/MiMo-V2.6-Distill-Qwen-9B-GGUF/MiMo-V2.6-Distill-Qwen-9B-Q4_K_M.gguf",
+  "args": [],
+  "sampling": {
+   "vendor": {
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "min_p": 0.0,
+    "repeat_penalty": 1.0,
+    "presence_penalty": 0.0
+   }
+  }
+ },
+ "nemotron-3-nano-4b": {
+  "path": "~/.lmstudio/models/lmstudio-community/NVIDIA-Nemotron-3-Nano-4B-GGUF/NVIDIA-Nemotron-3-Nano-4B-Q4_K_M.gguf",
+  "args": [],
+  "sampling": {
+   "vendor": {
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 0,
+    "min_p": 0.0,
+    "repeat_penalty": 1.0,
+    "presence_penalty": 0.0
+   },
+   "vendor-alt": {
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 0,
+    "min_p": 0.0,
+    "repeat_penalty": 1.0,
+    "presence_penalty": 0.0
+   }
+  }
+ },
+ "qwen2.5-coder-3b": {
+  "path": "~/.lmstudio/models/lmstudio-community/Qwen2.5-Coder-3B-Instruct-GGUF/Qwen2.5-Coder-3B-Instruct-Q4_K_M.gguf",
+  "args": [],
+  "sampling": {
+   "vendor": {
+    "temperature": 0.7,
+    "top_p": 0.8,
+    "top_k": 20,
+    "min_p": 0.0,
+    "repeat_penalty": 1.05,
+    "presence_penalty": 0.0
+   }
+  }
+ },
+ "qwen2.5-coder-7b": {
+  "path": "~/.lmstudio/models/lmstudio-community/Qwen2.5-Coder-7B-Instruct-GGUF/Qwen2.5-Coder-7B-Instruct-Q4_K_M.gguf",
+  "args": [],
+  "sampling": {
+   "vendor": {
+    "temperature": 0.7,
+    "top_p": 0.8,
+    "top_k": 20,
+    "min_p": 0.0,
+    "repeat_penalty": 1.1,
+    "presence_penalty": 0.0
+   }
+  }
+ },
+ "gemma-4-e4b": {
+  "path": "~/.lmstudio/models/unsloth/gemma-4-E4B-it-GGUF/gemma-4-E4B-it-Q4_K_M.gguf",
+  "args": [
+   "-fa",
+   "off"
+  ]
+ },
+ "gemma-4-e4b-mtp": {
+  "path": "~/.lmstudio/models/unsloth/gemma-4-E4B-it-GGUF/gemma-4-E4B-it-Q4_K_M.gguf",
+  "args": [
+   "-fa",
+   "off",
+   "--model-draft",
+   "/var/home/fedir/.lmstudio/models/unsloth/gemma-4-E4B-it-GGUF/MTP/mtp-gemma-4-E4B-it-Q8_0.gguf",
+   "--spec-type",
+   "draft-mtp",
+   "--spec-draft-n-max",
+   "4"
+  ]
+ },
+ "gemma-4-e4b-concise": {
+  "path": "~/.lmstudio/models/unsloth/gemma-4-E4B-it-GGUF/gemma-4-E4B-it-Q4_K_M.gguf",
+  "args": [
+   "-fa",
+   "off"
+  ],
+  "system": "Be concise. Reply with only the final code, regex or command, with no explanation and no comments."
+ },
+ "gemma-4-e4b-p-code-only": {
+  "path": "~/.lmstudio/models/unsloth/gemma-4-E4B-it-GGUF/gemma-4-E4B-it-Q4_K_M.gguf",
+  "args": [
+   "-fa",
+   "off"
+  ],
+  "system": "Output only a single code block containing the solution. No text before or after it, no comments, no docstrings, no example usage."
+ },
+ "gemma-4-e4b-p-minimal": {
+  "path": "~/.lmstudio/models/unsloth/gemma-4-E4B-it-GGUF/gemma-4-E4B-it-Q4_K_M.gguf",
+  "args": [
+   "-fa",
+   "off"
+  ],
+  "system": "You are a terse expert. Give the shortest correct solution as one code block. Never explain, never add tests, comments or usage examples."
+ },
+ "gemma-4-e4b-p-oneline-rule": {
+  "path": "~/.lmstudio/models/unsloth/gemma-4-E4B-it-GGUF/gemma-4-E4B-it-Q4_K_M.gguf",
+  "args": [
+   "-fa",
+   "off"
+  ],
+  "system": "Answer rules: (1) one code block only, (2) no prose, (3) no comments, (4) prefer a compact idiomatic solution over a long explicit one."
+ },
+ "gemma-4-e4b-terse": {
+  "path": "~/.lmstudio/models/unsloth/gemma-4-E4B-it-GGUF/gemma-4-E4B-it-Q4_K_M.gguf",
+  "args": [
+   "-fa",
+   "off"
+  ],
+  "system": "You are a terse expert. Give the shortest correct solution as one code block. Never explain, never add tests, comments or usage examples."
+ }
+}

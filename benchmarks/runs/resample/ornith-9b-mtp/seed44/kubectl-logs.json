@@ -1,0 +1,48 @@
+{
+ "model": "ornith-9b-mtp",
+ "mode": "resample",
+ "seed": 44,
+ "question": "kubectl-logs",
+ "category": "kubectl",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 44,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 46,
+ "seconds_total": 16.4,
+ "attempts": [
+  {
+   "tokens": 20,
+   "seconds": 7.0,
+   "tps": 2.87,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['-c[ =]?app\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "the command is valid kubectl but does not do what was asked: the target should be pod `api-0`; the container to read should be `app`, the command selects None",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 26,
+   "seconds": 9.4,
+   "tps": 2.77,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "all parts present",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0,
+   "retry_seed": 1044
+  }
+ ]
+}

@@ -1,0 +1,59 @@
+{
+ "model": "qwen2.5-coder-3b",
+ "mode": "resample",
+ "seed": 42,
+ "question": "regex-hexcolor",
+ "category": "regex",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 42,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 62,
+ "seconds_total": 10.3,
+ "attempts": [
+  {
+   "tokens": 21,
+   "seconds": 3.4,
+   "tps": 6.13,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^#[0-9A-Fa-f]{3,6}$'; wrong on ['!#ffff', '!#12345']",
+   "verifier_pass": false,
+   "verifier_feedback": "it matches these, which it must reject: ['#abcd']"
+  },
+  {
+   "tokens": 20,
+   "seconds": 3.4,
+   "tps": 5.88,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '#[0-9A-Fa-f]{3,6}'; wrong on ['!#ffff', '!#12345']",
+   "verifier_pass": false,
+   "verifier_feedback": "it matches these, which it must reject: ['#abcd']",
+   "reasoning_chars": 0,
+   "retry_seed": 1042
+  },
+  {
+   "tokens": 21,
+   "seconds": 3.5,
+   "tps": 6.04,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^#[0-9a-fA-F]{3,6}$'; wrong on ['!#ffff', '!#12345']",
+   "verifier_pass": false,
+   "verifier_feedback": "it matches these, which it must reject: ['#abcd']",
+   "reasoning_chars": 0,
+   "retry_seed": 2042
+  }
+ ]
+}

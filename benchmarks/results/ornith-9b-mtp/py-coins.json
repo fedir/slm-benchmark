@@ -1,0 +1,12 @@
+{
+ "model": "ornith-9b-mtp",
+ "question": "py-coins",
+ "category": "python",
+ "passed": true,
+ "detail": "tests passed",
+ "completion_tokens": 107,
+ "seconds": 26.3,
+ "tps": 4.06,
+ "finish_reason": "stop",
+ "reasoning_chars": 0
+}

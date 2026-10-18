@@ -1,0 +1,12 @@
+{
+ "model": "qwen2.5-coder-3b",
+ "question": "kubectl-nodes-names",
+ "category": "kubectl",
+ "passed": true,
+ "detail": "all parts present",
+ "completion_tokens": 30,
+ "seconds": 3.4,
+ "tps": 8.71,
+ "finish_reason": "stop",
+ "reasoning_chars": 0
+}

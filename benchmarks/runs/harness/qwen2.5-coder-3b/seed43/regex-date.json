@@ -1,0 +1,24 @@
+{
+ "model": "qwen2.5-coder-3b",
+ "mode": "harness",
+ "seed": 43,
+ "question": "regex-date",
+ "category": "regex",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": false,
+ "tokens_total": 50,
+ "seconds_total": 6.0,
+ "attempts": [
+  {
+   "tokens": 50,
+   "seconds": 6.0,
+   "tps": 8.34,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "regex '^(19|20)\\\\d{2}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\\\d|3[01])$'",
+   "verifier_pass": true,
+   "verifier_feedback": ""
+  }
+ ]
+}

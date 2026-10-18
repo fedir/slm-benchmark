@@ -1,0 +1,12 @@
+{
+ "model": "qwen2.5-coder-3b",
+ "question": "kubectl-pods-sorted",
+ "category": "kubectl",
+ "passed": true,
+ "detail": "all parts present",
+ "completion_tokens": 19,
+ "seconds": 2.8,
+ "tps": 6.72,
+ "finish_reason": "stop",
+ "reasoning_chars": 0
+}

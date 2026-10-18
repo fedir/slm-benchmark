@@ -1,0 +1,58 @@
+{
+ "model": "mimo-9b",
+ "mode": "harness",
+ "seed": 43,
+ "question": "regex-semver",
+ "category": "regex",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 43,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 82,
+ "seconds_total": 45.5,
+ "attempts": [
+  {
+   "tokens": 27,
+   "seconds": 11.0,
+   "tps": 2.45,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^(?:[1-9][0-9]*)(?:\\\\.[0-9]+){2}$'; wrong on ['0.0.0', '!1.02.3', '!1.2.03']",
+   "verifier_pass": false,
+   "verifier_feedback": "it does not match these, which it should: ['0.10.0']; it matches these, which it must reject: ['3.04.5', '10.0.00']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 24,
+   "seconds": 14.3,
+   "tps": 1.67,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^[1-9][0-9]*(?:\\\\.[0-9]+){2}$'; wrong on ['0.0.0', '!1.02.3', '!1.2.03']",
+   "verifier_pass": false,
+   "verifier_feedback": "it does not match these, which it should: ['0.10.0']; it matches these, which it must reject: ['3.04.5', '10.0.00']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 31,
+   "seconds": 20.2,
+   "tps": 1.53,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^[1-9][0-9]*(?:\\\\.(?:0|[1-9][0-9]*)){2}$'; wrong on ['0.0.0']",
+   "verifier_pass": false,
+   "verifier_feedback": "it does not match these, which it should: ['0.10.0']",
+   "reasoning_chars": 0
+  }
+ ]
+}

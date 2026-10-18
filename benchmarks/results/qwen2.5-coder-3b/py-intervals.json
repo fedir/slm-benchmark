@@ -1,0 +1,12 @@
+{
+ "model": "qwen2.5-coder-3b",
+ "question": "py-intervals",
+ "category": "python",
+ "passed": true,
+ "detail": "tests passed",
+ "completion_tokens": 125,
+ "seconds": 12.7,
+ "tps": 9.84,
+ "finish_reason": "stop",
+ "reasoning_chars": 0
+}

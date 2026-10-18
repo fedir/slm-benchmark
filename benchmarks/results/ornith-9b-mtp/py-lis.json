@@ -1,0 +1,12 @@
+{
+ "model": "ornith-9b-mtp",
+ "question": "py-lis",
+ "category": "python",
+ "passed": true,
+ "detail": "tests passed",
+ "completion_tokens": 104,
+ "seconds": 23.6,
+ "tps": 4.42,
+ "finish_reason": "stop",
+ "reasoning_chars": 0
+}

@@ -1,0 +1,24 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "harness",
+ "seed": 44,
+ "question": "regex-hexcolor",
+ "category": "regex",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": false,
+ "tokens_total": 32,
+ "seconds_total": 7.0,
+ "attempts": [
+  {
+   "tokens": 32,
+   "seconds": 7.0,
+   "tps": 4.56,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "regex '#[0-9a-fA-F]{3}(?:[0-9a-fA-F]{3})?'",
+   "verifier_pass": true,
+   "verifier_feedback": ""
+  }
+ ]
+}

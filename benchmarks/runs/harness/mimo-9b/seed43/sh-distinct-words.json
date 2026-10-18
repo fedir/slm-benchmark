@@ -1,0 +1,36 @@
+{
+ "model": "mimo-9b",
+ "mode": "harness",
+ "seed": 43,
+ "question": "sh-distinct-words",
+ "category": "shell",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": false,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 43,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 38,
+ "seconds_total": 12.9,
+ "attempts": [
+  {
+   "tokens": 38,
+   "seconds": 12.9,
+   "tps": 2.95,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "output matches",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

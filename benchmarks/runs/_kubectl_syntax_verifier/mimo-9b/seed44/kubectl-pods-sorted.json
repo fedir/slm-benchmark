@@ -1,0 +1,34 @@
+{
+ "model": "mimo-9b",
+ "mode": "harness",
+ "seed": 44,
+ "question": "kubectl-pods-sorted",
+ "category": "kubectl",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "tokens_total": 67,
+ "seconds_total": 28.5,
+ "attempts": [
+  {
+   "tokens": 32,
+   "seconds": 11.6,
+   "tps": 2.76,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['--sort-by[ =]\\\\.?metadata\\\\.creationTimestamp']",
+   "verifier_pass": false,
+   "verifier_feedback": "kubectl rejected the command: error: unknown flag: --sort"
+  },
+  {
+   "tokens": 35,
+   "seconds": 16.9,
+   "tps": 2.07,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "all parts present",
+   "verifier_pass": true,
+   "verifier_feedback": ""
+  }
+ ]
+}

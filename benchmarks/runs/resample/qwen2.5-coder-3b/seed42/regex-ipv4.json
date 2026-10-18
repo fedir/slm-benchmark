@@ -1,0 +1,59 @@
+{
+ "model": "qwen2.5-coder-3b",
+ "mode": "resample",
+ "seed": 42,
+ "question": "regex-ipv4",
+ "category": "regex",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 42,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 197,
+ "seconds_total": 22.3,
+ "attempts": [
+  {
+   "tokens": 25,
+   "seconds": 3.8,
+   "tps": 6.55,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^(\\\\d{1,3}\\\\.){3}\\\\d{1,3}$'; wrong on ['!256.1.1.1', '!300.1.1.1']",
+   "verifier_pass": false,
+   "verifier_feedback": "it matches these, which it must reject: ['999.1.1.1']"
+  },
+  {
+   "tokens": 33,
+   "seconds": 4.6,
+   "tps": 7.12,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}$'; wrong on ['!256.1.1.1', '!300.1.1.1']",
+   "verifier_pass": false,
+   "verifier_feedback": "it matches these, which it must reject: ['999.1.1.1']",
+   "reasoning_chars": 0,
+   "retry_seed": 1042
+  },
+  {
+   "tokens": 139,
+   "seconds": 13.9,
+   "tps": 9.99,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "regex '\\\\b(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\\\b'",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0,
+   "retry_seed": 2042
+  }
+ ]
+}

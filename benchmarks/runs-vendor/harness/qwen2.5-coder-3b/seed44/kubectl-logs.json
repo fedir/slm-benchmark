@@ -1,0 +1,50 @@
+{
+ "model": "qwen2.5-coder-3b",
+ "mode": "harness",
+ "seed": 44,
+ "question": "kubectl-logs",
+ "category": "kubectl",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.7,
+  "top_p": 0.8,
+  "top_k": 20,
+  "seed": 44,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "min_p": 0.0,
+  "repeat_penalty": 1.05,
+  "presence_penalty": 0.0,
+  "profile": "vendor"
+ },
+ "tokens_total": 52,
+ "seconds_total": 8.4,
+ "attempts": [
+  {
+   "tokens": 25,
+   "seconds": 3.8,
+   "tps": 6.61,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['\\\\s-f\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "the command is valid kubectl but does not do what was asked: it does not follow (stream) the log",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 27,
+   "seconds": 4.6,
+   "tps": 5.9,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "all parts present",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

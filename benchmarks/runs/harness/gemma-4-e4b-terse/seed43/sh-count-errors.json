@@ -1,0 +1,47 @@
+{
+ "model": "gemma-4-e4b-terse",
+ "mode": "harness",
+ "seed": 43,
+ "question": "sh-count-errors",
+ "category": "shell",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 43,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 37,
+ "seconds_total": 14.6,
+ "attempts": [
+  {
+   "tokens": 15,
+   "seconds": 5.6,
+   "tps": 2.66,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "output ['0'], expected ['3']",
+   "verifier_pass": false,
+   "verifier_feedback": "on a small example the command's output ['0'], expected ['4']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 22,
+   "seconds": 9.0,
+   "tps": 2.43,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "output ['4'], expected ['3']",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

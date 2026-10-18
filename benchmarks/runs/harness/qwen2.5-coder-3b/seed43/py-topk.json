@@ -1,0 +1,44 @@
+{
+ "model": "qwen2.5-coder-3b",
+ "mode": "harness",
+ "seed": 43,
+ "question": "py-topk",
+ "category": "python",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "tokens_total": 249,
+ "seconds_total": 30.0,
+ "attempts": [
+  {
+   "tokens": 83,
+   "seconds": 8.6,
+   "tps": 9.62,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "AssertionError",
+   "verifier_pass": false,
+   "verifier_feedback": "top_k_frequent(['dog','cat','cat','dog'],1) returned ['dog'], expected ['cat']"
+  },
+  {
+   "tokens": 83,
+   "seconds": 10.0,
+   "tps": 8.32,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "AssertionError",
+   "verifier_pass": false,
+   "verifier_feedback": "top_k_frequent(['dog','cat','cat','dog'],1) returned ['dog'], expected ['cat']"
+  },
+  {
+   "tokens": 83,
+   "seconds": 11.4,
+   "tps": 7.31,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "AssertionError",
+   "verifier_pass": false,
+   "verifier_feedback": "top_k_frequent(['dog','cat','cat','dog'],1) returned ['dog'], expected ['cat']"
+  }
+ ]
+}

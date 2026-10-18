@@ -1,0 +1,60 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "resample",
+ "seed": 45,
+ "question": "kubectl-exec",
+ "category": "kubectl",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 45,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 64,
+ "seconds_total": 15.2,
+ "attempts": [
+  {
+   "tokens": 19,
+   "seconds": 4.5,
+   "tps": 4.21,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['\\\\bdb-0\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "kubectl rejected the command: error: pod, type/name or --filename must be specified",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 21,
+   "seconds": 5.2,
+   "tps": 4.01,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['-c[ =]?db\\\\b', '-n[ =]?data\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "kubectl rejected the command: error: arguments in resource/name form may not have more than one slash",
+   "reasoning_chars": 0,
+   "retry_seed": 1045
+  },
+  {
+   "tokens": 24,
+   "seconds": 5.5,
+   "tps": 4.39,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['-c[ =]?db\\\\b', '-n[ =]?data\\\\b', '--\\\\s+ls\\\\s+/data\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "the command is valid kubectl but does not do what was asked: the command to run should come after `--` and be `ls /data`, found '/bin/sh -c ls /data'; the namespace should be `data`, the command uses None; the --container option should be 'db', the command has None",
+   "reasoning_chars": 0,
+   "retry_seed": 2045
+  }
+ ]
+}

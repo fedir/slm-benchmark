@@ -1,0 +1,58 @@
+{
+ "model": "ornith-9b-mtp",
+ "mode": "harness",
+ "seed": 45,
+ "question": "py-flatten",
+ "category": "python",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 45,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 156,
+ "seconds_total": 54.1,
+ "attempts": [
+  {
+   "tokens": 52,
+   "seconds": 12.7,
+   "tps": 4.09,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "RecursionError: maximum recursion depth exceeded",
+   "verifier_pass": false,
+   "verifier_feedback": "the performance example raised RecursionError: maximum recursion depth exceeded",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 52,
+   "seconds": 18.0,
+   "tps": 2.88,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "RecursionError: maximum recursion depth exceeded",
+   "verifier_pass": false,
+   "verifier_feedback": "the performance example raised RecursionError: maximum recursion depth exceeded",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 52,
+   "seconds": 23.4,
+   "tps": 2.23,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "RecursionError: maximum recursion depth exceeded",
+   "verifier_pass": false,
+   "verifier_feedback": "the performance example raised RecursionError: maximum recursion depth exceeded",
+   "reasoning_chars": 0
+  }
+ ]
+}

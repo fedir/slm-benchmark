@@ -1,0 +1,36 @@
+{
+ "model": "gemma-4-e4b",
+ "mode": "naked",
+ "seed": 42,
+ "question": "regex-hexcolor",
+ "category": "regex",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": false,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 42,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 22,
+ "seconds_total": 5.1,
+ "attempts": [
+  {
+   "tokens": 22,
+   "seconds": 5.1,
+   "tps": 4.29,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^#([0-9a-f]{3}){1,2}$'; wrong on ['#A1b2C3', '#1aF']",
+   "verifier_pass": null,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

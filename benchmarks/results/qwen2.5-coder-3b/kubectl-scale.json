@@ -1,0 +1,12 @@
+{
+ "model": "qwen2.5-coder-3b",
+ "question": "kubectl-scale",
+ "category": "kubectl",
+ "passed": true,
+ "detail": "all parts present",
+ "completion_tokens": 18,
+ "seconds": 2.5,
+ "tps": 7.34,
+ "finish_reason": "stop",
+ "reasoning_chars": 0
+}

@@ -1,0 +1,12 @@
+{
+ "model": "ornith-9b-mtp",
+ "question": "py-topk",
+ "category": "python",
+ "passed": false,
+ "detail": "AssertionError",
+ "completion_tokens": 49,
+ "seconds": 13.0,
+ "tps": 3.77,
+ "finish_reason": "stop",
+ "reasoning_chars": 0
+}

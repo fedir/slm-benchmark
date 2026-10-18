@@ -1,0 +1,647 @@
+[
+ {
+  "id": "regex-ipv4",
+  "category": "regex",
+  "type": "regex",
+  "prompt": "Write a single regular expression (Python `re` syntax, to be used with re.fullmatch) that matches a valid IPv4 address: four decimal numbers 0-255 separated by dots. Reply with ONLY the regex in a code block, no explanation.",
+  "match": [
+   "192.168.1.1",
+   "0.0.0.0",
+   "255.255.255.255",
+   "10.0.42.7"
+  ],
+  "nomatch": [
+   "256.1.1.1",
+   "1.2.3",
+   "1.2.3.4.5",
+   "300.1.1.1",
+   "a.b.c.d"
+  ]
+ },
+ {
+  "id": "regex-date",
+  "category": "regex",
+  "type": "regex",
+  "prompt": "Write a single regular expression (Python `re` syntax, to be used with re.fullmatch) that matches dates in the format YYYY-MM-DD where the month is 01-12 and the day is 01-31 (no need to check month lengths). Reply with ONLY the regex in a code block, no explanation.",
+  "match": [
+   "2024-02-29",
+   "1999-12-31",
+   "2000-01-01"
+  ],
+  "nomatch": [
+   "2024-13-01",
+   "2024-00-10",
+   "2024-1-1",
+   "2024-01-32",
+   "24-01-01",
+   "2024-01-00"
+  ]
+ },
+ {
+  "id": "regex-hexcolor",
+  "category": "regex",
+  "type": "regex",
+  "prompt": "Write a single regular expression (Python `re` syntax, to be used with re.fullmatch) that matches a CSS hex color: '#' followed by exactly 3 or exactly 6 hex digits (case-insensitive). Reply with ONLY the regex in a code block, no explanation.",
+  "match": [
+   "#fff",
+   "#A1b2C3",
+   "#000000",
+   "#1aF"
+  ],
+  "nomatch": [
+   "#ffff",
+   "#ggg",
+   "fff",
+   "#12345",
+   "#1234567"
+  ]
+ },
+ {
+  "id": "py-intervals",
+  "category": "python",
+  "type": "python",
+  "func": "merge_intervals",
+  "prompt": "Write a Python function `merge_intervals(intervals)` that takes a list of [start, end] pairs and returns the merged list of non-overlapping intervals sorted by start (intervals that touch, like [1,2] and [2,3], must be merged). Reply with ONLY the code in one code block.",
+  "test": "assert merge_intervals([[1,3],[2,6],[8,10],[15,18]])==[[1,6],[8,10],[15,18]]\nassert merge_intervals([[1,2],[2,3]])==[[1,3]]\nassert merge_intervals([])==[]\nassert merge_intervals([[5,6],[1,2]])==[[1,2],[5,6]]\nassert merge_intervals([[1,10],[2,3]])==[[1,10]]\n"
+ },
+ {
+  "id": "py-lis",
+  "category": "python",
+  "type": "python",
+  "func": "lis_length",
+  "prompt": "Write a Python function `lis_length(nums)` returning the length of the longest STRICTLY increasing subsequence of a list of integers. It must run in O(n log n) (it will be tested with 200000 elements). Reply with ONLY the code in one code block.",
+  "test": "import random,time\nassert lis_length([10,9,2,5,3,7,101,18])==4\nassert lis_length([])==0\nassert lis_length([7,7,7])==1\nassert lis_length([1,2,3,4,5])==5\nrandom.seed(1)\nbig=[random.randint(0,10**6) for _ in range(200000)]\nt=time.time(); r=lis_length(big); assert time.time()-t<5, 'too slow'\nimport bisect\nt2=[]\nfor x in big:\n    i=bisect.bisect_left(t2,x)\n    if i==len(t2): t2.append(x)\n    else: t2[i]=x\nassert r==len(t2), (r,len(t2))\n"
+ },
+ {
+  "id": "py-topk",
+  "category": "python",
+  "type": "python",
+  "func": "top_k_frequent",
+  "prompt": "Write a Python function `top_k_frequent(words, k)` returning the k most frequent words as a list, ordered by frequency descending, ties broken alphabetically. Reply with ONLY the code in one code block.",
+  "test": "assert top_k_frequent(['i','love','leetcode','i','love','coding'],2)==['i','love']\nassert top_k_frequent(['the','day','is','sunny','the','the','the','sunny','is','is'],4)==['the','is','sunny','day']\nassert top_k_frequent(['b','a'],1)==['a']\nassert top_k_frequent([],3)==[]\n"
+ },
+ {
+  "id": "py-coins",
+  "category": "python",
+  "type": "python",
+  "func": "min_coins",
+  "prompt": "Write a Python function `min_coins(coins, amount)` returning the minimum number of coins (unlimited supply of each denomination) needed to make `amount`, or -1 if impossible. min_coins(coins, 0) is 0. Reply with ONLY the code in one code block.",
+  "test": "assert min_coins([1,2,5],11)==3\nassert min_coins([2],3)==-1\nassert min_coins([1],0)==0\nassert min_coins([186,419,83,408],6249)==20\nassert min_coins([5,10],3)==-1\n"
+ },
+ {
+  "id": "kubectl-pods-sorted",
+  "category": "kubectl",
+  "type": "tokens",
+  "prompt": "Give the single kubectl command to list all pods in the namespace `prod`, sorted by creation timestamp. Reply with ONLY the command in a code block.",
+  "tokens": [
+   [
+    "kubectl"
+   ],
+   [
+    "get\\s+(pods?|po)\\b"
+   ],
+   [
+    "-n[ =]?prod\\b",
+    "--namespace[ =]prod\\b"
+   ],
+   [
+    "--sort-by[ =]\\.?metadata\\.creationTimestamp"
+   ]
+  ]
+ },
+ {
+  "id": "kubectl-scale",
+  "category": "kubectl",
+  "type": "tokens",
+  "prompt": "Give the single kubectl command to scale the deployment `web` in namespace `staging` to 5 replicas. Reply with ONLY the command in a code block.",
+  "tokens": [
+   [
+    "kubectl"
+   ],
+   [
+    "scale"
+   ],
+   [
+    "deploy(ment)?[/ ]web\\b"
+   ],
+   [
+    "--replicas[ =]5\\b"
+   ],
+   [
+    "-n[ =]?staging\\b",
+    "--namespace[ =]staging\\b"
+   ]
+  ]
+ },
+ {
+  "id": "kubectl-logs",
+  "category": "kubectl",
+  "type": "tokens",
+  "prompt": "Give the single kubectl command to stream (follow) the last 100 log lines of container `app` in pod `api-0`. Reply with ONLY the command in a code block.",
+  "tokens": [
+   [
+    "kubectl"
+   ],
+   [
+    "logs"
+   ],
+   [
+    "\\bapi-0\\b"
+   ],
+   [
+    "-c[ =]?app\\b",
+    "--container[ =]app\\b",
+    "\\bapi-0\\s+app\\b"
+   ],
+   [
+    "--tail[ =]100\\b"
+   ],
+   [
+    "\\s-f\\b",
+    "--follow"
+   ]
+  ]
+ },
+ {
+  "id": "kubectl-nodes-names",
+  "category": "kubectl",
+  "type": "tokens",
+  "prompt": "Give the single kubectl command that prints only the names of all nodes in the cluster, using jsonpath output. Reply with ONLY the command in a code block.",
+  "tokens": [
+   [
+    "kubectl"
+   ],
+   [
+    "get\\s+(nodes?|no)\\b"
+   ],
+   [
+    "-o[ =]?jsonpath",
+    "--output[ =]jsonpath"
+   ],
+   [
+    "metadata\\.name"
+   ]
+  ]
+ },
+ {
+  "id": "regex-time24",
+  "category": "regex",
+  "type": "regex",
+  "match": [
+   "00:00",
+   "23:59",
+   "09:05",
+   "12:30"
+  ],
+  "nomatch": [
+   "24:00",
+   "12:60",
+   "9:05",
+   "12:5",
+   "23:599",
+   "ab:cd",
+   "7:7"
+  ],
+  "prompt": "Write a single regular expression (Python `re` syntax, to be used with re.fullmatch) that matches a 24-hour clock time `HH:MM` with two-digit hours 00-23 and two-digit minutes 00-59. Reply with ONLY the regex in a code block, no explanation."
+ },
+ {
+  "id": "regex-semver",
+  "category": "regex",
+  "type": "regex",
+  "match": [
+   "0.0.0",
+   "1.2.3",
+   "10.20.30",
+   "100.0.1"
+  ],
+  "nomatch": [
+   "01.2.3",
+   "1.02.3",
+   "1.2.03",
+   "1.2",
+   "1.2.3.4",
+   "v1.2.3",
+   "1.2.x",
+   "-1.2.3"
+  ],
+  "prompt": "Write a single regular expression (Python `re` syntax, to be used with re.fullmatch) that matches a version `MAJOR.MINOR.PATCH` where each part is a non-negative integer without leading zeros (so `0` is allowed, `01` is not). Reply with ONLY the regex in a code block, no explanation."
+ },
+ {
+  "id": "regex-mac",
+  "category": "regex",
+  "type": "regex",
+  "match": [
+   "00:1A:2b:3C:4d:5E",
+   "ff:ff:ff:ff:ff:ff",
+   "01:23:45:67:89:ab"
+  ],
+  "nomatch": [
+   "00:1A:2b:3C:4d",
+   "00-1A-2b-3C-4d-5E",
+   "00:1A:2b:3C:4d:5G",
+   "00:1A:2b:3C:4d:5E:6F",
+   "0:1A:2b:3C:4d:5E",
+   "001A.2b3C.4d5E"
+  ],
+  "prompt": "Write a single regular expression (Python `re` syntax, to be used with re.fullmatch) that matches a MAC address: six pairs of hex digits (either case) separated by colons. Reply with ONLY the regex in a code block, no explanation."
+ },
+ {
+  "id": "regex-uuid",
+  "category": "regex",
+  "type": "regex",
+  "match": [
+   "123e4567-e89b-12d3-a456-426614174000",
+   "00000000-0000-0000-0000-000000000000",
+   "ffffffff-ffff-ffff-ffff-ffffffffffff"
+  ],
+  "nomatch": [
+   "123E4567-e89b-12d3-a456-426614174000",
+   "123e4567e89b12d3a456426614174000",
+   "123e4567-e89b-12d3-a456-42661417400",
+   "123e4567-e89b-12d3-a456-4266141740000",
+   "123g4567-e89b-12d3-a456-426614174000",
+   "123e4567-e89b-12d3-a456"
+  ],
+  "prompt": "Write a single regular expression (Python `re` syntax, to be used with re.fullmatch) that matches a UUID in canonical form: 8-4-4-4-12 LOWERCASE hex digits separated by hyphens. Reply with ONLY the regex in a code block, no explanation."
+ },
+ {
+  "id": "regex-slug",
+  "category": "regex",
+  "type": "regex",
+  "match": [
+   "hello",
+   "hello-world",
+   "a1-b2-c3",
+   "2024-report",
+   "x"
+  ],
+  "nomatch": [
+   "Hello",
+   "hello_world",
+   "-hello",
+   "hello-",
+   "hello--world",
+   "hello world",
+   ""
+  ],
+  "prompt": "Write a single regular expression (Python `re` syntax, to be used with re.fullmatch) that matches a URL slug: lowercase letters and digits in words separated by single hyphens, with no leading, trailing or doubled hyphen. Reply with ONLY the regex in a code block, no explanation."
+ },
+ {
+  "id": "py-parens",
+  "category": "python",
+  "type": "python",
+  "func": "is_balanced(s)",
+  "prompt": "Write a Python function `is_balanced(s)` returning True if the brackets `()`, `[]` and `{}` in the string are balanced and correctly nested, else False. Other characters are ignored; the empty string is balanced. Reply with ONLY the code in one code block.",
+  "test": "assert is_balanced('')\nassert is_balanced('()[]{}')\nassert is_balanced('([{}])')\nassert is_balanced('a(b[c]d)e')\nassert not is_balanced('(]')\nassert not is_balanced('((')\nassert not is_balanced('())')\nassert not is_balanced('{[}]')\nassert not is_balanced(']')\nassert is_balanced('()'*50000)\n"
+ },
+ {
+  "id": "py-roman",
+  "category": "python",
+  "type": "python",
+  "func": "to_roman(n)",
+  "prompt": "Write a Python function `to_roman(n)` converting an integer 1..3999 to its Roman numeral (standard subtractive form, e.g. 4 is IV, 1994 is MCMXCIV). Reply with ONLY the code in one code block.",
+  "test": "assert to_roman(1)=='I'\nassert to_roman(4)=='IV'\nassert to_roman(9)=='IX'\nassert to_roman(14)=='XIV'\nassert to_roman(40)=='XL'\nassert to_roman(58)=='LVIII'\nassert to_roman(90)=='XC'\nassert to_roman(400)=='CD'\nassert to_roman(1994)=='MCMXCIV'\nassert to_roman(3999)=='MMMCMXCIX'\n"
+ },
+ {
+  "id": "py-rle",
+  "category": "python",
+  "type": "python",
+  "func": "rle_encode(s)",
+  "prompt": "Write a Python function `rle_encode(s)` that run-length encodes a string: each run of identical characters becomes the character followed by the run length, e.g. 'aaabcc' becomes 'a3b1c2'. The empty string gives ''. Reply with ONLY the code in one code block.",
+  "test": "assert rle_encode('')==''\nassert rle_encode('a')=='a1'\nassert rle_encode('aaabcc')=='a3b1c2'\nassert rle_encode('aabbaa')=='a2b2a2'\nassert rle_encode('x'*12)=='x12'\nassert rle_encode('ab'*3)=='a1b1a1b1a1b1'\n"
+ },
+ {
+  "id": "py-flatten",
+  "category": "python",
+  "type": "python",
+  "func": "flatten(x)",
+  "prompt": "Write a Python function `flatten(x)` that flattens an arbitrarily nested list of integers into a flat list, keeping the order, e.g. [1,[2,[3]],4] becomes [1,2,3,4]. Nesting can be up to 5000 levels deep. Reply with ONLY the code in one code block.",
+  "test": "assert flatten([1,[2,[3,[4]],5]])==[1,2,3,4,5]\nassert flatten([])==[]\nassert flatten([[],[[]]])==[]\nassert flatten([1,2])==[1,2]\ndeep=[7]\nfor _ in range(5000): deep=[deep]\nassert flatten(deep)==[7]\nassert flatten([[1,2],[3,[4,5]],6])==[1,2,3,4,5,6]\n"
+ },
+ {
+  "id": "py-twosum",
+  "category": "python",
+  "type": "python",
+  "func": "two_sum(nums, target)",
+  "prompt": "Write a Python function `two_sum(nums, target)` returning the two indices [i, j] with i < j whose values add up to `target`; exactly one such pair exists. It is tested with 200000 numbers, so it must be O(n). Reply with ONLY the code in one code block.",
+  "test": "import time\nassert two_sum([2,7,11,15],9)==[0,1]\nassert two_sum([3,2,4],6)==[1,2]\nassert two_sum([3,3],6)==[0,1]\nassert two_sum([-1,-2,-3,-4,-5],-8)==[2,4]\nbig=list(range(200000))\nt=time.time(); r=two_sum(big,199998+199999); assert time.time()-t<5,'too slow'\nassert r==[199998,199999]\n"
+ },
+ {
+  "id": "py-editdist",
+  "category": "python",
+  "type": "python",
+  "func": "edit_distance(a, b)",
+  "prompt": "Write a Python function `edit_distance(a, b)` returning the Levenshtein edit distance between two strings (insert, delete, replace, each cost 1). It is tested on strings of 1500 characters. Reply with ONLY the code in one code block.",
+  "test": "import time,random\nassert edit_distance('kitten','sitting')==3\nassert edit_distance('','abc')==3\nassert edit_distance('abc','abc')==0\nassert edit_distance('flaw','lawn')==2\nassert edit_distance('intention','execution')==5\nassert edit_distance('abc','')==3\nrandom.seed(3)\na=''.join(random.choice('ab') for _ in range(1500))\nb=''.join(random.choice('ab') for _ in range(1500))\nt=time.time(); d=edit_distance(a,b); assert time.time()-t<10,'too slow'\nassert 0<d<1500\nassert edit_distance(a,a)==0\n"
+ },
+ {
+  "id": "py-spiral",
+  "category": "python",
+  "type": "python",
+  "func": "spiral_order(matrix)",
+  "prompt": "Write a Python function `spiral_order(matrix)` returning the elements of a rectangular matrix (list of lists) in clockwise spiral order starting at the top-left, e.g. [[1,2],[3,4]] gives [1,2,4,3]. An empty matrix gives []. Reply with ONLY the code in one code block.",
+  "test": "assert spiral_order([[1,2,3],[4,5,6],[7,8,9]])==[1,2,3,6,9,8,7,4,5]\nassert spiral_order([[1,2,3,4],[5,6,7,8],[9,10,11,12]])==[1,2,3,4,8,12,11,10,9,5,6,7]\nassert spiral_order([[1]])==[1]\nassert spiral_order([])==[]\nassert spiral_order([[1],[2],[3]])==[1,2,3]\nassert spiral_order([[1,2,3]])==[1,2,3]\nassert spiral_order([[1,2],[3,4]])==[1,2,4,3]\n"
+ },
+ {
+  "id": "py-sieve",
+  "category": "python",
+  "type": "python",
+  "func": "count_primes(n)",
+  "prompt": "Write a Python function `count_primes(n)` returning how many prime numbers are <= n (n may be 0 or 1). It is tested with n = 3,000,000, so trial division is too slow. Reply with ONLY the code in one code block.",
+  "test": "import time\nassert count_primes(0)==0\nassert count_primes(1)==0\nassert count_primes(2)==1\nassert count_primes(10)==4\nassert count_primes(97)==25\nassert count_primes(100)==25\nassert count_primes(1000)==168\nt=time.time(); r=count_primes(3000000); assert time.time()-t<5,'too slow'\nassert r==216816\n"
+ },
+ {
+  "id": "kubectl-label-selector",
+  "category": "kubectl",
+  "type": "tokens",
+  "prompt": "Give the single kubectl command to list the pods labelled `app=web` in namespace `prod`. Reply with ONLY the command in a code block.",
+  "tokens": [
+   [
+    "kubectl"
+   ],
+   [
+    "get"
+   ],
+   [
+    "\\b(pods?|po)\\b"
+   ],
+   [
+    "(-l[ =]?|--selector[ =])app=web\\b"
+   ],
+   [
+    "-n[ =]?prod\\b",
+    "--namespace[ =]prod\\b"
+   ]
+  ]
+ },
+ {
+  "id": "kubectl-rollout-restart",
+  "category": "kubectl",
+  "type": "tokens",
+  "prompt": "Give the single kubectl command to restart the deployment `api` in namespace `prod` with a rolling restart. Reply with ONLY the command in a code block.",
+  "tokens": [
+   [
+    "kubectl"
+   ],
+   [
+    "rollout"
+   ],
+   [
+    "restart"
+   ],
+   [
+    "deploy(ment)?[/ ]api\\b"
+   ],
+   [
+    "-n[ =]?prod\\b",
+    "--namespace[ =]prod\\b"
+   ]
+  ]
+ },
+ {
+  "id": "kubectl-exec",
+  "category": "kubectl",
+  "type": "tokens",
+  "prompt": "Give the single kubectl command to run the command `ls /data` in the container `db` of the pod `db-0` in namespace `data`. Reply with ONLY the command in a code block.",
+  "tokens": [
+   [
+    "kubectl"
+   ],
+   [
+    "exec"
+   ],
+   [
+    "\\bdb-0\\b"
+   ],
+   [
+    "-c[ =]?db\\b",
+    "--container[ =]db\\b"
+   ],
+   [
+    "-n[ =]?data\\b",
+    "--namespace[ =]data\\b"
+   ],
+   [
+    "--\\s+ls\\s+/data\\b"
+   ]
+  ]
+ },
+ {
+  "id": "kubectl-portforward",
+  "category": "kubectl",
+  "type": "tokens",
+  "prompt": "Give the single kubectl command to forward local port 8080 to port 80 of the service `web` in namespace `staging`. Reply with ONLY the command in a code block.",
+  "tokens": [
+   [
+    "kubectl"
+   ],
+   [
+    "port-forward"
+   ],
+   [
+    "\\b(svc|service)/web\\b"
+   ],
+   [
+    "\\b8080:80\\b"
+   ],
+   [
+    "-n[ =]?staging\\b",
+    "--namespace[ =]staging\\b"
+   ]
+  ]
+ },
+ {
+  "id": "kubectl-events-sorted",
+  "category": "kubectl",
+  "type": "tokens",
+  "prompt": "Give the single kubectl command to list the events in namespace `prod` sorted by their last timestamp. Reply with ONLY the command in a code block.",
+  "tokens": [
+   [
+    "kubectl"
+   ],
+   [
+    "get"
+   ],
+   [
+    "\\bevents?\\b"
+   ],
+   [
+    "-n[ =]?prod\\b",
+    "--namespace[ =]prod\\b"
+   ],
+   [
+    "--sort-by[ =]\\S*lastTimestamp\\b"
+   ]
+  ]
+ },
+ {
+  "id": "kubectl-top",
+  "category": "kubectl",
+  "type": "tokens",
+  "prompt": "Give the single kubectl command to show the CPU and memory usage of the pods in namespace `prod`, sorted by memory. Reply with ONLY the command in a code block.",
+  "tokens": [
+   [
+    "kubectl"
+   ],
+   [
+    "top"
+   ],
+   [
+    "\\b(pods?|po)\\b"
+   ],
+   [
+    "-n[ =]?prod\\b",
+    "--namespace[ =]prod\\b"
+   ],
+   [
+    "--sort-by[ =]memory\\b"
+   ]
+  ]
+ },
+ {
+  "id": "sql-top-earners",
+  "category": "sql",
+  "type": "sql",
+  "ordered": true,
+  "setup": "CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT, dept TEXT, salary INTEGER, manager_id INTEGER); INSERT INTO employees VALUES (1,'Gus','hr',90000,NULL),(2,'Bob','eng',60000,7),(3,'Cy','ops',55000,7),(4,'Dee','ops',70000,3),(5,'Eve','eng',60000,7),(6,'Fay','hr',50000,NULL),(7,'Ann','eng',90000,NULL);",
+  "expected": [
+   [
+    "Ann"
+   ],
+   [
+    "Gus"
+   ],
+   [
+    "Dee"
+   ]
+  ],
+  "prompt": "Table `employees(id INTEGER PRIMARY KEY, name TEXT, dept TEXT, salary INTEGER, manager_id INTEGER)`. Write one SQLite query that returns the names of employees who earn more than 60000, highest salary first, ties broken by name alphabetically. Reply with ONLY the SQL query in a code block."
+ },
+ {
+  "id": "sql-dept-stats",
+  "category": "sql",
+  "type": "sql",
+  "ordered": true,
+  "setup": "CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT, dept TEXT, salary INTEGER, manager_id INTEGER); INSERT INTO employees VALUES (1,'Gus','hr',90000,NULL),(2,'Bob','eng',60000,7),(3,'Cy','ops',55000,7),(4,'Dee','ops',70000,3),(5,'Eve','eng',60000,7),(6,'Fay','hr',50000,NULL),(7,'Ann','eng',90000,NULL);",
+  "expected": [
+   [
+    "eng",
+    3,
+    210000
+   ],
+   [
+    "hr",
+    2,
+    140000
+   ],
+   [
+    "ops",
+    2,
+    125000
+   ]
+  ],
+  "prompt": "Table `employees(id INTEGER PRIMARY KEY, name TEXT, dept TEXT, salary INTEGER, manager_id INTEGER)`. Write one SQLite query that returns, for every department, the department name, the number of employees and the total salary, ordered by department name. Reply with ONLY the SQL query in a code block."
+ },
+ {
+  "id": "sql-no-orders",
+  "category": "sql",
+  "type": "sql",
+  "ordered": true,
+  "setup": "CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT); CREATE TABLE orders(id INTEGER PRIMARY KEY, customer_id INTEGER, amount INTEGER, placed_on TEXT); INSERT INTO customers VALUES (1,'Zed'),(2,'Amy'),(3,'Bo'),(4,'Cat'); INSERT INTO orders VALUES (1,1,100,'2024-01-05'),(2,1,50,'2024-01-20'),(3,2,70,'2024-02-11'),(4,2,30,'2023-12-31'),(5,3,200,'2024-03-01'),(6,3,10,'2024-03-15'),(7,1,5,'2025-01-01');",
+  "expected": [
+   [
+    "Cat"
+   ]
+  ],
+  "prompt": "Tables `customers(id INTEGER PRIMARY KEY, name TEXT)` and `orders(id INTEGER PRIMARY KEY, customer_id INTEGER, amount INTEGER, placed_on TEXT)` (`placed_on` is 'YYYY-MM-DD'). Write one SQLite query that returns the names of customers who have placed no orders, ordered by name. Reply with ONLY the SQL query in a code block."
+ },
+ {
+  "id": "sql-second-salary",
+  "category": "sql",
+  "type": "sql",
+  "ordered": false,
+  "setup": "CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT, dept TEXT, salary INTEGER, manager_id INTEGER); INSERT INTO employees VALUES (1,'Gus','hr',90000,NULL),(2,'Bob','eng',60000,7),(3,'Cy','ops',55000,7),(4,'Dee','ops',70000,3),(5,'Eve','eng',60000,7),(6,'Fay','hr',50000,NULL),(7,'Ann','eng',90000,NULL);",
+  "expected": [
+   [
+    70000
+   ]
+  ],
+  "prompt": "Table `employees(id INTEGER PRIMARY KEY, name TEXT, dept TEXT, salary INTEGER, manager_id INTEGER)`. Write one SQLite query that returns the second highest DISTINCT salary as a single value. Reply with ONLY the SQL query in a code block."
+ },
+ {
+  "id": "sql-monthly",
+  "category": "sql",
+  "type": "sql",
+  "ordered": true,
+  "setup": "CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT); CREATE TABLE orders(id INTEGER PRIMARY KEY, customer_id INTEGER, amount INTEGER, placed_on TEXT); INSERT INTO customers VALUES (1,'Zed'),(2,'Amy'),(3,'Bo'),(4,'Cat'); INSERT INTO orders VALUES (1,1,100,'2024-01-05'),(2,1,50,'2024-01-20'),(3,2,70,'2024-02-11'),(4,2,30,'2023-12-31'),(5,3,200,'2024-03-01'),(6,3,10,'2024-03-15'),(7,1,5,'2025-01-01');",
+  "expected": [
+   [
+    "2024-01",
+    150
+   ],
+   [
+    "2024-02",
+    70
+   ],
+   [
+    "2024-03",
+    210
+   ]
+  ],
+  "prompt": "Tables `customers(id INTEGER PRIMARY KEY, name TEXT)` and `orders(id INTEGER PRIMARY KEY, customer_id INTEGER, amount INTEGER, placed_on TEXT)` (`placed_on` is 'YYYY-MM-DD'). Write one SQLite query that returns the total order amount per month (as 'YYYY-MM') for orders placed in 2024, only for months that have orders, ordered by month. Reply with ONLY the SQL query in a code block."
+ },
+ {
+  "id": "sh-count-errors",
+  "category": "shell",
+  "type": "shell",
+  "files": {
+   "app.log": "INFO start\nERROR disk full\nWARN slow\nERROR timeout\nINFO error handled\nERROR again\nDEBUG ERRORS ignored? no\n"
+  },
+  "expected": "3",
+  "prompt": "The file `app.log` is in the current directory. Print the number of lines that contain the exact word ERROR (uppercase), and nothing else. Reply with ONLY the bash command (a one-liner or pipeline) in a code block."
+ },
+ {
+  "id": "sh-top-ips",
+  "category": "shell",
+  "type": "shell",
+  "files": {
+   "access.log": "10.0.0.2 GET /\n10.0.0.1 GET /a\n10.0.0.2 GET /b\n10.0.0.3 GET /\n10.0.0.1 GET /c\n10.0.0.2 POST /d\n10.0.0.9 GET /\n10.0.0.3 GET /x\n"
+  },
+  "expected": "3 10.0.0.2\n2 10.0.0.1\n2 10.0.0.3",
+  "prompt": "The file `access.log` has an IP address as the first space-separated field of each line. Print the 3 most frequent IP addresses with their counts, one per line as `COUNT IP`, most frequent first, ties broken by IP address in ascending string order. Reply with ONLY the bash command (a one-liner or pipeline) in a code block."
+ },
+ {
+  "id": "sh-csv-sum",
+  "category": "shell",
+  "type": "shell",
+  "files": {
+   "sales.csv": "id,item,qty\n1,pen,10\n2,ink,5\n3,pad,7\n4,cap,20\n"
+  },
+  "expected": "42",
+  "prompt": "The file `sales.csv` is comma-separated with a header line. Print the sum of the third column over all data rows, and nothing else. Reply with ONLY the bash command (a one-liner or pipeline) in a code block."
+ },
+ {
+  "id": "sh-rename-ext",
+  "category": "shell",
+  "type": "shell",
+  "files": {
+   "a.txt": "1",
+   "b.txt": "2",
+   "notes.bak": "3",
+   "c.txt": "4"
+  },
+  "expected": "a.md\nb.md\nc.md\nnotes.bak",
+  "prompt": "The current directory contains some `.txt` files and other files. Rename every `.txt` file to the same name with the extension `.md`. Reply with ONLY the bash command (a one-liner or pipeline) in a code block.",
+  "post": "ls"
+ },
+ {
+  "id": "sh-distinct-words",
+  "category": "shell",
+  "type": "shell",
+  "files": {
+   "text.txt": "The quick brown fox\njumps over the lazy dog\nTHE DOG barks\n"
+  },
+  "expected": "9",
+  "prompt": "The file `text.txt` contains words separated by spaces and newlines. Print the number of distinct words, ignoring case, and nothing else. Reply with ONLY the bash command (a one-liner or pipeline) in a code block."
+ }
+]

@@ -1,0 +1,58 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "harness",
+ "seed": 43,
+ "question": "kubectl-exec",
+ "category": "kubectl",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 43,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 57,
+ "seconds_total": 19.7,
+ "attempts": [
+  {
+   "tokens": 19,
+   "seconds": 4.5,
+   "tps": 4.18,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['\\\\bdb-0\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "kubectl rejected the command: error: pod, type/name or --filename must be specified",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 19,
+   "seconds": 6.5,
+   "tps": 2.92,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['\\\\bdb-0\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "kubectl rejected the command: error: pod, type/name or --filename must be specified",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 19,
+   "seconds": 8.7,
+   "tps": 2.19,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['\\\\bdb-0\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "kubectl rejected the command: error: pod, type/name or --filename must be specified",
+   "reasoning_chars": 0
+  }
+ ]
+}

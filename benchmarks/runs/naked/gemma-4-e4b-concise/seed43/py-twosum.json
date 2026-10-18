@@ -1,0 +1,36 @@
+{
+ "model": "gemma-4-e4b-concise",
+ "mode": "naked",
+ "seed": 43,
+ "question": "py-twosum",
+ "category": "python",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": false,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 43,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 71,
+ "seconds_total": 13.7,
+ "attempts": [
+  {
+   "tokens": 71,
+   "seconds": 13.7,
+   "tps": 5.18,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "tests passed",
+   "verifier_pass": null,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

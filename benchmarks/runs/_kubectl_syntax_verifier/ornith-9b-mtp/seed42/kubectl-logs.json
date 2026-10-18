@@ -1,0 +1,24 @@
+{
+ "model": "ornith-9b-mtp",
+ "mode": "harness",
+ "seed": 42,
+ "question": "kubectl-logs",
+ "category": "kubectl",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": false,
+ "tokens_total": 20,
+ "seconds_total": 7.1,
+ "attempts": [
+  {
+   "tokens": 20,
+   "seconds": 7.1,
+   "tps": 2.82,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['-c[ =]?app\\\\b']",
+   "verifier_pass": true,
+   "verifier_feedback": ""
+  }
+ ]
+}

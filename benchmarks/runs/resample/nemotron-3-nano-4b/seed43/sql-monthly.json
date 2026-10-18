@@ -1,0 +1,48 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "resample",
+ "seed": 43,
+ "question": "sql-monthly",
+ "category": "sql",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 43,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 108,
+ "seconds_total": 20.6,
+ "attempts": [
+  {
+   "tokens": 54,
+   "seconds": 10.2,
+   "tps": 5.29,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "the query fails: OperationalError: no such function: year",
+   "verifier_pass": false,
+   "verifier_feedback": "on a small example table the query the query fails: OperationalError: no such function: year",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 54,
+   "seconds": 10.4,
+   "tps": 5.19,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "rows match",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0,
+   "retry_seed": 1043
+  }
+ ]
+}

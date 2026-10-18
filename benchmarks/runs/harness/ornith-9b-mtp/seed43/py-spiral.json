@@ -1,0 +1,58 @@
+{
+ "model": "ornith-9b-mtp",
+ "mode": "harness",
+ "seed": 43,
+ "question": "py-spiral",
+ "category": "python",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 43,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 626,
+ "seconds_total": 143.9,
+ "attempts": [
+  {
+   "tokens": 207,
+   "seconds": 38.0,
+   "tps": 5.45,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "AssertionError",
+   "verifier_pass": false,
+   "verifier_feedback": "spiral_order([[1,2],[3,4],[5,6]]) returned [1, 2, 4, 6, 3], expected [1,2,4,6,5,3]; spiral_order([[1,2,3],[4,5,6]]) returned [1, 2, 3, 6, 5], expected [1,2,3,6,5,4]",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 212,
+   "seconds": 48.2,
+   "tps": 4.4,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "AssertionError",
+   "verifier_pass": false,
+   "verifier_feedback": "spiral_order([[1,2],[3,4],[5,6]]) returned [1, 2, 4, 6, 3], expected [1,2,4,6,5,3]; spiral_order([[1,2,3],[4,5,6]]) returned [1, 2, 3, 6, 5], expected [1,2,3,6,5,4]",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 207,
+   "seconds": 57.7,
+   "tps": 3.59,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "AssertionError",
+   "verifier_pass": false,
+   "verifier_feedback": "spiral_order([[1,2],[3,4],[5,6]]) returned [1, 2, 4, 6, 3], expected [1,2,4,6,5,3]; spiral_order([[1,2,3],[4,5,6]]) returned [1, 2, 3, 6, 5], expected [1,2,3,6,5,4]",
+   "reasoning_chars": 0
+  }
+ ]
+}

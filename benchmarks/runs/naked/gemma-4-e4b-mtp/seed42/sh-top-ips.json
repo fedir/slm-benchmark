@@ -1,0 +1,36 @@
+{
+ "model": "gemma-4-e4b-mtp",
+ "mode": "naked",
+ "seed": 42,
+ "question": "sh-top-ips",
+ "category": "shell",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": false,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 42,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 36,
+ "seconds_total": 9.4,
+ "attempts": [
+  {
+   "tokens": 36,
+   "seconds": 9.4,
+   "tps": 3.82,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "output ['2 10.0.0.1', '3 10.0.0.2', '2 10.0.0.3'], expected ['3 10.0.0.2', '2 10.0.0.1', '2 10.0.0.3']",
+   "verifier_pass": null,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

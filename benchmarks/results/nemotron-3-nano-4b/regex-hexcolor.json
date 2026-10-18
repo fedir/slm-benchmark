@@ -1,0 +1,12 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "question": "regex-hexcolor",
+ "category": "regex",
+ "passed": true,
+ "detail": "regex '#[0-9a-fA-F]{3}(?=[0-9a-fA-F]{3,6}|$)|#[0-9a-fA-F]{6}(?=$)'",
+ "completion_tokens": 48,
+ "seconds": 9.1,
+ "tps": 5.25,
+ "finish_reason": "stop",
+ "reasoning_chars": 0
+}

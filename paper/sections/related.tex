@@ -1,0 +1,24 @@
+\section{Background and related work}
+\paragraph{Small models and their deployment.} Surveys catalogue architectures, training and compression techniques for SLMs~\citep{nguyen2024slmsurvey}. Model vendors report
+results for their own models on public benchmarks, for example the Qwen2.5-Coder family~\citep{hui2024qwen25coder}; such numbers are measured on server hardware, with
+vendor-chosen prompts and sampling. Our focus is the complementary question of what a given quantized checkpoint delivers on consumer hardware.
+
+\paragraph{Quantization and the GGUF format.} Post-training quantization stores weights with 3--8 bits and typically loses little accuracy at 4 bits~\citep{frantar2023gptq,dettmers2023case}; 4-bit precision was found to be close to optimal in total model bits versus zero-shot accuracy~\citep{dettmers2023case}.
+llama.cpp~\citep{llamacpp} stores models in GGUF, a single file with weights, tokenizer and metadata, and offers block-wise ``k-quant'' formats such as \code{Q4\_K\_M}, which we use for every model so that
+differences are not due to precision.
+
+\paragraph{Inference speed and speculative decoding.} Autoregressive decoding at batch size one is bound by memory bandwidth, because every weight is read for each generated token; the
+roofline model~\citep{williams2009roofline} gives the corresponding bound. Speculative decoding drafts several tokens and verifies them in a single pass of the target model, leaving the output distribution
+unchanged~\citep{leviathan2023speculative}. Multi-token prediction trains additional output heads to predict several future tokens~\citep{gloeckle2024mtp}; such heads can serve as the draft model.
+We measure this on one MTP-enabled checkpoint.
+
+\paragraph{Execution-based evaluation of code.} Functional correctness against hidden tests is the standard for code generation~\citep{chen2021codex}, and insufficient tests are known to
+overestimate model quality and mis-rank models~\citep{liu2023evalplus}. We follow this practice, extend it to shell, SQL and \code{kubectl} tasks, and spend effort on validating the graders themselves.
+
+\paragraph{Self-repair and retry loops.} Models can revise their output given feedback~\citep{madaan2023selfrefine,chen2024selfdebug}, but gains from \emph{intrinsic} self-correction are doubtful and often vanish once the
+extra compute is accounted for~\citep{huang2024selfcorrect,olausson2024selfrepair}. In particular, \citet{olausson2024selfrepair} found that gains from self-repair are small and uneven once the cost of repair is counted, and attributed this to
+the quality of the feedback. Our setting differs in that the feedback comes from an external verifier, and we compare it directly with a no-feedback resampling control on the same first attempts.
+
+\paragraph{Sampling settings and statistical reporting.} Sampling temperature between 0 and 1 had no significant effect on multiple-choice problem solving across nine models~\citep{renze2024temperature}; dynamic truncation such as min-$p$ is
+reported to help mainly at high temperature~\citep{nguyen2024minp}. We test vendor-recommended settings against ours directly. On reporting, \citet{miller2024errorbars} argue that evaluations are experiments and should carry error bars, clustered by question and
+paired across models; we adopt that approach (bootstrap~\citep{efron1993bootstrap}, Holm correction~\citep{holm1979}, McNemar's test for paired outcomes~\citep{mcnemar1947}).

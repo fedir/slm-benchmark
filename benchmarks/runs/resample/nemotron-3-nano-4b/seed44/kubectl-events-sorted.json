@@ -1,0 +1,60 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "resample",
+ "seed": 44,
+ "question": "kubectl-events-sorted",
+ "category": "kubectl",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 44,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 91,
+ "seconds_total": 18.5,
+ "attempts": [
+  {
+   "tokens": 21,
+   "seconds": 5.0,
+   "tps": 4.24,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['--sort-by[ =]\\\\S*lastTimestamp\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "the command is valid kubectl but does not do what was asked: the --sort-by option should be '.lastTimestamp', the command has '.metadata.creationTimestamp'",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 49,
+   "seconds": 8.8,
+   "tps": 5.57,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['--sort-by[ =]\\\\S*lastTimestamp\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "it must be a single kubectl invocation: no pipes, redirects or substitutions",
+   "reasoning_chars": 0,
+   "retry_seed": 1044
+  },
+  {
+   "tokens": 21,
+   "seconds": 4.7,
+   "tps": 4.45,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['--sort-by[ =]\\\\S*lastTimestamp\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "the command is valid kubectl but does not do what was asked: the --sort-by option should be '.lastTimestamp', the command has '.metadata.creationTimestamp'",
+   "reasoning_chars": 0,
+   "retry_seed": 2044
+  }
+ ]
+}

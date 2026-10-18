@@ -1,0 +1,47 @@
+{
+ "model": "gemma-4-e4b-terse",
+ "mode": "harness",
+ "seed": 46,
+ "question": "kubectl-exec",
+ "category": "kubectl",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 46,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 43,
+ "seconds_total": 15.5,
+ "attempts": [
+  {
+   "tokens": 20,
+   "seconds": 6.4,
+   "tps": 3.15,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['-c[ =]?db\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "the command is valid kubectl but does not do what was asked: the --container option should be 'db', the command has None",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 23,
+   "seconds": 9.1,
+   "tps": 2.52,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "all parts present",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

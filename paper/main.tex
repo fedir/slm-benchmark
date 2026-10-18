@@ -1,0 +1,36 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{booktabs,array,tabularx,multirow}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage{caption}
+\captionsetup{font=small,labelfont=bf}
+\lstset{basicstyle=\ttfamily\footnotesize,breaklines=true,columns=fullflexible,frame=single,framerule=0.3pt}
+\newcommand{\code}[1]{\texttt{#1}}
+\input{numbers}   % macros generated from the analysis (make_tables.py)
+
+\title{Benchmarking Small Language Models on a Laptop:\\Throughput, Task Accuracy, and the Limits of Verify-and-Retry}
+\author{Feodor Rykhtik\\\small Independent researcher}
+\date{October 2026}
+
+\begin{document}
+\maketitle
+\input{sections/abstract}
+\input{sections/intro}
+\input{sections/related}
+\input{sections/setup}
+\input{sections/results}
+\input{sections/discussion}
+\input{sections/reproducibility}
+\bibliographystyle{plainnat}
+\bibliography{refs}
+\appendix
+\input{sections/appendix}
+\end{document}

@@ -1,0 +1,48 @@
+{
+ "model": "qwen2.5-coder-7b",
+ "mode": "resample",
+ "seed": 44,
+ "question": "sql-monthly",
+ "category": "sql",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 44,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 124,
+ "seconds_total": 36.2,
+ "attempts": [
+  {
+   "tokens": 65,
+   "seconds": 16.0,
+   "tps": 4.06,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "returned [('2024-01-05', 150), ('2024-02-11', 70), ('2024-03-01', 210)] (3 rows), expected [('2024-01', 150), ('2024-02', 70), ('2024-03', 210)] (3 rows)",
+   "verifier_pass": false,
+   "verifier_feedback": "on a small example table the query returned [('2024-07-01', 11), ('2024-09-09', 9)] (2 rows), expected [('2024-07', 11), ('2024-09', 9)] (2 rows)",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 59,
+   "seconds": 20.2,
+   "tps": 2.92,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "rows match",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0,
+   "retry_seed": 1044
+  }
+ ]
+}

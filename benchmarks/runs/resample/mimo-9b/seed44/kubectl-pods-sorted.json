@@ -1,0 +1,60 @@
+{
+ "model": "mimo-9b",
+ "mode": "resample",
+ "seed": 44,
+ "question": "kubectl-pods-sorted",
+ "category": "kubectl",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 44,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 84,
+ "seconds_total": 29.8,
+ "attempts": [
+  {
+   "tokens": 32,
+   "seconds": 10.8,
+   "tps": 2.98,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['--sort-by[ =]\\\\.?metadata\\\\.creationTimestamp']",
+   "verifier_pass": false,
+   "verifier_feedback": "kubectl rejected the command: error: unknown flag: --sort",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 18,
+   "seconds": 7.3,
+   "tps": 2.47,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['--sort-by[ =]\\\\.?metadata\\\\.creationTimestamp']",
+   "verifier_pass": false,
+   "verifier_feedback": "kubectl rejected the command: error: unknown flag: --sort",
+   "reasoning_chars": 0,
+   "retry_seed": 1044
+  },
+  {
+   "tokens": 34,
+   "seconds": 11.7,
+   "tps": 2.92,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['--sort-by[ =]\\\\.?metadata\\\\.creationTimestamp']",
+   "verifier_pass": false,
+   "verifier_feedback": "kubectl rejected the command: error: unknown flag: --sort",
+   "reasoning_chars": 0,
+   "retry_seed": 2044
+  }
+ ]
+}

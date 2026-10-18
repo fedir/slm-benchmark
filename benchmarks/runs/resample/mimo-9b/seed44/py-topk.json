@@ -1,0 +1,59 @@
+{
+ "model": "mimo-9b",
+ "mode": "resample",
+ "seed": 44,
+ "question": "py-topk",
+ "category": "python",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 44,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 109,
+ "seconds_total": 36.8,
+ "attempts": [
+  {
+   "tokens": 37,
+   "seconds": 13.2,
+   "tps": 2.8,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "NameError: name 'Counter' is not defined (no code fence)",
+   "verifier_pass": false,
+   "verifier_feedback": "top_k_frequent(['a','b','a','c','b','a'],2) raised NameError: name 'Counter' is not defined; top_k_frequent(['x','y','z'],2) raised NameError: name 'Counter' is not defined; top_k_frequent(['dog','cat','cat','dog'],1) raised NameError: name 'Counter' is not defined"
+  },
+  {
+   "tokens": 36,
+   "seconds": 11.8,
+   "tps": 3.05,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "NameError: name 'Counter' is not defined (no code fence)",
+   "verifier_pass": false,
+   "verifier_feedback": "top_k_frequent(['a','b','a','c','b','a'],2) raised NameError: name 'Counter' is not defined; top_k_frequent(['x','y','z'],2) raised NameError: name 'Counter' is not defined; top_k_frequent(['dog','cat','cat','dog'],1) raised NameError: name 'Counter' is not defined",
+   "reasoning_chars": 0,
+   "retry_seed": 1044
+  },
+  {
+   "tokens": 36,
+   "seconds": 11.8,
+   "tps": 3.06,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "NameError: name 'Counter' is not defined (no code fence)",
+   "verifier_pass": false,
+   "verifier_feedback": "top_k_frequent(['a','b','a','c','b','a'],2) raised NameError: name 'Counter' is not defined; top_k_frequent(['x','y','z'],2) raised NameError: name 'Counter' is not defined; top_k_frequent(['dog','cat','cat','dog'],1) raised NameError: name 'Counter' is not defined",
+   "reasoning_chars": 0,
+   "retry_seed": 2044
+  }
+ ]
+}

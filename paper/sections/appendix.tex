@@ -1,0 +1,30 @@
+\section{Task list}
+\label{app:tasks}
+\input{tab_tasklist}
+Full prompts, hidden cases, public examples and known-good/known-bad answers are in \code{benchmarks/questions.json}, \code{public.json} and \code{tasks\_v2.py}.
+
+\section{Per-task results}
+\label{app:perq}
+Passes over \nseeds{} seeds for the first attempt / after two retries with feedback (condition N / condition H).
+{\small\input{tab_perquestion}}
+
+\section{Additional tables}
+\subsection{Where the variance comes from}
+For each model the variance of the 0/1 first-attempt outcome is split into the between-question part (stable difficulty) and the within-question, between-seed part (sampling noise); a question is \emph{flaky} if its outcome differs between seeds.
+\begin{table}[h]\centering\small\input{tab_variance}\caption{Variance decomposition of first-attempt outcomes.}\end{table}
+\subsection{Cost}
+\begin{table}[h]\centering\small\input{tab_cost}\caption{Tokens, speed and retry cost. Speeds here are wall-clock rates including prompt processing and were measured while other (light) work ran on the machine; Section~\ref{sec:speed} gives controlled throughput.}\end{table}
+
+\section{Incidents and corrections}
+\label{app:incidents}
+We record the errors we made or found, because each could have changed a conclusion.
+\begin{itemize}
+\item \textbf{Implicit \code{min\_p}.} llama-server's own default is $\mathrm{min}\text{-}p=0.05$ (read from its \code{/props}: temperature 0.8, top-$k$ 40, top-$p$ 0.95, min-$p$ 0.05); our requests never set it, so every benchmark run sampled with min-$p$ 0.05 although we had described the setting as temperature 0.6, top-$p$ 0.95, top-$k$ 20. This was found after the first runs; the vendor-setting re-run (Section~\ref{sec:sampling}) sets every field explicitly.
+\item \textbf{Grader bugs.} (i) The assertion range of the longest-increasing-subsequence test was wrong (a random 200\,000-element list has an LIS of about 880); the test now compares with a reference implementation. (ii) Correct code returned without a code fence, and regexes wrapped as \code{r'...'}, were rejected; both are now accepted. (iii) Quoted flag values (\code{--tail="100"}) were rejected; quotes are ignored. (iv) The \code{kubectl-logs} check required \code{-c app} and rejected the valid positional form \code{logs POD CONTAINER}; it now accepts both. After each fix every saved answer was re-graded without re-running a model; the last fix changed six Qwen~3B cells (three in the default runs, three in the vendor-setting runs).
+\item \textbf{A verifier that was too weak.} The first \code{kubectl} verifier checked syntax only. On the first four models it accepted nine answers the hidden check rejected (a missing \code{-c app}, a wrong sort field); adding a comparison of the parsed command with the task's requirements reduced these to one, which was itself a hidden-grader false negative (the positional container form, fixed afterwards).
+\item \textbf{A suspended laptop.} The machine suspended during the first Ornith harness run and resumed 6.6 hours later; one request recorded 23\,880\,s. The answer was valid, so only the timing was affected; that cell was re-run alone, gave the identical answer in 24.6\,s, and later runs inhibited sleep.
+\item \textbf{Swap.} During the very first single-run benchmark almost all 8\,GB of swap was in use, which lowered the 9B models' measured speed (Ornith 3.2 against 3.9\,tokens/s in the later runs); scores are unaffected.
+\item \textbf{Model sizes.} Sizes were first recorded in MiB under a ``GB'' label (Ornith 5512\,MiB written as 5.5\,GB). Table~\ref{tab:models} uses decimal GB read from the file (5.78\,GB), which changes the predicted bandwidth ceiling by about 5\%. A reviewer's note about an inconsistency between two sections led us to find this.
+\item \textbf{Errors in our own task data} (found by \code{tasks\_v2.py} before any model ran): one inverted expected row, one fixture in which a wrong query was accidentally correct (no tie to break), one known-bad answer that was equivalent to the good one.
+\item \textbf{A wrong ``correction''.} While fixing the port number in a checklist after a reviewer's remark we replaced 8089 with 8080; the benchmark scripts do use 8089 (the chat server uses 8080). We noticed on reading \code{run.py} and restored both.
+\end{itemize}

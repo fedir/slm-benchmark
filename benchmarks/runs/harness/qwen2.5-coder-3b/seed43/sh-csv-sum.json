@@ -1,0 +1,58 @@
+{
+ "model": "qwen2.5-coder-3b",
+ "mode": "harness",
+ "seed": 43,
+ "question": "sh-csv-sum",
+ "category": "shell",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 43,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 75,
+ "seconds_total": 13.7,
+ "attempts": [
+  {
+   "tokens": 25,
+   "seconds": 3.9,
+   "tps": 6.42,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "output ['0'], expected ['42']",
+   "verifier_pass": false,
+   "verifier_feedback": "on a small example the command's output ['0'], expected ['6']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 25,
+   "seconds": 4.6,
+   "tps": 5.48,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "output ['0'], expected ['42']",
+   "verifier_pass": false,
+   "verifier_feedback": "on a small example the command's output ['0'], expected ['6']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 25,
+   "seconds": 5.2,
+   "tps": 4.85,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "output ['0'], expected ['42']",
+   "verifier_pass": false,
+   "verifier_feedback": "on a small example the command's output ['0'], expected ['6']",
+   "reasoning_chars": 0
+  }
+ ]
+}

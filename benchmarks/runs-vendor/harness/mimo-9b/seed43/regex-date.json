@@ -1,0 +1,61 @@
+{
+ "model": "mimo-9b",
+ "mode": "harness",
+ "seed": 43,
+ "question": "regex-date",
+ "category": "regex",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 43,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "min_p": 0.0,
+  "repeat_penalty": 1.0,
+  "presence_penalty": 0.0,
+  "profile": "vendor"
+ },
+ "tokens_total": 740,
+ "seconds_total": 244.9,
+ "attempts": [
+  {
+   "tokens": 45,
+   "seconds": 18.0,
+   "tps": 2.5,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^\\\\d{4}-(0[1-9]|[12]\\\\d|3[01])-(0[1-9]|[12]\\\\d|3[01])$'; wrong on ['!2024-13-01']",
+   "verifier_pass": false,
+   "verifier_feedback": "it matches these, which it must reject: ['2023-15-10']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 435,
+   "seconds": 134.2,
+   "tps": 3.24,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^\\\\d{4}-(0[1-9]|[12]\\\\d|3[01])-(0[1-9]|[12]\\\\d|3[01])$'; wrong on ['!2024-13-01']",
+   "verifier_pass": false,
+   "verifier_feedback": "it matches these, which it must reject: ['2023-15-10']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 260,
+   "seconds": 92.7,
+   "tps": 2.8,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^\\\\d{4}-(0[1-9]|[12]\\\\d|3[01])-(0[1-9]|[12]\\\\d|3[01])$'; wrong on ['!2024-13-01']",
+   "verifier_pass": false,
+   "verifier_feedback": "it matches these, which it must reject: ['2023-15-10']",
+   "reasoning_chars": 0
+  }
+ ]
+}

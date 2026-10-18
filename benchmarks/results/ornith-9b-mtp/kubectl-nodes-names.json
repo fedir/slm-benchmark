@@ -1,0 +1,12 @@
+{
+ "model": "ornith-9b-mtp",
+ "question": "kubectl-nodes-names",
+ "category": "kubectl",
+ "passed": true,
+ "detail": "all parts present",
+ "completion_tokens": 29,
+ "seconds": 162.2,
+ "tps": 0.18,
+ "finish_reason": "stop",
+ "reasoning_chars": 0
+}

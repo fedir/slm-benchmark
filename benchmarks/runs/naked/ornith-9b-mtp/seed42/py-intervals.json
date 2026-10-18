@@ -1,0 +1,24 @@
+{
+ "model": "ornith-9b-mtp",
+ "mode": "naked",
+ "seed": 42,
+ "question": "py-intervals",
+ "category": "python",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": false,
+ "tokens_total": 111,
+ "seconds_total": 20.6,
+ "attempts": [
+  {
+   "tokens": 111,
+   "seconds": 20.6,
+   "tps": 5.38,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "tests passed",
+   "verifier_pass": null,
+   "verifier_feedback": ""
+  }
+ ]
+}

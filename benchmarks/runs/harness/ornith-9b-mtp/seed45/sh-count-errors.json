@@ -1,0 +1,58 @@
+{
+ "model": "ornith-9b-mtp",
+ "mode": "harness",
+ "seed": 45,
+ "question": "sh-count-errors",
+ "category": "shell",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 45,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 43,
+ "seconds_total": 28.4,
+ "attempts": [
+  {
+   "tokens": 14,
+   "seconds": 6.6,
+   "tps": 2.13,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "output ['0'], expected ['3']",
+   "verifier_pass": false,
+   "verifier_feedback": "on a small example the command's output ['0'], expected ['4']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 15,
+   "seconds": 9.6,
+   "tps": 1.56,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "output ['0'], expected ['3']",
+   "verifier_pass": false,
+   "verifier_feedback": "on a small example the command's output ['0'], expected ['4']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 14,
+   "seconds": 12.2,
+   "tps": 1.15,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "output matches",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

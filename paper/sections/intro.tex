@@ -1,0 +1,23 @@
+\section{Introduction}
+Small language models (SLMs, here 3--9 billion parameters) can now run on an ordinary laptop with no discrete GPU. For a practitioner the questions are
+concrete: how fast does a given model generate on this hardware, how often does it produce a \emph{correct} answer to a task with a checkable result
+(a regular expression, a function, a shell command, a SQL query, a \code{kubectl} invocation), and how much of the remaining error can be removed
+cheaply by wrapping the model in a generate--verify--retry loop? Published SLM comparisons mostly report one score per model from a single sampled run on a
+public benchmark, run on server GPUs. They rarely report uncertainty, rarely use the hardware that people actually own, and rarely separate what a retry loop
+gains from \emph{feedback} from what it gains from simply drawing another sample.
+
+This paper reports a controlled, fully reproducible benchmark of five instruction-tuned SLMs (Qwen2.5-Coder 3B and 7B, Nemotron~3 Nano 4B, MiMo-V2.6-Distill-Qwen 9B and
+Ornith~1.5 9B with a multi-token-prediction head) on one laptop CPU (Intel Core i7-1165G7, 15.3\,GB shared RAM), all in the same 4-bit GGUF quantization and the same
+inference engine (llama.cpp). We make five contributions.
+\begin{enumerate}
+\item \textbf{A throughput model that holds on this machine.} Generation speed is limited by memory bandwidth, not compute: speed is predicted by the effective bandwidth
+divided by the model file size, 4~threads beat 8, the integrated GPU is slower than the CPU, and multi-token prediction raises the speed of the 9B model by about a quarter at no extra memory cost (Section~\ref{sec:speed}).
+\item \textbf{A validated task suite with hidden graders.} \nq{} tasks in five types, each with a hidden grader and a disjoint set of public examples for the retry loop; every grader was checked against
+known-good and known-bad answers before any model ran (Section~\ref{sec:tasks}).
+\item \textbf{Statistics that match the experimental unit.} We treat the questions, not the seeds, as the sample, report bootstrap confidence intervals over questions,
+paired tests, Holm-adjusted $p$-values, rank stability and the fraction of variance due to seed noise (Section~\ref{sec:stats}).
+\item \textbf{A control arm for verify-and-retry.} Besides the usual retry with the verifier's feedback we run a control that redraws a rejected answer \emph{without} feedback. This separates the value of
+\emph{detecting} a wrong answer from the value of \emph{explaining} it to the model (Section~\ref{sec:harness}).
+\item \textbf{A record of measurement pitfalls} we hit and corrected: an implicit \code{min\_p} sampling default, grader bugs, a verifier that was too weak, and a unit error in model sizes (Appendix~\ref{app:incidents}).
+\end{enumerate}
+\paragraph{Main findings.} \resultsummary

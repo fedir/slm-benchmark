@@ -1,0 +1,58 @@
+{
+ "model": "ornith-9b-mtp",
+ "mode": "harness",
+ "seed": 45,
+ "question": "kubectl-logs",
+ "category": "kubectl",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 45,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 64,
+ "seconds_total": 39.2,
+ "attempts": [
+  {
+   "tokens": 20,
+   "seconds": 9.5,
+   "tps": 2.11,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['-c[ =]?app\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "the command is valid kubectl but does not do what was asked: the target should be pod `api-0`; the container to read should be `app`, the command selects None",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 21,
+   "seconds": 13.2,
+   "tps": 1.59,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['-c[ =]?app\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "kubectl rejected the command: error: arguments in resource/name form may not have more than one slash",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 23,
+   "seconds": 16.5,
+   "tps": 1.4,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "all parts present",
+   "verifier_pass": false,
+   "verifier_feedback": "the command is valid kubectl but does not do what was asked: the target should be pod `api-0`",
+   "reasoning_chars": 0
+  }
+ ]
+}

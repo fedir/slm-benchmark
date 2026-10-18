@@ -1,0 +1,58 @@
+{
+ "model": "mimo-9b",
+ "mode": "harness",
+ "seed": 43,
+ "question": "py-editdist",
+ "category": "python",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 43,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 572,
+ "seconds_total": 181.5,
+ "attempts": [
+  {
+   "tokens": 190,
+   "seconds": 50.7,
+   "tps": 3.74,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "AssertionError",
+   "verifier_pass": false,
+   "verifier_feedback": "edit_distance('horse','ros') returned 6, expected 3; edit_distance('a','a') returned 1, expected 0; edit_distance('abc','xyz') returned 6, expected 3",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 191,
+   "seconds": 59.6,
+   "tps": 3.2,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "AssertionError",
+   "verifier_pass": false,
+   "verifier_feedback": "edit_distance('horse','ros') returned 6, expected 3; edit_distance('a','a') returned 1, expected 0; edit_distance('abc','xyz') returned 6, expected 3",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 191,
+   "seconds": 71.2,
+   "tps": 2.68,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "AssertionError",
+   "verifier_pass": false,
+   "verifier_feedback": "edit_distance('horse','ros') returned 6, expected 3; edit_distance('a','a') returned 1, expected 0; edit_distance('abc','xyz') returned 6, expected 3",
+   "reasoning_chars": 0
+  }
+ ]
+}

@@ -1,0 +1,12 @@
+{
+ "model": "mimo-9b",
+ "question": "py-intervals",
+ "category": "python",
+ "passed": true,
+ "detail": "tests passed (no code fence)",
+ "completion_tokens": 104,
+ "seconds": 31.9,
+ "tps": 3.26,
+ "finish_reason": "stop",
+ "reasoning_chars": 0
+}

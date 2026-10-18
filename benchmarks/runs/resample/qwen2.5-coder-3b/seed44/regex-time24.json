@@ -1,0 +1,60 @@
+{
+ "model": "qwen2.5-coder-3b",
+ "mode": "resample",
+ "seed": 44,
+ "question": "regex-time24",
+ "category": "regex",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 44,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 99,
+ "seconds_total": 15.3,
+ "attempts": [
+  {
+   "tokens": 32,
+   "seconds": 4.5,
+   "tps": 7.06,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '\\\\b([01]?[0-9]|2[0-3]):([0-5][0-9])\\\\b'; wrong on ['!9:05']",
+   "verifier_pass": false,
+   "verifier_feedback": "it matches these, which it must reject: ['1:15']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 33,
+   "seconds": 5.3,
+   "tps": 6.26,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^([01]?[0-9]|2[0-3]):([0-5][0-9])$'; wrong on ['!9:05']",
+   "verifier_pass": false,
+   "verifier_feedback": "it matches these, which it must reject: ['1:15']",
+   "reasoning_chars": 0,
+   "retry_seed": 1044
+  },
+  {
+   "tokens": 34,
+   "seconds": 5.5,
+   "tps": 6.23,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^([01]?[0-9]|2[0-3]):([0-5]?[0-9])$'; wrong on ['!9:05', '!12:5', '!7:7']",
+   "verifier_pass": false,
+   "verifier_feedback": "it matches these, which it must reject: ['1:15', '10:5']",
+   "reasoning_chars": 0,
+   "retry_seed": 2044
+  }
+ ]
+}

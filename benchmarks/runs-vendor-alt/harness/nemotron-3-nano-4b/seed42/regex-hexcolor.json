@@ -1,0 +1,61 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "harness",
+ "seed": 42,
+ "question": "regex-hexcolor",
+ "category": "regex",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 1.0,
+  "top_p": 0.95,
+  "top_k": 0,
+  "seed": 42,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "min_p": 0.0,
+  "repeat_penalty": 1.0,
+  "presence_penalty": 0.0,
+  "profile": "vendor-alt"
+ },
+ "tokens_total": 96,
+ "seconds_total": 27.7,
+ "attempts": [
+  {
+   "tokens": 32,
+   "seconds": 7.1,
+   "tps": 4.54,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '\\\\b#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6})\\\\b'; wrong on ['#fff', '#A1b2C3', '#000000', '#1aF']",
+   "verifier_pass": false,
+   "verifier_feedback": "it does not match these, which it should: ['#abc', '#DEF012', '#9a8B7c']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 32,
+   "seconds": 8.7,
+   "tps": 3.68,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '\\\\b#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6})\\\\b'; wrong on ['#fff', '#A1b2C3', '#000000', '#1aF']",
+   "verifier_pass": false,
+   "verifier_feedback": "it does not match these, which it should: ['#abc', '#DEF012', '#9a8B7c']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 32,
+   "seconds": 11.9,
+   "tps": 2.69,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '\\\\b#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6})\\\\b'; wrong on ['#fff', '#A1b2C3', '#000000', '#1aF']",
+   "verifier_pass": false,
+   "verifier_feedback": "it does not match these, which it should: ['#abc', '#DEF012', '#9a8B7c']",
+   "reasoning_chars": 0
+  }
+ ]
+}

@@ -1,0 +1,58 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "harness",
+ "seed": 45,
+ "question": "regex-slug",
+ "category": "regex",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 45,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 78,
+ "seconds_total": 23.6,
+ "attempts": [
+  {
+   "tokens": 27,
+   "seconds": 6.4,
+   "tps": 4.2,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^[a-z0-9]+-(?:[a-z0-9]+)-?$'; wrong on ['hello', 'a1-b2-c3', 'x']",
+   "verifier_pass": false,
+   "verifier_feedback": "it does not match these, which it should: ['my-first-post', 'v2', 'a-b-c']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 25,
+   "seconds": 7.4,
+   "tps": 3.36,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^[a-z0-9](?:-[a-z0-9]+)*$'; wrong on ['hello', 'hello-world', 'a1-b2-c3', '2024-report']",
+   "verifier_pass": false,
+   "verifier_feedback": "it does not match these, which it should: ['my-first-post', 'v2']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 26,
+   "seconds": 9.8,
+   "tps": 2.67,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "regex '^[a-z0-9]+(?:-[a-z0-9]+)*$'",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

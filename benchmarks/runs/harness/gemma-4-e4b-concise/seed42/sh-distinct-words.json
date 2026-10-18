@@ -1,0 +1,58 @@
+{
+ "model": "gemma-4-e4b-concise",
+ "mode": "harness",
+ "seed": 42,
+ "question": "sh-distinct-words",
+ "category": "shell",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 42,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 129,
+ "seconds_total": 36.5,
+ "attempts": [
+  {
+   "tokens": 41,
+   "seconds": 9.2,
+   "tps": 4.48,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "output ['2'], expected ['9']",
+   "verifier_pass": false,
+   "verifier_feedback": "on a small example the command's output ['2'], expected ['3']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 47,
+   "seconds": 12.7,
+   "tps": 3.7,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "output ['1'], expected ['9']",
+   "verifier_pass": false,
+   "verifier_feedback": "on a small example the command's output ['1'], expected ['3']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 41,
+   "seconds": 14.6,
+   "tps": 2.81,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "output ['2'], expected ['9']",
+   "verifier_pass": false,
+   "verifier_feedback": "on a small example the command's output ['2'], expected ['3']",
+   "reasoning_chars": 0
+  }
+ ]
+}

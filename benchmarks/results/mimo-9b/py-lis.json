@@ -1,0 +1,12 @@
+{
+ "model": "mimo-9b",
+ "question": "py-lis",
+ "category": "python",
+ "passed": false,
+ "detail": "NameError: name 'bisect' is not defined. Did you forget to import 'bisect'? (no code fence)",
+ "completion_tokens": 110,
+ "seconds": 33.9,
+ "tps": 3.24,
+ "finish_reason": "stop",
+ "reasoning_chars": 0
+}

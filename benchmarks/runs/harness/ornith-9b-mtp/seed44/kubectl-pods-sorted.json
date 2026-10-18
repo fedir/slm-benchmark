@@ -1,0 +1,25 @@
+{
+ "model": "ornith-9b-mtp",
+ "mode": "harness",
+ "seed": 44,
+ "question": "kubectl-pods-sorted",
+ "category": "kubectl",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": false,
+ "tokens_total": 19,
+ "seconds_total": 6.0,
+ "attempts": [
+  {
+   "tokens": 19,
+   "seconds": 6.0,
+   "tps": 3.15,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "all parts present",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

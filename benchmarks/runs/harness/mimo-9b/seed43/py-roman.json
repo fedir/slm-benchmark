@@ -1,0 +1,36 @@
+{
+ "model": "mimo-9b",
+ "mode": "harness",
+ "seed": 43,
+ "question": "py-roman",
+ "category": "python",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": false,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 43,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 218,
+ "seconds_total": 59.5,
+ "attempts": [
+  {
+   "tokens": 218,
+   "seconds": 59.5,
+   "tps": 3.66,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "tests passed (no code fence)",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

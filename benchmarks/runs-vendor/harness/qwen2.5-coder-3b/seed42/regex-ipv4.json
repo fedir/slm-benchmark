@@ -1,0 +1,61 @@
+{
+ "model": "qwen2.5-coder-3b",
+ "mode": "harness",
+ "seed": 42,
+ "question": "regex-ipv4",
+ "category": "regex",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.7,
+  "top_p": 0.8,
+  "top_k": 20,
+  "seed": 42,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "min_p": 0.0,
+  "repeat_penalty": 1.05,
+  "presence_penalty": 0.0,
+  "profile": "vendor"
+ },
+ "tokens_total": 100,
+ "seconds_total": 16.2,
+ "attempts": [
+  {
+   "tokens": 25,
+   "seconds": 4.1,
+   "tps": 6.16,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^(\\\\d{1,3}\\\\.){3}\\\\d{1,3}$'; wrong on ['!256.1.1.1', '!300.1.1.1']",
+   "verifier_pass": false,
+   "verifier_feedback": "it matches these, which it must reject: ['999.1.1.1']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 25,
+   "seconds": 4.6,
+   "tps": 5.42,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^(\\\\d{1,3}\\\\.){3}\\\\d{1,2}$'; wrong on ['255.255.255.255', '!256.1.1.1', '!300.1.1.1']",
+   "verifier_pass": false,
+   "verifier_feedback": "it matches these, which it must reject: ['999.1.1.1']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 50,
+   "seconds": 7.5,
+   "tps": 6.63,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^(\\\\d{1,3}\\\\.){3}([0-9]|[1-9]\\\\d|1\\\\d\\\\d|2[0-4]\\\\d|25[0-5])$'; wrong on ['!256.1.1.1', '!300.1.1.1']",
+   "verifier_pass": false,
+   "verifier_feedback": "it matches these, which it must reject: ['999.1.1.1']",
+   "reasoning_chars": 0
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "model": "gemma-4-e4b-mtp",
+ "mode": "naked",
+ "seed": 42,
+ "question": "kubectl-exec",
+ "category": "kubectl",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": false,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 42,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 20,
+ "seconds_total": 5.2,
+ "attempts": [
+  {
+   "tokens": 20,
+   "seconds": 5.2,
+   "tps": 3.84,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['-c[ =]?db\\\\b']",
+   "verifier_pass": null,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

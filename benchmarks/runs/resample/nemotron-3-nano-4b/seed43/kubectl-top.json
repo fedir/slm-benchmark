@@ -1,0 +1,60 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "resample",
+ "seed": 43,
+ "question": "kubectl-top",
+ "category": "kubectl",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 43,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 61,
+ "seconds_total": 14.5,
+ "attempts": [
+  {
+   "tokens": 20,
+   "seconds": 4.9,
+   "tps": 4.11,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['--sort-by[ =]memory\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "kubectl rejected the command: error: --sort-by accepts only cpu or memory",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 22,
+   "seconds": 5.1,
+   "tps": 4.33,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['--sort-by[ =]memory\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "it must be a single kubectl invocation: no pipes, redirects or substitutions",
+   "reasoning_chars": 0,
+   "retry_seed": 1043
+  },
+  {
+   "tokens": 19,
+   "seconds": 4.5,
+   "tps": 4.22,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "all parts present",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0,
+   "retry_seed": 2043
+  }
+ ]
+}

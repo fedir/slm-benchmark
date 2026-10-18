@@ -1,0 +1,12 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "question": "py-coins",
+ "category": "python",
+ "passed": true,
+ "detail": "tests passed",
+ "completion_tokens": 114,
+ "seconds": 19.7,
+ "tps": 5.79,
+ "finish_reason": "stop",
+ "reasoning_chars": 0
+}

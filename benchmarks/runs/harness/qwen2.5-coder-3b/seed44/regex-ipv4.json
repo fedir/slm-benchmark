@@ -1,0 +1,24 @@
+{
+ "model": "qwen2.5-coder-3b",
+ "mode": "harness",
+ "seed": 44,
+ "question": "regex-ipv4",
+ "category": "regex",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": false,
+ "tokens_total": 138,
+ "seconds_total": 13.3,
+ "attempts": [
+  {
+   "tokens": 138,
+   "seconds": 13.3,
+   "tps": 10.34,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "regex '\\\\b(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\\\b'",
+   "verifier_pass": true,
+   "verifier_feedback": ""
+  }
+ ]
+}

@@ -1,0 +1,47 @@
+{
+ "model": "ornith-9b-mtp",
+ "mode": "harness",
+ "seed": 45,
+ "question": "kubectl-exec",
+ "category": "kubectl",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 45,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 37,
+ "seconds_total": 17.5,
+ "attempts": [
+  {
+   "tokens": 17,
+   "seconds": 6.8,
+   "tps": 2.48,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['-c[ =]?db\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "the command is valid kubectl but does not do what was asked: the --container option should be 'db', the command has None",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 20,
+   "seconds": 10.7,
+   "tps": 1.88,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "all parts present",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

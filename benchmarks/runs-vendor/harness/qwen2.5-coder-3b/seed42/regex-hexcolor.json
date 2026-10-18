@@ -1,0 +1,61 @@
+{
+ "model": "qwen2.5-coder-3b",
+ "mode": "harness",
+ "seed": 42,
+ "question": "regex-hexcolor",
+ "category": "regex",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.7,
+  "top_p": 0.8,
+  "top_k": 20,
+  "seed": 42,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "min_p": 0.0,
+  "repeat_penalty": 1.05,
+  "presence_penalty": 0.0,
+  "profile": "vendor"
+ },
+ "tokens_total": 76,
+ "seconds_total": 13.9,
+ "attempts": [
+  {
+   "tokens": 29,
+   "seconds": 4.1,
+   "tps": 6.99,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '\\\\b#[0-9a-fA-F]{3}|[0-9a-fA-F]{6}\\\\b'; wrong on ['#fff', '#A1b2C3', '#000000', '#1aF']",
+   "verifier_pass": false,
+   "verifier_feedback": "it does not match these, which it should: ['#abc', '#DEF012', '#9a8B7c']; it matches these, which it must reject: ['abc123']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 18,
+   "seconds": 3.8,
+   "tps": 4.68,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '\\\\b#[0-9a-fA-F]{6}\\\\b'; wrong on ['#fff', '#A1b2C3', '#000000', '#1aF']",
+   "verifier_pass": false,
+   "verifier_feedback": "it does not match these, which it should: ['#abc', '#DEF012', '#9a8B7c']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 29,
+   "seconds": 6.0,
+   "tps": 4.84,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '\\\\b#[0-9a-fA-F]{3}|[0-9a-fA-F]{6}\\\\b'; wrong on ['#fff', '#A1b2C3', '#000000', '#1aF']",
+   "verifier_pass": false,
+   "verifier_feedback": "it does not match these, which it should: ['#abc', '#DEF012', '#9a8B7c']; it matches these, which it must reject: ['abc123']",
+   "reasoning_chars": 0
+  }
+ ]
+}

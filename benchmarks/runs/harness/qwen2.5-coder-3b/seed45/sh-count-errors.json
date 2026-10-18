@@ -1,0 +1,36 @@
+{
+ "model": "qwen2.5-coder-3b",
+ "mode": "harness",
+ "seed": 45,
+ "question": "sh-count-errors",
+ "category": "shell",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": false,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 45,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 14,
+ "seconds_total": 2.8,
+ "attempts": [
+  {
+   "tokens": 14,
+   "seconds": 2.8,
+   "tps": 4.94,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "output ['4'], expected ['3']",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

@@ -1,0 +1,58 @@
+{
+ "model": "qwen2.5-coder-3b",
+ "mode": "harness",
+ "seed": 46,
+ "question": "py-topk",
+ "category": "python",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 46,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 270,
+ "seconds_total": 32.0,
+ "attempts": [
+  {
+   "tokens": 90,
+   "seconds": 9.3,
+   "tps": 9.67,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "AssertionError",
+   "verifier_pass": false,
+   "verifier_feedback": "top_k_frequent(['dog','cat','cat','dog'],1) returned ['dog'], expected ['cat']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 90,
+   "seconds": 10.7,
+   "tps": 8.38,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "AssertionError",
+   "verifier_pass": false,
+   "verifier_feedback": "top_k_frequent(['dog','cat','cat','dog'],1) returned ['dog'], expected ['cat']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 90,
+   "seconds": 12.0,
+   "tps": 7.5,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "AssertionError",
+   "verifier_pass": false,
+   "verifier_feedback": "top_k_frequent(['dog','cat','cat','dog'],1) returned ['dog'], expected ['cat']",
+   "reasoning_chars": 0
+  }
+ ]
+}

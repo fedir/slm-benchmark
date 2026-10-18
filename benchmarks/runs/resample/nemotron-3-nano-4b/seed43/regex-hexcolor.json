@@ -1,0 +1,35 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "resample",
+ "seed": 43,
+ "question": "regex-hexcolor",
+ "category": "regex",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": false,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 43,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 33,
+ "seconds_total": 7.2,
+ "attempts": [
+  {
+   "tokens": 33,
+   "seconds": 7.2,
+   "tps": 4.61,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "regex '#[0-9a-fA-F]{3}(?:[0-9a-fA-F]{3})?$'",
+   "verifier_pass": true,
+   "verifier_feedback": ""
+  }
+ ]
+}

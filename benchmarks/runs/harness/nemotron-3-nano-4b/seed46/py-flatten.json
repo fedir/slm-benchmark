@@ -1,0 +1,47 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "harness",
+ "seed": 46,
+ "question": "py-flatten",
+ "category": "python",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 46,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 102,
+ "seconds_total": 21.6,
+ "attempts": [
+  {
+   "tokens": 45,
+   "seconds": 8.9,
+   "tps": 5.03,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "RecursionError: maximum recursion depth exceeded",
+   "verifier_pass": false,
+   "verifier_feedback": "the performance example raised RecursionError: maximum recursion depth exceeded",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 57,
+   "seconds": 12.7,
+   "tps": 4.49,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "tests passed",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

@@ -1,0 +1,47 @@
+{
+ "model": "qwen2.5-coder-3b",
+ "mode": "harness",
+ "seed": 45,
+ "question": "kubectl-top",
+ "category": "kubectl",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 45,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 67,
+ "seconds_total": 9.1,
+ "attempts": [
+  {
+   "tokens": 50,
+   "seconds": 5.4,
+   "tps": 9.3,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['top', '--sort-by[ =]memory\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "it must be a single kubectl invocation: no pipes, redirects or substitutions",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 17,
+   "seconds": 3.7,
+   "tps": 4.61,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "all parts present",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

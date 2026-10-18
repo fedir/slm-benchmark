@@ -1,0 +1,12 @@
+{
+ "model": "ornith-9b-mtp",
+ "question": "regex-hexcolor",
+ "category": "regex",
+ "passed": true,
+ "detail": "regex '^#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6})$'",
+ "completion_tokens": 32,
+ "seconds": 10.8,
+ "tps": 2.97,
+ "finish_reason": "stop",
+ "reasoning_chars": 0
+}

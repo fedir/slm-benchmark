@@ -1,0 +1,60 @@
+{
+ "model": "ornith-9b-mtp",
+ "mode": "resample",
+ "seed": 44,
+ "question": "kubectl-exec",
+ "category": "kubectl",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 44,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 52,
+ "seconds_total": 21.0,
+ "attempts": [
+  {
+   "tokens": 17,
+   "seconds": 7.0,
+   "tps": 2.41,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['-c[ =]?db\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "the command is valid kubectl but does not do what was asked: the --container option should be 'db', the command has None",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 18,
+   "seconds": 7.0,
+   "tps": 2.56,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['-c[ =]?db\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "the command is valid kubectl but does not do what was asked: the --container option should be 'db', the command has None",
+   "reasoning_chars": 0,
+   "retry_seed": 1044
+  },
+  {
+   "tokens": 17,
+   "seconds": 7.0,
+   "tps": 2.42,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['-c[ =]?db\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "the command is valid kubectl but does not do what was asked: the --container option should be 'db', the command has None",
+   "reasoning_chars": 0,
+   "retry_seed": 2044
+  }
+ ]
+}

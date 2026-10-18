@@ -1,0 +1,60 @@
+{
+ "model": "qwen2.5-coder-7b",
+ "mode": "resample",
+ "seed": 46,
+ "question": "regex-semver",
+ "category": "regex",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 46,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 44,
+ "seconds_total": 23.6,
+ "attempts": [
+  {
+   "tokens": 15,
+   "seconds": 6.3,
+   "tps": 2.39,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^\\\\d+(\\\\.\\\\d+){2}$'; wrong on ['!01.2.3', '!1.02.3', '!1.2.03']",
+   "verifier_pass": false,
+   "verifier_feedback": "it matches these, which it must reject: ['3.04.5', '10.0.00']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 15,
+   "seconds": 8.8,
+   "tps": 1.71,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^\\\\d+(\\\\.\\\\d+){2}$'; wrong on ['!01.2.3', '!1.02.3', '!1.2.03']",
+   "verifier_pass": false,
+   "verifier_feedback": "it matches these, which it must reject: ['3.04.5', '10.0.00']",
+   "reasoning_chars": 0,
+   "retry_seed": 1046
+  },
+  {
+   "tokens": 14,
+   "seconds": 8.5,
+   "tps": 1.64,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^\\\\d+(\\\\.\\\\d+){2}$'; wrong on ['!01.2.3', '!1.02.3', '!1.2.03']",
+   "verifier_pass": false,
+   "verifier_feedback": "it matches these, which it must reject: ['3.04.5', '10.0.00']",
+   "reasoning_chars": 0,
+   "retry_seed": 2046
+  }
+ ]
+}

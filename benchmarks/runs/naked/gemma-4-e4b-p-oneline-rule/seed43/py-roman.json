@@ -1,0 +1,36 @@
+{
+ "model": "gemma-4-e4b-p-oneline-rule",
+ "mode": "naked",
+ "seed": 43,
+ "question": "py-roman",
+ "category": "python",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": false,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 43,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 159,
+ "seconds_total": 26.3,
+ "attempts": [
+  {
+   "tokens": 159,
+   "seconds": 26.3,
+   "tps": 6.06,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "tests passed",
+   "verifier_pass": null,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

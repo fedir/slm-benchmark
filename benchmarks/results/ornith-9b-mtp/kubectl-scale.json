@@ -1,0 +1,12 @@
+{
+ "model": "ornith-9b-mtp",
+ "question": "kubectl-scale",
+ "category": "kubectl",
+ "passed": true,
+ "detail": "all parts present",
+ "completion_tokens": 18,
+ "seconds": 7.8,
+ "tps": 2.31,
+ "finish_reason": "stop",
+ "reasoning_chars": 0
+}

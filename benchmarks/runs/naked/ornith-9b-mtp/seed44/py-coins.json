@@ -1,0 +1,24 @@
+{
+ "model": "ornith-9b-mtp",
+ "mode": "naked",
+ "seed": 44,
+ "question": "py-coins",
+ "category": "python",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": false,
+ "tokens_total": 117,
+ "seconds_total": 23.5,
+ "attempts": [
+  {
+   "tokens": 117,
+   "seconds": 23.5,
+   "tps": 4.99,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "tests passed",
+   "verifier_pass": null,
+   "verifier_feedback": ""
+  }
+ ]
+}

@@ -1,0 +1,39 @@
+{
+ "model": "qwen2.5-coder-3b",
+ "mode": "harness",
+ "seed": 43,
+ "question": "regex-ipv4",
+ "category": "regex",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": false,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.7,
+  "top_p": 0.8,
+  "top_k": 20,
+  "seed": 43,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "min_p": 0.0,
+  "repeat_penalty": 1.05,
+  "presence_penalty": 0.0,
+  "profile": "vendor"
+ },
+ "tokens_total": 122,
+ "seconds_total": 12.2,
+ "attempts": [
+  {
+   "tokens": 122,
+   "seconds": 12.2,
+   "tps": 10.0,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "regex '\\\\b(?:[01]?\\\\d{1,2}|2[0-4]\\\\d|25[0-5])\\\\.(?:[01]?\\\\d{1,2}|2[0-4]\\\\d|25[0-5])\\\\.(?:[01]?\\\\d{1,2}|2[0-4]\\\\d|25[0-5])\\\\.(?:[01]?\\\\d{1,2}|2[0-4]\\\\d|25[0-5])\\\\b'",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

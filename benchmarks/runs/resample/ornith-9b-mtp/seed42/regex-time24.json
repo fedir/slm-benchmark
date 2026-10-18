@@ -1,0 +1,36 @@
+{
+ "model": "ornith-9b-mtp",
+ "mode": "resample",
+ "seed": 42,
+ "question": "regex-time24",
+ "category": "regex",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": false,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 42,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 30,
+ "seconds_total": 10.6,
+ "attempts": [
+  {
+   "tokens": 30,
+   "seconds": 10.6,
+   "tps": 2.83,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "regex '^([01][0-9]|2[0-3]):[0-5][0-9]$'",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

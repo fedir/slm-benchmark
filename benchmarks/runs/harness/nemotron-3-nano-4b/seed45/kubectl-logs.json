@@ -1,0 +1,47 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "harness",
+ "seed": 45,
+ "question": "kubectl-logs",
+ "category": "kubectl",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 45,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 47,
+ "seconds_total": 12.3,
+ "attempts": [
+  {
+   "tokens": 24,
+   "seconds": 5.2,
+   "tps": 4.6,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "all parts present",
+   "verifier_pass": false,
+   "verifier_feedback": "the command is valid kubectl but does not do what was asked: the target should be pod `api-0`",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 23,
+   "seconds": 7.1,
+   "tps": 3.24,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "all parts present",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

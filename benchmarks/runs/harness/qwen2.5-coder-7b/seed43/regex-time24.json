@@ -1,0 +1,58 @@
+{
+ "model": "qwen2.5-coder-7b",
+ "mode": "harness",
+ "seed": 43,
+ "question": "regex-time24",
+ "category": "regex",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 43,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 126,
+ "seconds_total": 42.0,
+ "attempts": [
+  {
+   "tokens": 42,
+   "seconds": 11.6,
+   "tps": 3.64,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex \"re.fullmatch(r'\\\\b([01]?[0-9]|2[0-3]):([0-5]?[0-9])\\\\b', time_string)\"; wrong on ['00:00', '23:59', '09:05', '12:30']",
+   "verifier_pass": false,
+   "verifier_feedback": "it does not match these, which it should: ['01:15', '18:45', '20:00']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 42,
+   "seconds": 14.4,
+   "tps": 2.92,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex \"re.fullmatch(r'\\\\b([01]?[0-9]|2[0-3]):([0-5]?[0-9])\\\\b', time_string)\"; wrong on ['00:00', '23:59', '09:05', '12:30']",
+   "verifier_pass": false,
+   "verifier_feedback": "it does not match these, which it should: ['01:15', '18:45', '20:00']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 42,
+   "seconds": 16.0,
+   "tps": 2.63,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex \"re.fullmatch(r'\\\\b([01]?[0-9]|2[0-3]):([0-5]?[0-9])\\\\b', time_string)\"; wrong on ['00:00', '23:59', '09:05', '12:30']",
+   "verifier_pass": false,
+   "verifier_feedback": "it does not match these, which it should: ['01:15', '18:45', '20:00']",
+   "reasoning_chars": 0
+  }
+ ]
+}

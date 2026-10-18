@@ -1,0 +1,44 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "harness",
+ "seed": 44,
+ "question": "regex-date",
+ "category": "regex",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "tokens_total": 117,
+ "seconds_total": 30.7,
+ "attempts": [
+  {
+   "tokens": 39,
+   "seconds": 8.2,
+   "tps": 4.78,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$'; wrong on ['2024-02-29', '1999-12-31', '2000-01-01']",
+   "verifier_pass": false,
+   "verifier_feedback": "it does not match these, which it should: ['2023-07-15', '1985-10-31', '2030-12-01']"
+  },
+  {
+   "tokens": 39,
+   "seconds": 10.2,
+   "tps": 3.84,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$'; wrong on ['2024-02-29', '1999-12-31', '2000-01-01']",
+   "verifier_pass": false,
+   "verifier_feedback": "it does not match these, which it should: ['2023-07-15', '1985-10-31', '2030-12-01']"
+  },
+  {
+   "tokens": 39,
+   "seconds": 12.3,
+   "tps": 3.16,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$'; wrong on ['2024-02-29', '1999-12-31', '2000-01-01']",
+   "verifier_pass": false,
+   "verifier_feedback": "it does not match these, which it should: ['2023-07-15', '1985-10-31', '2030-12-01']"
+  }
+ ]
+}

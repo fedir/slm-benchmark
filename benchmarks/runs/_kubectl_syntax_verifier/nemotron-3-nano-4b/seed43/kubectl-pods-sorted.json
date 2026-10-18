@@ -1,0 +1,34 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "harness",
+ "seed": 43,
+ "question": "kubectl-pods-sorted",
+ "category": "kubectl",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "tokens_total": 71,
+ "seconds_total": 15.5,
+ "attempts": [
+  {
+   "tokens": 49,
+   "seconds": 8.6,
+   "tps": 5.71,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['--sort-by[ =]\\\\.?metadata\\\\.creationTimestamp']",
+   "verifier_pass": false,
+   "verifier_feedback": "it must be a single kubectl invocation: no pipes, redirects or substitutions"
+  },
+  {
+   "tokens": 22,
+   "seconds": 6.9,
+   "tps": 3.18,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "all parts present",
+   "verifier_pass": true,
+   "verifier_feedback": ""
+  }
+ ]
+}

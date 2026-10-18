@@ -1,0 +1,13 @@
+\section{Reproducibility}
+\label{sec:repro}
+All code, tasks, saved transcripts and analysis scripts are in the project repository (\code{benchmarks/} and \code{paper/}). Every attempt of every run is stored as a Markdown transcript and a JSON record under \code{benchmarks/runs/\{harness,resample\}/<model>/seed<N>/},
+including the hidden grader's verdict and the verifier's feedback, so every table can be regenerated and every grader re-applied (\code{repeat.py --regrade}) without a model.
+\begin{itemize}
+\item \code{make benchmark-repeat MODE=harness MODELS=<m>}, \code{python3 benchmarks/repeat.py --mode resample -m <m>}: run a model; existing cells are skipped, so interrupted runs resume.
+\item \code{python3 benchmarks/tasks\_v2.py --check}: validate every extended-suite grader against known-good and known-bad answers.
+\item \code{python3 benchmarks/analysis.py}: all statistics (\code{ANALYSIS.md}, \code{analysis.json}); \code{python3 paper/make\_tables.py} and \code{make\_figs.py} generate every table, macro and figure used in this paper.
+\item \code{python3 benchmarks/speed.py}: the throughput experiment.
+\end{itemize}
+\paragraph{Determinism.} With a fixed seed and parameters the setup was deterministic where we checked: re-running seed 42 reproduced the pass/fail outcome of an earlier, independent single run in 44 of 44 cells (4 models $\times$ 11 questions; hours apart, in different machine states), and for the one model run in both naked and harness mode (Ornith) the first harness attempt was identical to the naked answer in 33 of 33 cells.
+A different seed is a different random draw, so differences between seeds are sampling noise, not machine noise.
+\paragraph{Not covered.} Model weights are third-party files (listed in Table~\ref{tab:models}); the LM~Studio runtime is closed-source packaging of llama.cpp, whose build is identified in Section~\ref{sec:setup}.

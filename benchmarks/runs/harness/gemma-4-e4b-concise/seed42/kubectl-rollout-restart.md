@@ -1,0 +1,14 @@
+# gemma-4-e4b-concise / kubectl-rollout-restart / seed 42 / harness
+
+## Prompt
+
+Give the single kubectl command to restart the deployment `api` in namespace `prod` with a rolling restart. Reply with ONLY the command in a code block.
+
+## Attempt 1: PASS (hidden: all parts present)
+
+- 15 tokens in 5.1s, finish: stop
+- verifier: pass
+
+```bash
+kubectl rollout restart deployment/api -n prod
+```

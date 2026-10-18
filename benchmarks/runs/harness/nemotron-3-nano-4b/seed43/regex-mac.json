@@ -1,0 +1,47 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "harness",
+ "seed": 43,
+ "question": "regex-mac",
+ "category": "regex",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 43,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 93,
+ "seconds_total": 18.8,
+ "attempts": [
+  {
+   "tokens": 19,
+   "seconds": 4.6,
+   "tps": 4.14,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^[0-9a-fA-F:]+$'; wrong on ['!00:1A:2b:3C:4d', '!00:1A:2b:3C:4d:5E:6F', '!0:1A:2b:3C:4d:5E']",
+   "verifier_pass": false,
+   "verifier_feedback": "it matches these, which it must reject: ['12:34:56:78:9A']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 74,
+   "seconds": 14.2,
+   "tps": 5.21,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "regex '^[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}$'",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

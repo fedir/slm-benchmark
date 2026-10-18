@@ -1,0 +1,24 @@
+# qwen2.5-coder-7b / py-intervals / seed 45 / resample (no feedback)
+
+## Prompt
+
+Write a Python function `merge_intervals(intervals)` that takes a list of [start, end] pairs and returns the merged list of non-overlapping intervals sorted by start (intervals that touch, like [1,2] and [2,3], must be merged). Reply with ONLY the code in one code block.
+
+## Attempt 1: PASS (hidden: tests passed)
+
+- 92 tokens in 21.2s, finish: stop
+- verifier: pass
+
+```python
+def merge_intervals(intervals):
+    if not intervals:
+        return []
+    intervals.sort(key=lambda x: x[0])
+    merged = [intervals[0]]
+    for interval in intervals[1:]:
+        if interval[0] <= merged[-1][1]:
+            merged[-1][1] = max(merged[-1][1], interval[1])
+        else:
+            merged.append(interval)
+    return merged
+```

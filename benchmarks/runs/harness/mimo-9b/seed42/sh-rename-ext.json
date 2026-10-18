@@ -1,0 +1,58 @@
+{
+ "model": "mimo-9b",
+ "mode": "harness",
+ "seed": 42,
+ "question": "sh-rename-ext",
+ "category": "shell",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 42,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 99,
+ "seconds_total": 44.7,
+ "attempts": [
+  {
+   "tokens": 33,
+   "seconds": 11.1,
+   "tps": 2.98,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "output ['a.txt', 'b.txt', 'c.txt', 'notes.bak'], expected ['a.md', 'b.md', 'c.md', 'notes.bak']",
+   "verifier_pass": false,
+   "verifier_feedback": "on a small example the command's output ['x.txt', 'y.txt', 'z.doc'], expected ['x.md', 'y.md', 'z.doc']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 33,
+   "seconds": 14.9,
+   "tps": 2.21,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "output ['a.txt', 'b.txt', 'c.txt', 'notes.bak'], expected ['a.md', 'b.md', 'c.md', 'notes.bak']",
+   "verifier_pass": false,
+   "verifier_feedback": "on a small example the command's output ['x.txt', 'y.txt', 'z.doc'], expected ['x.md', 'y.md', 'z.doc']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 33,
+   "seconds": 18.7,
+   "tps": 1.77,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "output ['a.txt', 'b.txt', 'c.txt', 'notes.bak'], expected ['a.md', 'b.md', 'c.md', 'notes.bak']",
+   "verifier_pass": false,
+   "verifier_feedback": "on a small example the command's output ['x.txt', 'y.txt', 'z.doc'], expected ['x.md', 'y.md', 'z.doc']",
+   "reasoning_chars": 0
+  }
+ ]
+}

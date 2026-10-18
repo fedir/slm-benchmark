@@ -1,0 +1,44 @@
+{
+ "model": "mimo-9b",
+ "mode": "harness",
+ "seed": 43,
+ "question": "regex-date",
+ "category": "regex",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "tokens_total": 598,
+ "seconds_total": 190.9,
+ "attempts": [
+  {
+   "tokens": 45,
+   "seconds": 15.5,
+   "tps": 2.9,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^\\\\d{4}-(0[1-9]|[12]\\\\d|3[01])-(0[1-9]|[12]\\\\d|3[01])$'; wrong on ['!2024-13-01']",
+   "verifier_pass": false,
+   "verifier_feedback": "it matches these, which it must reject: ['2023-15-10']"
+  },
+  {
+   "tokens": 512,
+   "seconds": 140.6,
+   "tps": 3.64,
+   "finish_reason": "length",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^\\\\d{4}-(0[1-9]|[12]\\\\d|3[01])-(0[1-9]|[12]\\\\d|3[01])$'; wrong on ['!2024-13-01']",
+   "verifier_pass": false,
+   "verifier_feedback": "it matches these, which it must reject: ['2023-15-10']"
+  },
+  {
+   "tokens": 41,
+   "seconds": 34.8,
+   "tps": 1.18,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "regex '^\\\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\\\d|3[01])$'",
+   "verifier_pass": true,
+   "verifier_feedback": ""
+  }
+ ]
+}

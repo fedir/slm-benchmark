@@ -1,0 +1,58 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "harness",
+ "seed": 46,
+ "question": "sql-monthly",
+ "category": "sql",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 46,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 232,
+ "seconds_total": 47.9,
+ "attempts": [
+  {
+   "tokens": 70,
+   "seconds": 12.5,
+   "tps": 5.62,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "the query fails: OperationalError: no such function: DATE_FORMAT",
+   "verifier_pass": false,
+   "verifier_feedback": "on a small example table the query the query fails: OperationalError: no such function: DATE_FORMAT",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 82,
+   "seconds": 16.3,
+   "tps": 5.02,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "the query fails: OperationalError: no such function: YEAR",
+   "verifier_pass": false,
+   "verifier_feedback": "on a small example table the query the query fails: OperationalError: no such function: YEAR",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 80,
+   "seconds": 19.1,
+   "tps": 4.18,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "the query fails: OperationalError: no such function: MONTH",
+   "verifier_pass": false,
+   "verifier_feedback": "on a small example table the query the query fails: OperationalError: no such function: MONTH",
+   "reasoning_chars": 0
+  }
+ ]
+}

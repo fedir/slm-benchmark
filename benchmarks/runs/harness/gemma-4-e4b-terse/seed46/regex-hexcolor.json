@@ -1,0 +1,47 @@
+{
+ "model": "gemma-4-e4b-terse",
+ "mode": "harness",
+ "seed": 46,
+ "question": "regex-hexcolor",
+ "category": "regex",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 46,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 61,
+ "seconds_total": 18.2,
+ "attempts": [
+  {
+   "tokens": 28,
+   "seconds": 7.5,
+   "tps": 3.72,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^#([0-9a-f]{3}|[0-9a-f]{6})$'; wrong on ['#A1b2C3', '#1aF']",
+   "verifier_pass": false,
+   "verifier_feedback": "it does not match these, which it should: ['#DEF012', '#9a8B7c']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 33,
+   "seconds": 10.7,
+   "tps": 3.09,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "regex '^#[0-9a-fA-F]{3}([0-9a-fA-F]{3})?$'",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

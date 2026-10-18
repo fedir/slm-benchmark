@@ -1,0 +1,59 @@
+{
+ "model": "qwen2.5-coder-3b",
+ "mode": "resample",
+ "seed": 42,
+ "question": "py-lis",
+ "category": "python",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 42,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 431,
+ "seconds_total": 42.3,
+ "attempts": [
+  {
+   "tokens": 180,
+   "seconds": 17.1,
+   "tps": 10.53,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "timeout",
+   "verifier_pass": false,
+   "verifier_feedback": "too slow: 8.2s on a 20,000-element list (limit 2.0s)"
+  },
+  {
+   "tokens": 157,
+   "seconds": 15.4,
+   "tps": 10.17,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "NameError: name 'bisect' is not defined. Did you forget to import 'bisect'?",
+   "verifier_pass": false,
+   "verifier_feedback": "lis_length([0,1,0,3,2,3]) raised NameError: name 'bisect' is not defined; lis_length([5,4,3]) raised NameError: name 'bisect' is not defined; lis_length([2,2,2,2]) raised NameError: name 'bisect' is not defined; the performance example raised NameError: name 'bisect' is not defined",
+   "reasoning_chars": 0,
+   "retry_seed": 1042
+  },
+  {
+   "tokens": 94,
+   "seconds": 9.8,
+   "tps": 9.6,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "tests passed",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0,
+   "retry_seed": 2042
+  }
+ ]
+}

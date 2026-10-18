@@ -1,0 +1,34 @@
+{
+ "model": "ornith-9b-mtp",
+ "mode": "harness",
+ "seed": 44,
+ "question": "py-topk",
+ "category": "python",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "tokens_total": 121,
+ "seconds_total": 29.1,
+ "attempts": [
+  {
+   "tokens": 60,
+   "seconds": 13.0,
+   "tps": 4.61,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "AssertionError",
+   "verifier_pass": false,
+   "verifier_feedback": "top_k_frequent(['a','b','a','c','b','a'],2) returned ['a', 'a'], expected ['a','b']"
+  },
+  {
+   "tokens": 61,
+   "seconds": 16.1,
+   "tps": 3.78,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "tests passed",
+   "verifier_pass": true,
+   "verifier_feedback": ""
+  }
+ ]
+}

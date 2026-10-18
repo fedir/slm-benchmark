@@ -1,0 +1,36 @@
+{
+ "model": "gemma-4-e4b-terse",
+ "mode": "harness",
+ "seed": 45,
+ "question": "regex-ipv4",
+ "category": "regex",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": false,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 45,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 74,
+ "seconds_total": 14.1,
+ "attempts": [
+  {
+   "tokens": 74,
+   "seconds": 14.1,
+   "tps": 5.25,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "regex '^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

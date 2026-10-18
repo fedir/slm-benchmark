@@ -1,0 +1,39 @@
+{
+ "model": "mimo-9b",
+ "mode": "harness",
+ "seed": 44,
+ "question": "regex-hexcolor",
+ "category": "regex",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": false,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 44,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "min_p": 0.0,
+  "repeat_penalty": 1.0,
+  "presence_penalty": 0.0,
+  "profile": "vendor"
+ },
+ "tokens_total": 31,
+ "seconds_total": 10.9,
+ "attempts": [
+  {
+   "tokens": 31,
+   "seconds": 10.9,
+   "tps": 2.83,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "regex '^#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6})$'",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

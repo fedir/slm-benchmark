@@ -1,0 +1,47 @@
+{
+ "model": "mimo-9b",
+ "mode": "harness",
+ "seed": 44,
+ "question": "regex-semver",
+ "category": "regex",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 44,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 172,
+ "seconds_total": 60.3,
+ "attempts": [
+  {
+   "tokens": 129,
+   "seconds": 38.6,
+   "tps": 3.34,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^\\\\d$|\\\\d+\\\\d*$'; wrong on ['0.0.0', '1.2.3', '10.20.30', '100.0.1']",
+   "verifier_pass": false,
+   "verifier_feedback": "it does not match these, which it should: ['2.0.15', '0.10.0', '7.7.7']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 43,
+   "seconds": 21.7,
+   "tps": 1.98,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "regex '([1-9][0-9]*|0)\\\\.([1-9][0-9]*|0)\\\\.([1-9][0-9]*|0)'",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

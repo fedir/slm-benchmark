@@ -1,0 +1,47 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "harness",
+ "seed": 45,
+ "question": "regex-uuid",
+ "category": "regex",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 45,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 126,
+ "seconds_total": 27.1,
+ "attempts": [
+  {
+   "tokens": 75,
+   "seconds": 13.4,
+   "tps": 5.58,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^\\\\(?([0-9a-f]{4})-(?=[0-9a-f]{4})-(?=[0-9a-f]{4})-(?=[0-9a-f]{4})-(?=[0-9a-f]{12})[0-9a-f]{12}\\\\)?$`'; wrong on ['123e4567-e89b-12d3-a456-426614174000', '00000000-0000-0000-0000-000000000000', 'ffffffff-ffff-ffff-ffff-ffffffffffff']",
+   "verifier_pass": false,
+   "verifier_feedback": "it does not match these, which it should: ['550e8400-e29b-41d4-a716-446655440000', 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 51,
+   "seconds": 13.7,
+   "tps": 3.71,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "regex '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$'",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

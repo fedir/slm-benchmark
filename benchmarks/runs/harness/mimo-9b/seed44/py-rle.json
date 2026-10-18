@@ -1,0 +1,47 @@
+{
+ "model": "mimo-9b",
+ "mode": "harness",
+ "seed": 44,
+ "question": "py-rle",
+ "category": "python",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 44,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 249,
+ "seconds_total": 102.6,
+ "attempts": [
+  {
+   "tokens": 127,
+   "seconds": 45.5,
+   "tps": 2.79,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "no code block defining rle_encode(s)",
+   "verifier_pass": false,
+   "verifier_feedback": "no code block defining rle_encode(s)",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 122,
+   "seconds": 57.1,
+   "tps": 2.14,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "tests passed",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

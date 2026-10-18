@@ -1,0 +1,47 @@
+{
+ "model": "ornith-9b-mtp",
+ "mode": "harness",
+ "seed": 45,
+ "question": "sql-monthly",
+ "category": "sql",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 45,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 112,
+ "seconds_total": 34.5,
+ "attempts": [
+  {
+   "tokens": 54,
+   "seconds": 13.1,
+   "tps": 4.11,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "returned [] (0 rows), expected [('2024-01', 150), ('2024-02', 70), ('2024-03', 210)] (3 rows)",
+   "verifier_pass": false,
+   "verifier_feedback": "on a small example table the query returned [] (0 rows), expected [('2024-07', 11), ('2024-09', 9)] (2 rows)",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 58,
+   "seconds": 21.4,
+   "tps": 2.71,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "rows match",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

@@ -1,0 +1,42 @@
+\begin{longtable}{lll}\toprule id & type & task (prompt, abridged)\\\midrule\endhead
+\code{regex-ipv4} & regex & Write a single regular expression (Python `re` syntax, to be used with re.fullmatch) that matches a valid IPv4 address: four decimal numbers 0-255 separated by dots. \\
+\code{regex-date} & regex & Write a single regular expression (Python `re` syntax, to be used with re.fullmatch) that matches dates in the format YYYY-MM-DD where the month is 01-12 and the day is 01-31 (no need to ... \\
+\code{regex-hexcolor} & regex & Write a single regular expression (Python `re` syntax, to be used with re.fullmatch) that matches a CSS hex color: '\#' followed by exactly 3 or exactly 6 hex digits (case-insensitive). \\
+\code{py-intervals} & python & Write a Python function `merge\_intervals(intervals)` that takes a list of [start, end] pairs and returns the merged list of non-overlapping intervals sorted by start (intervals that touch... \\
+\code{py-lis} & python & Write a Python function `lis\_length(nums)` returning the length of the longest STRICTLY increasing subsequence of a list of integers. It must run in O(n log n) (it will be tested with 200... \\
+\code{py-topk} & python & Write a Python function `top\_k\_frequent(words, k)` returning the k most frequent words as a list, ordered by frequency descending, ties broken alphabetically. \\
+\code{py-coins} & python & Write a Python function `min\_coins(coins, amount)` returning the minimum number of coins (unlimited supply of each denomination) needed to make `amount`, or -1 if impossible. min\_coins(co... \\
+\code{kubectl-pods-sorted} & kubectl & Give the single kubectl command to list all pods in the namespace `prod`, sorted by creation timestamp. \\
+\code{kubectl-scale} & kubectl & Give the single kubectl command to scale the deployment `web` in namespace `staging` to 5 replicas. \\
+\code{kubectl-logs} & kubectl & Give the single kubectl command to stream (follow) the last 100 log lines of container `app` in pod `api-0`. \\
+\code{kubectl-nodes-names} & kubectl & Give the single kubectl command that prints only the names of all nodes in the cluster, using jsonpath output. \\
+\code{regex-time24} & regex & Write a single regular expression (Python `re` syntax, to be used with re.fullmatch) that matches a 24-hour clock time `HH:MM` with two-digit hours 00-23 and two-digit minutes 00-59. \\
+\code{regex-semver} & regex & Write a single regular expression (Python `re` syntax, to be used with re.fullmatch) that matches a version `MAJOR.MINOR.PATCH` where each part is a non-negative integer without leading z... \\
+\code{regex-mac} & regex & Write a single regular expression (Python `re` syntax, to be used with re.fullmatch) that matches a MAC address: six pairs of hex digits (either case) separated by colons. \\
+\code{regex-uuid} & regex & Write a single regular expression (Python `re` syntax, to be used with re.fullmatch) that matches a UUID in canonical form: 8-4-4-4-12 LOWERCASE hex digits separated by hyphens. \\
+\code{regex-slug} & regex & Write a single regular expression (Python `re` syntax, to be used with re.fullmatch) that matches a URL slug: lowercase letters and digits in words separated by single hyphens, with no le... \\
+\code{py-parens} & python & Write a Python function `is\_balanced(s)` returning True if the brackets `()`, `[]` and `{}` in the string are balanced and correctly nested, else False. Other characters are ignored; the ... \\
+\code{py-roman} & python & Write a Python function `to\_roman(n)` converting an integer 1..3999 to its Roman numeral (standard subtractive form, e.g. 4 is IV, 1994 is MCMXCIV). \\
+\code{py-rle} & python & Write a Python function `rle\_encode(s)` that run-length encodes a string: each run of identical characters becomes the character followed by the run length, e.g. 'aaabcc' becomes 'a3b1c2'... \\
+\code{py-flatten} & python & Write a Python function `flatten(x)` that flattens an arbitrarily nested list of integers into a flat list, keeping the order, e.g. [1,[2,[3]],4] becomes [1,2,3,4]. Nesting can be up to 5... \\
+\code{py-twosum} & python & Write a Python function `two\_sum(nums, target)` returning the two indices [i, j] with i < j whose values add up to `target`; exactly one such pair exists. It is tested with 200000 numbers... \\
+\code{py-editdist} & python & Write a Python function `edit\_distance(a, b)` returning the Levenshtein edit distance between two strings (insert, delete, replace, each cost 1). It is tested on strings of 1500 characters. \\
+\code{py-spiral} & python & Write a Python function `spiral\_order(matrix)` returning the elements of a rectangular matrix (list of lists) in clockwise spiral order starting at the top-left, e.g. [[1,2],[3,4]] gives ... \\
+\code{py-sieve} & python & Write a Python function `count\_primes(n)` returning how many prime numbers are <= n (n may be 0 or 1). It is tested with n = 3,000,000, so trial division is too slow. \\
+\code{kubectl-label-selector} & kubectl & Give the single kubectl command to list the pods labelled `app=web` in namespace `prod`. \\
+\code{kubectl-rollout-restart} & kubectl & Give the single kubectl command to restart the deployment `api` in namespace `prod` with a rolling restart. \\
+\code{kubectl-exec} & kubectl & Give the single kubectl command to run the command `ls /data` in the container `db` of the pod `db-0` in namespace `data`. \\
+\code{kubectl-portforward} & kubectl & Give the single kubectl command to forward local port 8080 to port 80 of the service `web` in namespace `staging`. \\
+\code{kubectl-events-sorted} & kubectl & Give the single kubectl command to list the events in namespace `prod` sorted by their last timestamp. \\
+\code{kubectl-top} & kubectl & Give the single kubectl command to show the CPU and memory usage of the pods in namespace `prod`, sorted by memory. \\
+\code{sql-top-earners} & sql & Table `employees(id INTEGER PRIMARY KEY, name TEXT, dept TEXT, salary INTEGER, manager\_id INTEGER)`. Write one SQLite query that returns the names of employees who earn more than 60000, h... \\
+\code{sql-dept-stats} & sql & Table `employees(id INTEGER PRIMARY KEY, name TEXT, dept TEXT, salary INTEGER, manager\_id INTEGER)`. Write one SQLite query that returns, for every department, the department name, the nu... \\
+\code{sql-no-orders} & sql & Tables `customers(id INTEGER PRIMARY KEY, name TEXT)` and `orders(id INTEGER PRIMARY KEY, customer\_id INTEGER, amount INTEGER, placed\_on TEXT)` (`placed\_on` is 'YYYY-MM-DD'). Write one SQ... \\
+\code{sql-second-salary} & sql & Table `employees(id INTEGER PRIMARY KEY, name TEXT, dept TEXT, salary INTEGER, manager\_id INTEGER)`. Write one SQLite query that returns the second highest DISTINCT salary as a single val... \\
+\code{sql-monthly} & sql & Tables `customers(id INTEGER PRIMARY KEY, name TEXT)` and `orders(id INTEGER PRIMARY KEY, customer\_id INTEGER, amount INTEGER, placed\_on TEXT)` (`placed\_on` is 'YYYY-MM-DD'). Write one SQ... \\
+\code{sh-count-errors} & shell & The file `app.log` is in the current directory. Print the number of lines that contain the exact word ERROR (uppercase), and nothing else. \\
+\code{sh-top-ips} & shell & The file `access.log` has an IP address as the first space-separated field of each line. Print the 3 most frequent IP addresses with their counts, one per line as `COUNT IP`, most frequen... \\
+\code{sh-csv-sum} & shell & The file `sales.csv` is comma-separated with a header line. Print the sum of the third column over all data rows, and nothing else. \\
+\code{sh-rename-ext} & shell & The current directory contains some `.txt` files and other files. Rename every `.txt` file to the same name with the extension `.md`. \\
+\code{sh-distinct-words} & shell & The file `text.txt` contains words separated by spaces and newlines. Print the number of distinct words, ignoring case, and nothing else. \\
+\bottomrule\end{longtable}

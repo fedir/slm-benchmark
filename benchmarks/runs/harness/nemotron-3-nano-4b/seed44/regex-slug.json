@@ -1,0 +1,58 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "harness",
+ "seed": 44,
+ "question": "regex-slug",
+ "category": "regex",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 44,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 90,
+ "seconds_total": 25.3,
+ "attempts": [
+  {
+   "tokens": 30,
+   "seconds": 6.8,
+   "tps": 4.4,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$'; wrong on ['!hello--world']",
+   "verifier_pass": false,
+   "verifier_feedback": "it matches these, which it must reject: ['a--b']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 30,
+   "seconds": 8.1,
+   "tps": 3.69,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$'; wrong on ['!hello--world']",
+   "verifier_pass": false,
+   "verifier_feedback": "it matches these, which it must reject: ['a--b']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 30,
+   "seconds": 10.4,
+   "tps": 2.87,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$'; wrong on ['!hello--world']",
+   "verifier_pass": false,
+   "verifier_feedback": "it matches these, which it must reject: ['a--b']",
+   "reasoning_chars": 0
+  }
+ ]
+}

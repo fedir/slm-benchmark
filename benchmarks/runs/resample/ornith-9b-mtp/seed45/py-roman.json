@@ -1,0 +1,48 @@
+{
+ "model": "ornith-9b-mtp",
+ "mode": "resample",
+ "seed": 45,
+ "question": "py-roman",
+ "category": "python",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 45,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 342,
+ "seconds_total": 64.4,
+ "attempts": [
+  {
+   "tokens": 168,
+   "seconds": 32.7,
+   "tps": 5.13,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "AssertionError",
+   "verifier_pass": false,
+   "verifier_feedback": "to_roman(3) returned '', expected 'III'; to_roman(49) returned '', expected 'XLIX'; to_roman(900) returned '', expected 'CM'",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 174,
+   "seconds": 31.7,
+   "tps": 5.48,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "tests passed",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0,
+   "retry_seed": 1045
+  }
+ ]
+}

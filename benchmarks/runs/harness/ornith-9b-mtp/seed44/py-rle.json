@@ -1,0 +1,58 @@
+{
+ "model": "ornith-9b-mtp",
+ "mode": "harness",
+ "seed": 44,
+ "question": "py-rle",
+ "category": "python",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 44,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 297,
+ "seconds_total": 74.2,
+ "attempts": [
+  {
+   "tokens": 99,
+   "seconds": 20.6,
+   "tps": 4.81,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "AssertionError",
+   "verifier_pass": false,
+   "verifier_feedback": "rle_encode('abc') returned 'a1a1c1', expected 'a1b1c1'",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 99,
+   "seconds": 24.2,
+   "tps": 4.1,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "AssertionError",
+   "verifier_pass": false,
+   "verifier_feedback": "rle_encode('abc') returned 'a1a1c1', expected 'a1b1c1'",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 99,
+   "seconds": 29.4,
+   "tps": 3.36,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "AssertionError",
+   "verifier_pass": false,
+   "verifier_feedback": "rle_encode('wwwwb') returned 'w4w1', expected 'w4b1'; rle_encode('abc') returned 'a1a1a1', expected 'a1b1c1'",
+   "reasoning_chars": 0
+  }
+ ]
+}

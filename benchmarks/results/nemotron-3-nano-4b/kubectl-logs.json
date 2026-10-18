@@ -1,0 +1,12 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "question": "kubectl-logs",
+ "category": "kubectl",
+ "passed": false,
+ "detail": "missing ['-c[ =]?app\\\\b', '\\\\s-f\\\\b']",
+ "completion_tokens": 19,
+ "seconds": 4.3,
+ "tps": 4.42,
+ "finish_reason": "stop",
+ "reasoning_chars": 0
+}

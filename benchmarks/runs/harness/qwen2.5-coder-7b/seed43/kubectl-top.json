@@ -1,0 +1,58 @@
+{
+ "model": "qwen2.5-coder-7b",
+ "mode": "harness",
+ "seed": 43,
+ "question": "kubectl-top",
+ "category": "kubectl",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 43,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 58,
+ "seconds_total": 24.2,
+ "attempts": [
+  {
+   "tokens": 20,
+   "seconds": 5.8,
+   "tps": 3.43,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['--sort-by[ =]memory\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "kubectl rejected the command: error: --sort-by accepts only cpu or memory",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 20,
+   "seconds": 8.7,
+   "tps": 2.29,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['--sort-by[ =]memory\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "kubectl rejected the command: error: --sort-by accepts only cpu or memory",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 18,
+   "seconds": 9.7,
+   "tps": 1.86,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "all parts present",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

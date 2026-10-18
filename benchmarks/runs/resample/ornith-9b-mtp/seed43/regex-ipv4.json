@@ -1,0 +1,35 @@
+{
+ "model": "ornith-9b-mtp",
+ "mode": "resample",
+ "seed": 43,
+ "question": "regex-ipv4",
+ "category": "regex",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": false,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 43,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 133,
+ "seconds_total": 24.6,
+ "attempts": [
+  {
+   "tokens": 133,
+   "seconds": 24.6,
+   "tps": 5.4,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "regex '^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'",
+   "verifier_pass": true,
+   "verifier_feedback": ""
+  }
+ ]
+}

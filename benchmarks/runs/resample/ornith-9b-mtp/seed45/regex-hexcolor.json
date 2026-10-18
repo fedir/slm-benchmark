@@ -1,0 +1,36 @@
+{
+ "model": "ornith-9b-mtp",
+ "mode": "resample",
+ "seed": 45,
+ "question": "regex-hexcolor",
+ "category": "regex",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": false,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 45,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 28,
+ "seconds_total": 10.2,
+ "attempts": [
+  {
+   "tokens": 28,
+   "seconds": 10.2,
+   "tps": 2.75,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "regex '#[0-9a-fA-F]{3}|#[0-9a-fA-F]{6}'",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

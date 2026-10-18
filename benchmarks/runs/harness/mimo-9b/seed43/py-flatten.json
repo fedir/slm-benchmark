@@ -1,0 +1,58 @@
+{
+ "model": "mimo-9b",
+ "mode": "harness",
+ "seed": 43,
+ "question": "py-flatten",
+ "category": "python",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 43,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 221,
+ "seconds_total": 83.9,
+ "attempts": [
+  {
+   "tokens": 60,
+   "seconds": 19.4,
+   "tps": 3.09,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "RecursionError: maximum recursion depth exceeded",
+   "verifier_pass": false,
+   "verifier_feedback": "the performance example raised RecursionError: maximum recursion depth exceeded",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 92,
+   "seconds": 31.6,
+   "tps": 2.91,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "NameError: name 'itertools' is not defined. Did you forget to import 'itertools'?",
+   "verifier_pass": false,
+   "verifier_feedback": "flatten([[1],[2,[3]]]) raised NameError: name 'itertools' is not defined; flatten([]) raised StopIteration: ; flatten([[[[9]]]]) raised NameError: name 'itertools' is not defined; the performance example raised NameError: name 'itertools' is not defined",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 69,
+   "seconds": 32.9,
+   "tps": 2.1,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "AssertionError",
+   "verifier_pass": false,
+   "verifier_feedback": "flatten([[1],[2,[3]]]) returned [1, 3, 2], expected [1,2,3]",
+   "reasoning_chars": 0
+  }
+ ]
+}

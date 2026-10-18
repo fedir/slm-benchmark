@@ -1,0 +1,58 @@
+{
+ "model": "gemma-4-e4b-terse",
+ "mode": "harness",
+ "seed": 46,
+ "question": "py-flatten",
+ "category": "python",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 46,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 193,
+ "seconds_total": 50.0,
+ "attempts": [
+  {
+   "tokens": 46,
+   "seconds": 10.9,
+   "tps": 4.22,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "RecursionError: maximum recursion depth exceeded",
+   "verifier_pass": false,
+   "verifier_feedback": "flatten([[1],[2,[3]]]) raised RecursionError: maximum recursion depth exceeded; flatten([]) raised RecursionError: maximum recursion depth exceeded; flatten([[[[9]]]]) raised RecursionError: maximum recursion depth exceeded; the performance example raised RecursionError: maximum recursion depth exceeded",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 72,
+   "seconds": 18.0,
+   "tps": 4.0,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "AssertionError",
+   "verifier_pass": false,
+   "verifier_feedback": "flatten([[1],[2,[3]]]) returned [2, 3, 1], expected [1,2,3]",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 75,
+   "seconds": 21.1,
+   "tps": 3.56,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "tests passed",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

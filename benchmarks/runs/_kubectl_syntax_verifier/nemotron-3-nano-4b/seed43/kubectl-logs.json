@@ -1,0 +1,24 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "harness",
+ "seed": 43,
+ "question": "kubectl-logs",
+ "category": "kubectl",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": false,
+ "tokens_total": 19,
+ "seconds_total": 4.9,
+ "attempts": [
+  {
+   "tokens": 19,
+   "seconds": 4.9,
+   "tps": 3.85,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['-c[ =]?app\\\\b', '\\\\s-f\\\\b']",
+   "verifier_pass": true,
+   "verifier_feedback": ""
+  }
+ ]
+}

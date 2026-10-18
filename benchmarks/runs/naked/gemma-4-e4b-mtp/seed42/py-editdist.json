@@ -1,0 +1,36 @@
+{
+ "model": "gemma-4-e4b-mtp",
+ "mode": "naked",
+ "seed": 42,
+ "question": "py-editdist",
+ "category": "python",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": false,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 42,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 512,
+ "seconds_total": 60.1,
+ "attempts": [
+  {
+   "tokens": 512,
+   "seconds": 60.1,
+   "tps": 8.52,
+   "finish_reason": "length",
+   "hidden_pass": false,
+   "hidden_detail": "SyntaxError: invalid syntax (no code fence)",
+   "verifier_pass": null,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

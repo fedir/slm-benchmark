@@ -1,0 +1,18 @@
+{
+ "time": "2026-10-17 14:46:53",
+ "sampling_profile": "default",
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 42,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  }
+ },
+ "mem_available_mb": 13886,
+ "swap_used_mb": 810,
+ "loadavg_1m": 3.07,
+ "uptime_min": 1036
+}

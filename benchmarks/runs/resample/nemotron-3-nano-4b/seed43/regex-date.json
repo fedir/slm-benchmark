@@ -1,0 +1,59 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "resample",
+ "seed": 43,
+ "question": "regex-date",
+ "category": "regex",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 43,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 121,
+ "seconds_total": 27.8,
+ "attempts": [
+  {
+   "tokens": 59,
+   "seconds": 10.9,
+   "tps": 5.42,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])-(0[1-9]|[12][0-9]|3[01])$'; wrong on ['2024-02-29', '1999-12-31', '2000-01-01']",
+   "verifier_pass": false,
+   "verifier_feedback": "it does not match these, which it should: ['2023-07-15', '1985-10-31', '2030-12-01']"
+  },
+  {
+   "tokens": 30,
+   "seconds": 7.5,
+   "tps": 4.0,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '\\\\b(?:[0-9]{4}-[0-9]{2}-[0-9]{2})\\\\b'; wrong on ['!2024-13-01', '!2024-00-10', '!2024-01-32', '!2024-01-00']",
+   "verifier_pass": false,
+   "verifier_feedback": "it matches these, which it must reject: ['2023-15-10', '2023-00-01', '2023-07-45', '2023-07-00']",
+   "reasoning_chars": 0,
+   "retry_seed": 1043
+  },
+  {
+   "tokens": 32,
+   "seconds": 9.4,
+   "tps": 3.41,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '\\\\b(?:[0-9]{4}-[0-9]{2}-[0-9]{2})\\\\b'; wrong on ['!2024-13-01', '!2024-00-10', '!2024-01-32', '!2024-01-00']",
+   "verifier_pass": false,
+   "verifier_feedback": "it matches these, which it must reject: ['2023-15-10', '2023-00-01', '2023-07-45', '2023-07-00']",
+   "reasoning_chars": 0,
+   "retry_seed": 2043
+  }
+ ]
+}

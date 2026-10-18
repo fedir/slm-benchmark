@@ -1,0 +1,12 @@
+{
+ "model": "mimo-9b",
+ "question": "py-topk",
+ "category": "python",
+ "passed": true,
+ "detail": "tests passed (no code fence)",
+ "completion_tokens": 76,
+ "seconds": 24.3,
+ "tps": 3.12,
+ "finish_reason": "stop",
+ "reasoning_chars": 0
+}

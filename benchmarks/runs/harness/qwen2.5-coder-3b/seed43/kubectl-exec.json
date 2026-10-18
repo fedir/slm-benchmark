@@ -1,0 +1,47 @@
+{
+ "model": "qwen2.5-coder-3b",
+ "mode": "harness",
+ "seed": 43,
+ "question": "kubectl-exec",
+ "category": "kubectl",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 43,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 45,
+ "seconds_total": 7.9,
+ "attempts": [
+  {
+   "tokens": 22,
+   "seconds": 3.6,
+   "tps": 6.05,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['--\\\\s+ls\\\\s+/data\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "kubectl rejected the command: error: exec [POD] [COMMAND] is not supported anymore. Use exec [POD] -- [COMMAND] instead",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 23,
+   "seconds": 4.3,
+   "tps": 5.31,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "all parts present",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

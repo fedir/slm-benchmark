@@ -1,0 +1,59 @@
+{
+ "model": "mimo-9b",
+ "mode": "resample",
+ "seed": 44,
+ "question": "regex-ipv4",
+ "category": "regex",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 44,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 518,
+ "seconds_total": 146.6,
+ "attempts": [
+  {
+   "tokens": 40,
+   "seconds": 13.4,
+   "tps": 2.99,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?){4}$'; wrong on ['192.168.1.1', '0.0.0.0', '255.255.255.255', '10.0.42.7']",
+   "verifier_pass": false,
+   "verifier_feedback": "it does not match these, which it should: ['8.8.8.8', '127.0.0.1', '172.16.254.1']"
+  },
+  {
+   "tokens": 201,
+   "seconds": 56.5,
+   "tps": 3.56,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "regex '^((?:0|[1-9][0-9]?|1[01][0-9]|12[0-5]|13[0-9]|14[0-9]|15[0-9]|16[0-9]|17[0-9]|18[0-9]|19[0-9]|2[0-4][0-9]|25[0-5])[.]){3}(?:0|[1-9][0-9]?|1[01][0-9]|12[0-5]|13[0-9]|14[0-9]|15[0-9]|16[0-9]|17[0-9]|18[0-9]|19[0-9]|2[0-4][0-9]|25[0-5])$'",
+   "verifier_pass": false,
+   "verifier_feedback": "it does not match these, which it should: ['127.0.0.1']",
+   "reasoning_chars": 0,
+   "retry_seed": 1044
+  },
+  {
+   "tokens": 277,
+   "seconds": 76.7,
+   "tps": 3.61,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '^(\\\\d{1,3}\\\\.){3}\\\\d{1,3}$'; wrong on ['!256.1.1.1', '!300.1.1.1']",
+   "verifier_pass": false,
+   "verifier_feedback": "it matches these, which it must reject: ['999.1.1.1']",
+   "reasoning_chars": 0,
+   "retry_seed": 2044
+  }
+ ]
+}

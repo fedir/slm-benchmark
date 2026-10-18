@@ -1,0 +1,23 @@
+# qwen2.5-coder-7b / sh-top-ips / seed 46 / resample (no feedback)
+
+## Prompt
+
+The file `access.log` has an IP address as the first space-separated field of each line. Print the 3 most frequent IP addresses with their counts, one per line as `COUNT IP`, most frequent first, ties broken by IP address in ascending string order. Reply with ONLY the bash command (a one-liner or pipeline) in a code block.
+
+## Attempt 1: FAIL (hidden: output ['2 10.0.0.1', '3 10.0.0.2', '2 10.0.0.3'], expected ['3 10.0.0.2', '2 10.0.0.1', '2 10.0.0.3'])
+
+- 45 tokens in 12.1s, finish: stop
+- verifier: FAIL: on a small example the command's output ['3 1.1.1.1', '2 2.2.2.2', '1 4.4.4.4'], expected ['3 1.1.1.1', '2 2.2.2.2', '1 3.3.3.3']
+
+```bash
+awk '{ips[$1]++} END {for (ip in ips) print ips[ip], ip}' access.log | sort -nr | head -n 3 | sort -k2
+```
+
+## Attempt 2: PASS (hidden: output matches)
+
+- 50 tokens in 13.0s, finish: stop
+- verifier: pass
+
+```bash
+awk '{ips[$1]++} END {for (ip in ips) print ips[ip], ip}' access.log | sort -k2,2n -k1,1nr | head -n 3
+```

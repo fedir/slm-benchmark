@@ -1,0 +1,12 @@
+{
+ "model": "mimo-9b",
+ "question": "kubectl-pods-sorted",
+ "category": "kubectl",
+ "passed": false,
+ "detail": "missing ['--sort-by[ =]\\\\.?metadata\\\\.creationTimestamp']",
+ "completion_tokens": 18,
+ "seconds": 7.5,
+ "tps": 2.38,
+ "finish_reason": "stop",
+ "reasoning_chars": 0
+}

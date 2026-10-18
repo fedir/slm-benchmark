@@ -1,0 +1,47 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "resample",
+ "seed": 42,
+ "question": "regex-date",
+ "category": "regex",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 42,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 73,
+ "seconds_total": 15.9,
+ "attempts": [
+  {
+   "tokens": 19,
+   "seconds": 5.3,
+   "tps": 3.56,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '\\\\b\\\\d{4}-\\\\d{2}-\\\\d{2}\\\\b'; wrong on ['!2024-13-01', '!2024-00-10', '!2024-01-32', '!2024-01-00']",
+   "verifier_pass": false,
+   "verifier_feedback": "it matches these, which it must reject: ['2023-15-10', '2023-00-01', '2023-07-45', '2023-07-00']"
+  },
+  {
+   "tokens": 54,
+   "seconds": 10.6,
+   "tps": 5.11,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "regex '\\\\b(?:[0-9]{4})-((?:0[1-9]|1[0-2]))-(?:0[1-9]|[12][0-9]|3[01])\\\\b'",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0,
+   "retry_seed": 1042
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "model": "ornith-9b-mtp",
+ "mode": "resample",
+ "seed": 45,
+ "question": "py-editdist",
+ "category": "python",
+ "first_pass": true,
+ "final_pass": true,
+ "retried": false,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 45,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 200,
+ "seconds_total": 36.4,
+ "attempts": [
+  {
+   "tokens": 200,
+   "seconds": 36.4,
+   "tps": 5.5,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "tests passed",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

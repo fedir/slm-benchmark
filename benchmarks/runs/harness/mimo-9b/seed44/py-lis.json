@@ -1,0 +1,44 @@
+{
+ "model": "mimo-9b",
+ "mode": "harness",
+ "seed": 44,
+ "question": "py-lis",
+ "category": "python",
+ "first_pass": false,
+ "final_pass": true,
+ "retried": true,
+ "tokens_total": 331,
+ "seconds_total": 120.9,
+ "attempts": [
+  {
+   "tokens": 108,
+   "seconds": 31.7,
+   "tps": 3.41,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "NameError: name 'bisect_left' is not defined (no code fence)",
+   "verifier_pass": false,
+   "verifier_feedback": "lis_length([0,1,0,3,2,3]) raised NameError: name 'bisect_left' is not defined; lis_length([5,4,3]) raised NameError: name 'bisect_left' is not defined; lis_length([2,2,2,2]) raised NameError: name 'bisect_left' is not defined; the performance example raised NameError: name 'bisect_left' is not defined"
+  },
+  {
+   "tokens": 108,
+   "seconds": 37.7,
+   "tps": 2.86,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "NameError: name 'bisect_left' is not defined (no code fence)",
+   "verifier_pass": false,
+   "verifier_feedback": "lis_length([0,1,0,3,2,3]) raised NameError: name 'bisect_left' is not defined; lis_length([5,4,3]) raised NameError: name 'bisect_left' is not defined; lis_length([2,2,2,2]) raised NameError: name 'bisect_left' is not defined; the performance example raised NameError: name 'bisect_left' is not defined"
+  },
+  {
+   "tokens": 115,
+   "seconds": 51.5,
+   "tps": 2.23,
+   "finish_reason": "stop",
+   "hidden_pass": true,
+   "hidden_detail": "tests passed (no code fence)",
+   "verifier_pass": true,
+   "verifier_feedback": ""
+  }
+ ]
+}

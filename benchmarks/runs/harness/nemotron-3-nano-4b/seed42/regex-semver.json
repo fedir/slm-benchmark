@@ -1,0 +1,58 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "harness",
+ "seed": 42,
+ "question": "regex-semver",
+ "category": "regex",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 42,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 86,
+ "seconds_total": 25.9,
+ "attempts": [
+  {
+   "tokens": 22,
+   "seconds": 6.0,
+   "tps": 3.65,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '\\\\b0(?:\\\\.[1-9]\\\\d*|\\\\.0)*\\\\b'; wrong on ['1.2.3', '10.20.30', '100.0.1']",
+   "verifier_pass": false,
+   "verifier_feedback": "it does not match these, which it should: ['2.0.15', '7.7.7']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 32,
+   "seconds": 8.5,
+   "tps": 3.78,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '\\\\b(?:[1-9]\\\\d*|\\\\d)(?:\\\\.[1-9]\\\\d*|\\\\d)*\\\\b'; wrong on ['0.0.0', '100.0.1', '!01.2.3', '!1.2', '!1.2.3.4']",
+   "verifier_pass": false,
+   "verifier_feedback": "it does not match these, which it should: ['2.0.15', '0.10.0']; it matches these, which it must reject: ['4.5', '1.2.3.4.5']",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 32,
+   "seconds": 11.4,
+   "tps": 2.82,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "regex '\\\\b(?:[1-9]\\\\d*|\\\\d)(?:\\\\.[1-9]\\\\d*|\\\\d)*\\\\b'; wrong on ['0.0.0', '100.0.1', '!01.2.3', '!1.2', '!1.2.3.4']",
+   "verifier_pass": false,
+   "verifier_feedback": "it does not match these, which it should: ['2.0.15', '0.10.0']; it matches these, which it must reject: ['4.5', '1.2.3.4.5']",
+   "reasoning_chars": 0
+  }
+ ]
+}

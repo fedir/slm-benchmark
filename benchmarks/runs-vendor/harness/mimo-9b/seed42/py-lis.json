@@ -1,0 +1,61 @@
+{
+ "model": "mimo-9b",
+ "mode": "harness",
+ "seed": 42,
+ "question": "py-lis",
+ "category": "python",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 42,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "min_p": 0.0,
+  "repeat_penalty": 1.0,
+  "presence_penalty": 0.0,
+  "profile": "vendor"
+ },
+ "tokens_total": 350,
+ "seconds_total": 138.0,
+ "attempts": [
+  {
+   "tokens": 110,
+   "seconds": 35.6,
+   "tps": 3.09,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "NameError: name 'bisect' is not defined. Did you forget to import 'bisect'? (no code fence)",
+   "verifier_pass": false,
+   "verifier_feedback": "lis_length([0,1,0,3,2,3]) raised NameError: name 'bisect' is not defined; lis_length([5,4,3]) raised NameError: name 'bisect' is not defined; lis_length([2,2,2,2]) raised NameError: name 'bisect' is not defined; the performance example raised NameError: name 'bisect' is not defined",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 115,
+   "seconds": 44.5,
+   "tps": 2.59,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "IndexError: list assignment index out of range (no code fence)",
+   "verifier_pass": false,
+   "verifier_feedback": "lis_length([0,1,0,3,2,3]) raised IndexError: list assignment index out of range; lis_length([5,4,3]) raised IndexError: list assignment index out of range; lis_length([2,2,2,2]) raised IndexError: list assignment index out of range; the performance example raised IndexError: list assignment index out of range",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 125,
+   "seconds": 57.9,
+   "tps": 2.16,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "AssertionError (no code fence)",
+   "verifier_pass": false,
+   "verifier_feedback": "lis_length([5,4,3]) returned 3, expected 1; lis_length([2,2,2,2]) returned 4, expected 1",
+   "reasoning_chars": 0
+  }
+ ]
+}

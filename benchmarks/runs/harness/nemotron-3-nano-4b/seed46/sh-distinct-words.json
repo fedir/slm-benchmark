@@ -1,0 +1,36 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "harness",
+ "seed": 46,
+ "question": "sh-distinct-words",
+ "category": "shell",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": false,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 46,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 19,
+ "seconds_total": 5.2,
+ "attempts": [
+  {
+   "tokens": 19,
+   "seconds": 5.2,
+   "tps": 3.63,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "output ['3'], expected ['9']",
+   "verifier_pass": true,
+   "verifier_feedback": "",
+   "reasoning_chars": 0
+  }
+ ]
+}

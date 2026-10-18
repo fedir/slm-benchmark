@@ -1,0 +1,58 @@
+{
+ "model": "nemotron-3-nano-4b",
+ "mode": "harness",
+ "seed": 43,
+ "question": "kubectl-portforward",
+ "category": "kubectl",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 43,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 89,
+ "seconds_total": 27.0,
+ "attempts": [
+  {
+   "tokens": 28,
+   "seconds": 5.9,
+   "tps": 4.78,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['\\\\b8080:80\\\\b', '-n[ =]?staging\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "the command is valid kubectl but does not do what was asked: the target should be `svc/web`, the command uses 'service/web:80'; the ports should be LOCAL:REMOTE = 8080:80, the command uses '0.0.0.0:8080'; the namespace should be `staging`, the command uses None",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 29,
+   "seconds": 8.8,
+   "tps": 3.3,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['\\\\b8080:80\\\\b', '-n[ =]?staging\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "the command is valid kubectl but does not do what was asked: the target should be `svc/web`, the command uses 'svc/web:80'; the ports should be LOCAL:REMOTE = 8080:80, the command uses '0.0.0.0:8080'; the namespace should be `staging`, the command uses None",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 32,
+   "seconds": 12.3,
+   "tps": 2.61,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['\\\\b8080:80\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "the command is valid kubectl but does not do what was asked: the target should be `svc/web`, the command uses 'svc/web:80'; the ports should be LOCAL:REMOTE = 8080:80, the command uses '0.0.0.0:8080'",
+   "reasoning_chars": 0
+  }
+ ]
+}

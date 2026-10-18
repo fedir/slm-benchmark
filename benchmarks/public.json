@@ -1,0 +1,538 @@
+{
+ "_note": "Visible examples used ONLY by the harness verifier (repeat.py --mode harness). Deliberately disjoint from the hidden grading cases in questions.json, so the harness cannot see the answer key. kubectl questions have no examples: they are verified by the real kubectl argument parser, offline. The kubectl entries hold structured task requirements (taken from the prompt text), not the hidden regexes.",
+ "regex-ipv4": {
+  "match": [
+   "8.8.8.8",
+   "127.0.0.1",
+   "172.16.254.1"
+  ],
+  "nomatch": [
+   "999.1.1.1",
+   "10.0.0",
+   "8.8.8.8.8",
+   "foo.bar.baz.qux"
+  ]
+ },
+ "regex-date": {
+  "match": [
+   "2023-07-15",
+   "1985-10-31",
+   "2030-12-01"
+  ],
+  "nomatch": [
+   "2023-15-10",
+   "2023-00-01",
+   "2023-7-5",
+   "2023-07-45",
+   "2023-07-00"
+  ]
+ },
+ "regex-hexcolor": {
+  "match": [
+   "#abc",
+   "#DEF012",
+   "#9a8B7c"
+  ],
+  "nomatch": [
+   "#abcd",
+   "#xyz123",
+   "abc123",
+   "#abcdefg",
+   "#ab"
+  ]
+ },
+ "py-intervals": {
+  "func": "merge_intervals",
+  "cases": [
+   [
+    "merge_intervals([[1,4],[4,5]])",
+    "[[1,5]]"
+   ],
+   [
+    "merge_intervals([[1,4],[0,2],[3,5]])",
+    "[[0,5]]"
+   ],
+   [
+    "merge_intervals([[7,8],[1,2]])",
+    "[[1,2],[7,8]]"
+   ]
+  ]
+ },
+ "py-lis": {
+  "func": "lis_length",
+  "cases": [
+   [
+    "lis_length([0,1,0,3,2,3])",
+    "4"
+   ],
+   [
+    "lis_length([5,4,3])",
+    "1"
+   ],
+   [
+    "lis_length([2,2,2,2])",
+    "1"
+   ]
+  ],
+  "perf": "import random\nrandom.seed(7)\nlis_length([random.randint(0, 10**6) for _ in range(20000)])",
+  "perf_limit": 2.0,
+  "perf_label": "a 20,000-element list"
+ },
+ "py-topk": {
+  "func": "top_k_frequent",
+  "cases": [
+   [
+    "top_k_frequent(['a','b','a','c','b','a'],2)",
+    "['a','b']"
+   ],
+   [
+    "top_k_frequent(['x','y','z'],2)",
+    "['x','y']"
+   ],
+   [
+    "top_k_frequent(['dog','cat','cat','dog'],1)",
+    "['cat']"
+   ]
+  ]
+ },
+ "py-coins": {
+  "func": "min_coins",
+  "cases": [
+   [
+    "min_coins([1,3,4],6)",
+    "2"
+   ],
+   [
+    "min_coins([2,5],7)",
+    "2"
+   ],
+   [
+    "min_coins([3],7)",
+    "-1"
+   ],
+   [
+    "min_coins([5],0)",
+    "0"
+   ]
+  ]
+ },
+ "kubectl-pods-sorted": {
+  "intent": {
+   "verb": "get",
+   "kind": "pods",
+   "namespace": "prod",
+   "sort_by": ".metadata.creationTimestamp"
+  }
+ },
+ "kubectl-scale": {
+  "intent": {
+   "verb": "scale",
+   "kind": "deployment",
+   "name": "web",
+   "namespace": "staging",
+   "replicas": "5"
+  }
+ },
+ "kubectl-logs": {
+  "intent": {
+   "verb": "logs",
+   "name": "api-0",
+   "container": "app",
+   "follow": true,
+   "tail": "100"
+  }
+ },
+ "kubectl-nodes-names": {
+  "intent": {
+   "verb": "get",
+   "kind": "nodes",
+   "jsonpath_has": [
+    ".items",
+    ".metadata.name"
+   ]
+  }
+ },
+ "regex-time24": {
+  "match": [
+   "01:15",
+   "18:45",
+   "20:00"
+  ],
+  "nomatch": [
+   "25:10",
+   "10:75",
+   "1:15",
+   "10:5"
+  ]
+ },
+ "regex-semver": {
+  "match": [
+   "2.0.15",
+   "0.10.0",
+   "7.7.7"
+  ],
+  "nomatch": [
+   "3.04.5",
+   "4.5",
+   "1.2.3.4.5",
+   "10.0.00"
+  ]
+ },
+ "regex-mac": {
+  "match": [
+   "aa:bb:cc:dd:ee:ff",
+   "12:34:56:78:9A:BC"
+  ],
+  "nomatch": [
+   "12:34:56:78:9A",
+   "12:34:56:78:9A:BG",
+   "12-34-56-78-9A-BC"
+  ]
+ },
+ "regex-uuid": {
+  "match": [
+   "550e8400-e29b-41d4-a716-446655440000",
+   "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
+  ],
+  "nomatch": [
+   "550E8400-e29b-41d4-a716-446655440000",
+   "550e8400-e29b-41d4-a716",
+   "550e8400e29b41d4a716446655440000"
+  ]
+ },
+ "regex-slug": {
+  "match": [
+   "my-first-post",
+   "v2",
+   "a-b-c"
+  ],
+  "nomatch": [
+   "My-Post",
+   "post-",
+   "a--b",
+   "a b"
+  ]
+ },
+ "py-parens": {
+  "func": "is_balanced",
+  "cases": [
+   [
+    "is_balanced('{[()]}')",
+    "True"
+   ],
+   [
+    "is_balanced('([)]')",
+    "False"
+   ],
+   [
+    "is_balanced('x')",
+    "True"
+   ],
+   [
+    "is_balanced('}{')",
+    "False"
+   ]
+  ]
+ },
+ "py-roman": {
+  "func": "to_roman",
+  "cases": [
+   [
+    "to_roman(3)",
+    "'III'"
+   ],
+   [
+    "to_roman(49)",
+    "'XLIX'"
+   ],
+   [
+    "to_roman(2024)",
+    "'MMXXIV'"
+   ],
+   [
+    "to_roman(900)",
+    "'CM'"
+   ]
+  ]
+ },
+ "py-rle": {
+  "func": "rle_encode",
+  "cases": [
+   [
+    "rle_encode('wwwwb')",
+    "'w4b1'"
+   ],
+   [
+    "rle_encode('abc')",
+    "'a1b1c1'"
+   ],
+   [
+    "rle_encode('')",
+    "''"
+   ]
+  ]
+ },
+ "py-flatten": {
+  "func": "flatten",
+  "cases": [
+   [
+    "flatten([[1],[2,[3]]])",
+    "[1,2,3]"
+   ],
+   [
+    "flatten([])",
+    "[]"
+   ],
+   [
+    "flatten([[[[9]]]])",
+    "[9]"
+   ]
+  ],
+  "perf": "d=[1]\nfor _ in range(3000): d=[d]\nflatten(d)",
+  "perf_limit": 2.0,
+  "perf_label": "3000 nested levels"
+ },
+ "py-twosum": {
+  "func": "two_sum",
+  "cases": [
+   [
+    "two_sum([1,5,9],14)",
+    "[1,2]"
+   ],
+   [
+    "two_sum([4,4],8)",
+    "[0,1]"
+   ],
+   [
+    "two_sum([0,4,3,0],0)",
+    "[0,3]"
+   ]
+  ],
+  "perf": "n=list(range(50000))\ntwo_sum(n,49998+49999)",
+  "perf_limit": 2.0,
+  "perf_label": "50,000 numbers"
+ },
+ "py-editdist": {
+  "func": "edit_distance",
+  "cases": [
+   [
+    "edit_distance('horse','ros')",
+    "3"
+   ],
+   [
+    "edit_distance('a','a')",
+    "0"
+   ],
+   [
+    "edit_distance('abc','xyz')",
+    "3"
+   ]
+  ],
+  "perf": "edit_distance('ab'*400,'ba'*400)",
+  "perf_limit": 4.0,
+  "perf_label": "800-character strings"
+ },
+ "py-spiral": {
+  "func": "spiral_order",
+  "cases": [
+   [
+    "spiral_order([[1,2],[3,4],[5,6]])",
+    "[1,2,4,6,5,3]"
+   ],
+   [
+    "spiral_order([[5]])",
+    "[5]"
+   ],
+   [
+    "spiral_order([[1,2,3],[4,5,6]])",
+    "[1,2,3,6,5,4]"
+   ]
+  ]
+ },
+ "py-sieve": {
+  "func": "count_primes",
+  "cases": [
+   [
+    "count_primes(30)",
+    "10"
+   ],
+   [
+    "count_primes(3)",
+    "2"
+   ],
+   [
+    "count_primes(1)",
+    "0"
+   ]
+  ],
+  "perf": "count_primes(500000)",
+  "perf_limit": 2.0,
+  "perf_label": "n = 500,000"
+ },
+ "kubectl-label-selector": {
+  "intent": {
+   "verb": "get",
+   "kind": "pods",
+   "namespace": "prod",
+   "flags": {
+    "selector": "app=web"
+   }
+  }
+ },
+ "kubectl-rollout-restart": {
+  "intent": {
+   "verb": "rollout",
+   "args_head": [
+    "restart"
+   ],
+   "kind": "deployment",
+   "name": "api",
+   "namespace": "prod"
+  }
+ },
+ "kubectl-exec": {
+  "intent": {
+   "verb": "exec",
+   "name": "db-0",
+   "namespace": "data",
+   "flags": {
+    "container": "db"
+   },
+   "dashdash": [
+    "ls",
+    "/data"
+   ]
+  }
+ },
+ "kubectl-portforward": {
+  "intent": {
+   "verb": "port-forward",
+   "namespace": "staging",
+   "target": "web",
+   "target_kinds": [
+    "svc",
+    "service"
+   ],
+   "ports": "8080:80"
+  }
+ },
+ "kubectl-events-sorted": {
+  "intent": {
+   "verb": "get",
+   "kind": "events",
+   "namespace": "prod",
+   "flags": {
+    "sort-by": ".lastTimestamp"
+   }
+  }
+ },
+ "kubectl-top": {
+  "intent": {
+   "verb": "top",
+   "kind": "pods",
+   "namespace": "prod",
+   "flags": {
+    "sort-by": "memory"
+   }
+  }
+ },
+ "sql-top-earners": {
+  "setup": "CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT, dept TEXT, salary INTEGER, manager_id INTEGER); INSERT INTO employees VALUES (1,'Kim',NULL,80000,NULL),(2,'Lee',NULL,55000,1),(3,'Max',NULL,80000,1),(4,'Ned',NULL,61000,1);",
+  "expected": [
+   [
+    "Kim"
+   ],
+   [
+    "Max"
+   ],
+   [
+    "Ned"
+   ]
+  ],
+  "ordered": true
+ },
+ "sql-dept-stats": {
+  "setup": "CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT, dept TEXT, salary INTEGER, manager_id INTEGER); INSERT INTO employees VALUES (1,'a','x',10,NULL),(2,'b','x',20,1),(3,'c','y',5,1);",
+  "expected": [
+   [
+    "x",
+    2,
+    30
+   ],
+   [
+    "y",
+    1,
+    5
+   ]
+  ],
+  "ordered": true
+ },
+ "sql-no-orders": {
+  "setup": "CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT); CREATE TABLE orders(id INTEGER PRIMARY KEY, customer_id INTEGER, amount INTEGER, placed_on TEXT); INSERT INTO customers VALUES (1,'Q'),(2,'R'),(3,'S'); INSERT INTO orders VALUES (1,2,10,'2024-05-05');",
+  "expected": [
+   [
+    "Q"
+   ],
+   [
+    "S"
+   ]
+  ],
+  "ordered": true
+ },
+ "sql-second-salary": {
+  "setup": "CREATE TABLE employees(id INTEGER PRIMARY KEY, name TEXT, dept TEXT, salary INTEGER, manager_id INTEGER); INSERT INTO employees VALUES (1,'a',NULL,300,NULL),(2,'b',NULL,300,1),(3,'c',NULL,200,1),(4,'d',NULL,100,1);",
+  "expected": [
+   [
+    200
+   ]
+  ],
+  "ordered": false
+ },
+ "sql-monthly": {
+  "setup": "CREATE TABLE customers(id INTEGER PRIMARY KEY, name TEXT); CREATE TABLE orders(id INTEGER PRIMARY KEY, customer_id INTEGER, amount INTEGER, placed_on TEXT); INSERT INTO customers VALUES (1,'Q'); INSERT INTO orders VALUES (1,1,5,'2024-07-01'),(2,1,6,'2024-07-30'),(3,1,9,'2024-09-09'),(4,1,100,'2023-07-07');",
+  "expected": [
+   [
+    "2024-07",
+    11
+   ],
+   [
+    "2024-09",
+    9
+   ]
+  ],
+  "ordered": true
+ },
+ "sh-count-errors": {
+  "files": {
+   "app.log": "ERROR a\nok\nERROR b\nERROR c\nERROR d\nwarn\n"
+  },
+  "expected": "4"
+ },
+ "sh-top-ips": {
+  "files": {
+   "access.log": "1.1.1.1 a\n2.2.2.2 b\n1.1.1.1 c\n3.3.3.3 d\n2.2.2.2 e\n1.1.1.1 f\n4.4.4.4 g\n"
+  },
+  "expected": "3 1.1.1.1\n2 2.2.2.2\n1 3.3.3.3"
+ },
+ "sh-csv-sum": {
+  "files": {
+   "sales.csv": "id,item,qty\n1,a,1\n2,b,2\n3,c,3\n"
+  },
+  "expected": "6"
+ },
+ "sh-rename-ext": {
+  "files": {
+   "x.txt": "1",
+   "y.txt": "2",
+   "z.doc": "3"
+  },
+  "expected": "x.md\ny.md\nz.doc",
+  "post": "ls"
+ },
+ "sh-distinct-words": {
+  "files": {
+   "text.txt": "Red green\nblue RED\nGreen\n"
+  },
+  "expected": "3"
+ }
+}

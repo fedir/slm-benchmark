@@ -1,0 +1,60 @@
+{
+ "model": "qwen2.5-coder-7b",
+ "mode": "resample",
+ "seed": 44,
+ "question": "kubectl-events-sorted",
+ "category": "kubectl",
+ "first_pass": false,
+ "final_pass": false,
+ "retried": true,
+ "sampling": {
+  "max_tokens": 512,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "seed": 44,
+  "chat_template_kwargs": {
+   "enable_thinking": false
+  },
+  "profile": "default"
+ },
+ "tokens_total": 57,
+ "seconds_total": 21.3,
+ "attempts": [
+  {
+   "tokens": 20,
+   "seconds": 6.0,
+   "tps": 3.36,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['--sort-by[ =]\\\\S*lastTimestamp\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "the command is valid kubectl but does not do what was asked: the --sort-by option should be '.lastTimestamp', the command has '.metadata.creationTimestamp'",
+   "reasoning_chars": 0
+  },
+  {
+   "tokens": 19,
+   "seconds": 7.8,
+   "tps": 2.43,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['--sort-by[ =]\\\\S*lastTimestamp\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "the command is valid kubectl but does not do what was asked: the --sort-by option should be '.lastTimestamp', the command has '.metadata.creationTimestamp'",
+   "reasoning_chars": 0,
+   "retry_seed": 1044
+  },
+  {
+   "tokens": 18,
+   "seconds": 7.5,
+   "tps": 2.41,
+   "finish_reason": "stop",
+   "hidden_pass": false,
+   "hidden_detail": "missing ['--sort-by[ =]\\\\S*lastTimestamp\\\\b']",
+   "verifier_pass": false,
+   "verifier_feedback": "the command is valid kubectl but does not do what was asked: the --sort-by option should be '.lastTimestamp', the command has '.metadata.creationTimestamp'",
+   "reasoning_chars": 0,
+   "retry_seed": 2044
+  }
+ ]
+}

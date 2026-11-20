@@ -247,8 +247,8 @@ def start_server(spec):
     except OSError: pass
     global SYSTEM; SYSTEM = spec.get("system")
     env = dict(os.environ, LD_LIBRARY_PATH=base.BACKEND)
-    cmd = [f"{base.BACKEND}/llama-server", "-m", os.path.expanduser(spec["path"]), "-ngl", "0", "-t", "4",
-           "-c", "4096", "--port", str(base.PORT), "--no-webui"] + spec["args"]
+    cmd = [f"{base.BACKEND}/llama-server", "-m", base.expand(spec["path"]), "-ngl", "0", "-t", "4",
+           "-c", "4096", "--port", str(base.PORT), "--no-webui"] + [base.expand(x) for x in spec["args"]]
     srv = subprocess.Popen(cmd, env=env, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     for _ in range(180):
         try: urllib.request.urlopen(f"http://localhost:{base.PORT}/health", timeout=2); return srv

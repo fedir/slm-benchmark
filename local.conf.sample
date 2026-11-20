@@ -1,0 +1,8 @@
+# Machine-specific paths. Copy to local.conf (git-ignored) and edit.
+# Plain KEY=value lines, no quotes, no $VARIABLES: read by serve.sh, the Makefile and the Python scripts.
+
+# Directory holding the model folders (LM Studio default: ~/.lmstudio/models; write an absolute path for make)
+MODELS_DIR=/home/USER/.lmstudio/models
+
+# llama.cpp backend directory containing llama-server (a * wildcard is allowed; the highest version is used)
+BACKEND_DIR=/path/to/lmstudio/resources/app/.webpack/bin/extensions/backends/llama.cpp-linux-x86_64-vulkan-avx2-*

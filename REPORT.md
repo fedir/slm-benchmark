@@ -26,6 +26,8 @@ bus, so it adds no bandwidth.
 
 | File | Purpose |
 |---|---|
+| `LICENSE` | GNU General Public License v3.0 |
+| `local.conf.sample` | Template for the git-ignored `local.conf` (model directory and llama.cpp backend path) |
 | `serve.sh` | Starts `llama-server`; `MODEL=` and `SPEC=` env vars override the defaults |
 | `Makefile` | `make run-ornith`, `make run-mimo`, `make stop-all`, `make help` |
 | `chat.html` | Single-file chat UI for the server (see 2) |

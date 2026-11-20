@@ -2,3 +2,10 @@ __pycache__/
 *.pyc
 node_modules/
 .DS_Store
+
+# machine-specific paths
+local.conf
+
+# slides and slide theme (kept locally)
+slidev/
+theme-sample.odp

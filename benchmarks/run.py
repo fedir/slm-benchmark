@@ -13,8 +13,32 @@ import argparse, glob, json, os, re, subprocess, sys, tempfile, time, urllib.req
 HERE = os.path.dirname(os.path.abspath(__file__))
 RES = os.path.join(HERE, "results")
 PORT = int(os.environ.get("BENCH_PORT", "8089"))   # BENCH_PORT lets a side test run next to a benchmark
-BACKEND = glob.glob("/var/lib/flatpak/app/ai.lmstudio.lm-studio/x86_64/stable/active/files/extra/"
-                    "lmstudio/resources/app/.webpack/bin/extensions/backends/llama.cpp-linux-x86_64-vulkan-avx2-*")[0]
+ROOT = os.path.dirname(HERE)
+
+def load_local():
+    """Machine-specific paths from <project>/local.conf (KEY=value lines, not in git; see local.conf.sample)."""
+    conf = {}
+    try:
+        for line in open(os.path.join(ROOT, "local.conf")):
+            line = line.split("#", 1)[0].strip()
+            if "=" in line:
+                k, v = line.split("=", 1); conf[k.strip()] = v.strip().strip("\"'")
+    except OSError:
+        pass
+    return conf
+
+LOCAL = load_local()
+MODELS_DIR = os.path.expanduser(LOCAL.get("MODELS_DIR", "~/.lmstudio/models"))
+_BACKENDS = sorted(glob.glob(os.path.expanduser(LOCAL.get("BACKEND_DIR") or
+                    "/var/lib/flatpak/app/ai.lmstudio.lm-studio/x86_64/stable/active/files/extra/lmstudio/resources/app/.webpack/bin/"
+                    "extensions/backends/llama.cpp-linux-x86_64-vulkan-avx2-*")))
+if not _BACKENDS:
+    raise SystemExit("llama.cpp backend not found: copy local.conf.sample to local.conf and set BACKEND_DIR")
+BACKEND = _BACKENDS[-1]
+
+def expand(p):
+    """Resolve {MODELS_DIR} and ~ in a path or argument taken from models.json."""
+    return os.path.expanduser(p.replace("{MODELS_DIR}", MODELS_DIR))
 PARAMS = {"max_tokens": 512, "temperature": 0.6, "top_p": 0.95, "top_k": 20, "seed": 42,
           "chat_template_kwargs": {"enable_thinking": False}}
 
@@ -125,8 +149,8 @@ def run_model(name, spec, questions, force):
         print(f"[{name}] nothing to do"); return
     os.makedirs(f"{RES}/{name}", exist_ok=True)
     env = dict(os.environ, LD_LIBRARY_PATH=BACKEND)
-    cmd = [f"{BACKEND}/llama-server", "-m", os.path.expanduser(spec["path"]), "-ngl", "0", "-t", "4",
-           "-c", "4096", "--port", str(PORT), "--no-webui"] + spec["args"]
+    cmd = [f"{BACKEND}/llama-server", "-m", expand(spec["path"]), "-ngl", "0", "-t", "4",
+           "-c", "4096", "--port", str(PORT), "--no-webui"] + [expand(x) for x in spec["args"]]
     srv = subprocess.Popen(cmd, env=env, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     try:
         for _ in range(180):

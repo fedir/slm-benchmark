@@ -1,12 +1,13 @@
 # SLM project
 
-Local benchmarking of small language models on a laptop CPU/iGPU, plus a Slidev deck that presents the results. Not a git repo.
+Local benchmarking of small language models on a laptop CPU/iGPU, plus a Slidev deck that presents the results. Git repo, GPL-3.0 (`LICENSE`). `slidev/` and `theme-sample.odp` are kept locally but git-ignored.
 
 ## Layout
 
 - `REPORT.md` — source of truth for all benchmark numbers (platform, tuning, task results). The deck's benchmark slides are copied from it (3-seed mean ± SD from 6.4, harness from 6.5); update the report first, then the slides.
 - `benchmarks/` — `questions.json` (11 tasks: 3 regex, 4 Python, 4 kubectl), `models.json`, `run.py` (runs + auto-grades), `results/<model>/<question>.md|json`, `results/SUMMARY.md` (the single seed-42 run).
 - `benchmarks/repeat.py`, `public.json`, `runs/` — 3-seed stability runs and the generate->verify->retry harness. Per-attempt files in `runs/<mode>/<model>/seed<N>/`, tables in `runs/STATS.md`. `public.json` holds the harness's visible examples, kept disjoint from the hidden grading cases.
+- `local.conf` (git-ignored; copy `local.conf.sample`) — machine-specific `MODELS_DIR` and `BACKEND_DIR`, read by `serve.sh`, the Makefile and the Python scripts (`run.py` `expand()`); `models.json` paths use `{MODELS_DIR}/...`.
 - `serve.sh` + root `Makefile` — start `llama-server` (LM Studio's bundled llama.cpp Vulkan backend) on :8080. `chat.html` is a single-file chat UI for it.
 - `slidev/` — the presentation (`slides.md`, `style.css`, `global-top.vue`, `global-bottom.vue`). `slides.pdf` and `dist/` (gitignored) are build outputs.
 - `benchmarks/tasks_v2.py` (29 extra tasks + validation against known-good/bad answers), `run_extended.sh` (40 tasks x seeds 42-46, harness then `--mode resample` no-feedback control), `analysis.py` (bootstrap CIs over questions, paired tests -> `ANALYSIS.md`/`analysis.json`), `speed.py` (throughput with repetitions), `gguf_info.py`.

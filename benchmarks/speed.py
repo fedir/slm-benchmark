@@ -18,7 +18,7 @@ import run as base
 
 OUT = os.path.join(HERE, "speed")
 M = json.load(open(f"{HERE}/models.json"))
-ORNITH_STOCK = "~/.lmstudio/models/ornith-ai/Ornith-1.5-9B-GGUF/Ornith-1.5-9B-Q4_K_M.gguf"
+ORNITH_STOCK = "{MODELS_DIR}/ornith-ai/Ornith-1.5-9B-GGUF/Ornith-1.5-9B-Q4_K_M.gguf"
 PROMPT = ("Review the following Python function and explain, in about 100 words, what it does, whether it is correct and how you would improve it.\n\n"
           + "def merge_intervals(intervals):\n    intervals.sort(key=lambda x: x[0])\n    merged = []\n    for start, end in intervals:\n"
           "        if merged and start <= merged[-1][1]:\n            merged[-1][1] = max(merged[-1][1], end)\n        else:\n            merged.append([start, end])\n    return merged\n\n"
@@ -57,9 +57,9 @@ def measure(name, path, args, hw, reps):
         urllib.request.urlopen(f"http://localhost:{base.PORT}/health", timeout=2)
         raise SystemExit(f"a server is already answering on port {base.PORT}; stop it first")
     except OSError: pass
-    path = os.path.expanduser(path)
+    path = base.expand(path)
     env = dict(os.environ, LD_LIBRARY_PATH=base.BACKEND)
-    srv = subprocess.Popen([f"{base.BACKEND}/llama-server", "-m", path, *hw, "-c", "4096", "--port", str(base.PORT), "--no-webui", *args],
+    srv = subprocess.Popen([f"{base.BACKEND}/llama-server", "-m", path, *hw, "-c", "4096", "--port", str(base.PORT), "--no-webui", *[base.expand(x) for x in args]],
                            env=env, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     try:
         for _ in range(240):

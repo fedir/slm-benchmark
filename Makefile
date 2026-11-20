@@ -1,5 +1,9 @@
 .PHONY: benchmark-extended benchmark-analysis benchmark-speed validate-tasks paper benchmark-vendor benchmark-compare benchmark benchmark-summary benchmark-repeat benchmark-stats run-ornith run-mimo run-nemotron stop-all stop dev-slides build-slides export-slides help
 
+# Machine-specific paths (git-ignored); see local.conf.sample
+-include local.conf
+MODELS_DIR ?= $(HOME)/.lmstudio/models
+
 help:
 	@echo "make run-ornith   start Ornith 9B MTP server on :8080 (foreground, Ctrl+C to stop)"
 	@echo "make run-mimo     start MiMo V2.6 Distill Qwen 9B server on :8080"
@@ -24,10 +28,10 @@ run-ornith:
 	./serve.sh
 
 run-mimo:
-	MODEL=$(HOME)/.lmstudio/models/bartowski/MiMo-V2.6-Distill-Qwen-9B-GGUF/MiMo-V2.6-Distill-Qwen-9B-Q4_K_M.gguf SPEC= ./serve.sh
+	MODEL=$(MODELS_DIR)/bartowski/MiMo-V2.6-Distill-Qwen-9B-GGUF/MiMo-V2.6-Distill-Qwen-9B-Q4_K_M.gguf SPEC= ./serve.sh
 
 run-nemotron:
-	MODEL=$(HOME)/.lmstudio/models/lmstudio-community/NVIDIA-Nemotron-3-Nano-4B-GGUF/NVIDIA-Nemotron-3-Nano-4B-Q4_K_M.gguf SPEC= ./serve.sh
+	MODEL=$(MODELS_DIR)/lmstudio-community/NVIDIA-Nemotron-3-Nano-4B-GGUF/NVIDIA-Nemotron-3-Nano-4B-Q4_K_M.gguf SPEC= ./serve.sh
 
 stop-all stop:
 	@pkill -x llama-server && echo "llama-server stopped" || echo "no llama-server running"

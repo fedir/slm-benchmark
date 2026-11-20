@@ -3,7 +3,7 @@
 # Usage: ./serve.sh [extra llama-server args]   e.g. ./serve.sh -c 8192 --port 8081
 set -e
 
-BACKEND=/var/lib/flatpak/app/ai.lmstudio.lm-studio/x86_64/stable/active/files/extra/lmstudio/resources/app/.webpack/bin/extensions/backends/llama.cpp-linux-x86_64-vulkan-avx2-2.54.0
+BACKEND=${BACKEND:-$(ls -d /var/lib/flatpak/app/ai.lmstudio.lm-studio/x86_64/stable/active/files/extra/lmstudio/resources/app/.webpack/bin/extensions/backends/llama.cpp-linux-x86_64-vulkan-avx2-* | sort -V | tail -1)}
 # Override per model, e.g. MODEL=... SPEC="" ./serve.sh   (SPEC empty = no speculative decoding)
 MODEL=${MODEL:-$HOME/.lmstudio/models/protoLabsAI/Ornith-1.5-9B-MTP-GGUF/Ornith-1.5-9B-MTP-Q4_K_M.gguf}
 SPEC=${SPEC---spec-type draft-mtp --spec-draft-n-max 2}

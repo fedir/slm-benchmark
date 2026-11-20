@@ -26,7 +26,6 @@ bus, so it adds no bandwidth.
 
 | File | Purpose |
 |---|---|
-| `compatible_models.csv` | 6,605-row output of a hardware-compatibility scan (see 3.1) |
 | `serve.sh` | Starts `llama-server`; `MODEL=` and `SPEC=` env vars override the defaults |
 | `Makefile` | `make run-ornith`, `make run-mimo`, `make stop-all`, `make help` |
 | `chat.html` | Single-file chat UI for the server (see 2) |
@@ -54,8 +53,7 @@ streaming. Controls:
 ## 3. Methodology
 
 ### 3.1 Candidate selection
-`compatible_models.csv` marks all 6,605 entries "perfect" or "good" fit (4,338 / 2,267),
-mostly at Q8_0. Its figures were **not trusted** for two reasons:
+An early hardware-compatibility scan (6,605 entries marked "perfect" or "good" fit, 4,338 / 2,267, mostly at Q8_0; the file itself is no longer in the project) was **not trusted** for two reasons:
 
 - it treats all 15.3 GB as available (only ~6-8 GB really is);
 - its `estimated_tps` is optimistic: it predicted 28 t/s for a 3B Q8 model, against a
